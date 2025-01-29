@@ -10,4 +10,8 @@ abstract class ColorManager {
   static const Color black = Color(0xFF000000); // Black
   static const Color darkGray = Color(0xFF404040); // Dark Gray
   static const Color aquamarine = Color(0xFF2FBEB0); // Aquamarine
+  static const Color lightTeal = Color(0xFF2AE2D1); // lightTeal
+  static const Color orange = Color(0xFFF36D13); // orange
+  static const Color brightRed = Color(0xFFE63A3A); // brightRed
+
 }

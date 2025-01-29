@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="112" height="107" viewBox="0 0 112 107">
+  <g id="Group_4482" data-name="Group 4482" transform="translate(-154.386 -388.668)">
+    <ellipse id="Ellipse_593" data-name="Ellipse 593" cx="49.5" cy="50" rx="49.5" ry="50" transform="translate(154.386 391.668)" fill="#22c7b8"/>
+    <circle id="Ellipse_594" data-name="Ellipse 594" cx="23.5" cy="23.5" r="23.5" transform="translate(219.386 388.668)" fill="#22c7b8" opacity="0.5"/>
+    <circle id="Ellipse_595" data-name="Ellipse 595" cx="8" cy="8" r="8" transform="translate(154.386 479.668)" fill="#22c7b8" opacity="0.5"/>
+    <ellipse id="Ellipse_597" data-name="Ellipse 597" cx="6.5" cy="7" rx="6.5" ry="7" transform="translate(162.386 400.668)" fill="#22c7b8" opacity="0.5"/>
+    <ellipse id="Ellipse_596" data-name="Ellipse 596" cx="12" cy="11.5" rx="12" ry="11.5" transform="translate(219.386 472.668)" fill="#22c7b8" opacity="0.5"/>
+    <g id="fi-rr-download" transform="translate(186.774 423.16)">
+      <path id="Path_784" data-name="Path 784" d="M34.207,16h0a1.487,1.487,0,0,0-1.487,1.487v5.949a1.487,1.487,0,0,1-1.487,1.487H4.462a1.487,1.487,0,0,1-1.487-1.487V17.487A1.487,1.487,0,0,0,1.487,16h0A1.487,1.487,0,0,0,0,17.487v5.949A4.462,4.462,0,0,0,4.462,27.9h26.77a4.462,4.462,0,0,0,4.462-4.462V17.487A1.487,1.487,0,0,0,34.207,16Z" transform="translate(0 7.796)" fill="#fff"/>
+      <path id="Path_785" data-name="Path 785" d="M5.436,20.134l6.821,6.822a4.472,4.472,0,0,0,6.309,0l6.821-6.821a1.487,1.487,0,1,0-2.1-2.1L16.9,24.415V1.487a1.487,1.487,0,0,0-2.974,0V24.416L7.539,18.031a1.487,1.487,0,1,0-2.1,2.1Z" transform="translate(2.436)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
