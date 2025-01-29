@@ -1,0 +1,67 @@
+import 'package:flutter/material.dart';
+import 'package:medical_app/core/utils/assets.dart';
+import '../../utils/app_styles.dart';
+import '../../utils/color_manager.dart';
+import 'my_profile_custom_image_frame.dart';
+import 'my_profile_list_view.dart';
+
+class MyProfileData extends StatelessWidget {
+  const MyProfileData({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width; // Get screen width
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          Container(
+            padding: const EdgeInsets.only(left: 12, top: 70, bottom: 30),
+            decoration: ShapeDecoration(
+              color: ColorManager.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+            ),
+            child: Column(
+              children: [
+                Text(
+                  'Mohamed Abdrabo',
+                  style: AppStyles.textStyleMedium16(context),
+                ),
+                const SizedBox(height: 30),
+                MyProfileListView(),
+              ],
+            ),
+          ),
+
+          Positioned(
+            top: -187,
+            left: (screenWidth / 2) - 401,
+            child: CustomPaint(
+              size: const Size(200, 200),
+              painter: RPSCustomPainter(),
+            ),
+          ),
+
+          Positioned(
+            top: -34,
+            left: (screenWidth / 2) - 42,
+            child: ClipOval(
+              child: Image.asset(
+                AppAssets.imagesProfilePic,
+                width: 70,
+                height: 70,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

@@ -1,0 +1,50 @@
+import 'package:flutter/material.dart';
+import 'package:medical_app/core/utils/app_styles.dart';
+import 'package:medical_app/core/utils/color_manager.dart';
+
+import '../../../constants.dart';
+
+class TasksDetailsCustomTextFormField extends StatelessWidget {
+  final String label;
+  final EdgeInsetsGeometry contentPadding;
+
+  const TasksDetailsCustomTextFormField({
+    super.key,
+    required this.label,
+    this.contentPadding = const EdgeInsets.symmetric(
+        horizontal: 16.0, vertical: 12.0),
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: MediaQuery.sizeOf(context).width < 800
+          ? double.infinity
+          : kBiggerScreensWidth,
+      child: TextFormField(
+        decoration: InputDecoration(
+          labelText: label,
+          labelStyle: AppStyles.textStyleRegular14(context),
+          contentPadding: contentPadding,
+          filled: true,
+          fillColor: ColorManager.gray.withValues(alpha: 0.1),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12.0),
+            borderSide:
+                BorderSide(color: ColorManager.gray.withValues(alpha: 0.1)),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide:
+                BorderSide(color: ColorManager.gray.withValues(alpha: 0.1)),
+            borderRadius: BorderRadius.circular(12.0),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderSide:
+                BorderSide(color: ColorManager.gray.withValues(alpha: 0.1)),
+            borderRadius: BorderRadius.circular(12.0),
+          ),
+        ),
+      ),
+    );
+  }
+}

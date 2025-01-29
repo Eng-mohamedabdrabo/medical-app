@@ -14,11 +14,11 @@ class CustomSplashAndLoginBackground extends StatelessWidget {
       children: [
         Align(
           alignment: Alignment.topLeft,
-          child: SvgPicture.asset(Assets.imagesUpperSplashContainer),
+          child: SvgPicture.asset(AppAssets.imagesUpperSplashContainer),
         ),
         Align(
           alignment: Alignment.bottomRight,
-          child: SvgPicture.asset(Assets.imagesLowerSplashContainer),
+          child: SvgPicture.asset(AppAssets.imagesLowerSplashContainer),
         ),
         child
       ],

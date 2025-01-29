@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="168" height="40" viewBox="0 0 168 40">
+  <g id="Group_4484" data-name="Group 4484" transform="translate(-86 -553)">
+    <g id="Rectangle_1905" data-name="Rectangle 1905" transform="translate(86 553)" fill="none" stroke="#22c7b8" stroke-width="1">
+      <rect width="168" height="40" rx="8" stroke="none"/>
+      <rect x="0.5" y="0.5" width="167" height="39" rx="7.5" fill="none"/>
+    </g>
+    <g id="Group_4483" data-name="Group 4483" transform="translate(-6.999)">
+      <text id="Upload_Image" data-name="Upload Image" transform="translate(188 578)" fill="#22c7b8" font-size="14" font-family="SegoeUI, Segoe UI"><tspan x="-43" y="0">Upload Image</tspan></text>
+      <path id="fi-rr-plus-small" d="M19.268,12.031H14.443V7.206A1.206,1.206,0,0,0,13.237,6h0a1.206,1.206,0,0,0-1.206,1.206v4.825H7.206A1.206,1.206,0,0,0,6,13.237H6a1.206,1.206,0,0,0,1.206,1.206h4.825v4.825a1.206,1.206,0,0,0,1.206,1.206h0a1.206,1.206,0,0,0,1.206-1.206V14.443h4.825a1.206,1.206,0,0,0,1.206-1.206h0A1.206,1.206,0,0,0,19.268,12.031Z" transform="translate(110 560)" fill="#22c7b8"/>
+    </g>
+  </g>
+</svg>
