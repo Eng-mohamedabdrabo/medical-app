@@ -1,0 +1,106 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:medical_app/core/utils/assets.dart';
+import 'package:medical_app/core/utils/color_manager.dart';
+import 'package:medical_app/core/widgets/custom_data_info_header.dart';
+
+import 'custom_home_bigger_container.dart';
+import 'custom_home_smaller_container.dart';
+
+class CustomHomeView extends StatelessWidget {
+  const CustomHomeView(
+      {super.key,
+      required this.notificationsOnTap,
+      required this.firstContainerOnTap,
+      required this.secondContainerOnTap,
+      required this.thirdContainerTap,
+      required this.fourthContainerOnTap});
+
+  final void Function() notificationsOnTap;
+  final void Function() firstContainerOnTap;
+  final void Function() secondContainerOnTap;
+  final void Function() thirdContainerTap;
+  final void Function() fourthContainerOnTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        double containerWidth =
+            (constraints.maxWidth - 16 * 3) / 2; // Calculate container width
+
+        return Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: CustomDataInfoHeader(
+                trailingWidget: GestureDetector(
+                  onTap: notificationsOnTap,
+                  child: SvgPicture.asset(AppAssets.imagesNotifications),
+                ),
+                profileOnTap: () {},
+              ),
+            ),
+            const SizedBox(height: 50),
+            Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    children: [
+                      GestureDetector(
+                        onTap: firstContainerOnTap,
+                        child: CustomHomeBiggerContainer(
+                          color: ColorManager.skyBlue,
+                          text: 'Calls',
+                          image: AppAssets.containerHomeCalls,
+                          width: containerWidth,
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      GestureDetector(
+                        onTap: secondContainerOnTap,
+                        child: CustomHomeSmallerContainer(
+                          color: ColorManager.purple,
+                          text: 'Reports',
+                          image: AppAssets.containerHomeReports,
+                          width: containerWidth,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Column(
+                    children: [
+                      GestureDetector(
+                        onTap: thirdContainerTap,
+                        child: CustomHomeSmallerContainer(
+                          color: ColorManager.green,
+                          text: 'Tasks',
+                          image: AppAssets.containerHomeTasks,
+                          width: containerWidth,
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      GestureDetector(
+                        onTap: fourthContainerOnTap,
+                        child: CustomHomeBiggerContainer(
+                          color: ColorManager.cyan,
+                          text: 'Attendance - Leaving',
+                          image: AppAssets.containerHomeAttendance,
+                          width: containerWidth,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ],
+        );
+      },
+    );
+  }
+}
+
+
