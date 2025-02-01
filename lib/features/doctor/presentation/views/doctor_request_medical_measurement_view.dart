@@ -8,8 +8,8 @@ import '../../../../core/utils/color_manager.dart';
 import '../../../../core/widgets/custom_elevated_button.dart';
 import '../../../../core/widgets/custom_header.dart';
 
-class AddMedicalMeasurementView extends StatelessWidget {
-  const AddMedicalMeasurementView({super.key});
+class DoctorRequestMedicalMeasurementView extends StatelessWidget {
+  const DoctorRequestMedicalMeasurementView({super.key});
 
   @override
   Widget build(BuildContext context) {

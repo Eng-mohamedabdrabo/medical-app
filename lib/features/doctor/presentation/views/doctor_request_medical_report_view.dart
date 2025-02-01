@@ -8,8 +8,8 @@ import '../../../../core/utils/app_styles.dart';
 import '../../../../core/utils/color_manager.dart';
 import '../../../../core/widgets/custom_header.dart';
 
-class AddMedicalReportView extends StatelessWidget {
-  const AddMedicalReportView({super.key});
+class DoctorRequestMedicalReportView extends StatelessWidget {
+  const DoctorRequestMedicalReportView({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:medical_app/core/utils/assets.dart';
 import 'package:medical_app/core/widgets/custom_elevated_button.dart';
-import 'package:medical_app/features/doctor/presentation/views/add_medical_measurement_view.dart';
-import 'package:medical_app/features/doctor/presentation/views/add_medical_report_view.dart';
+import 'package:medical_app/features/doctor/presentation/views/doctor_request_medical_measurement_view.dart';
+import 'package:medical_app/features/doctor/presentation/views/doctor_request_medical_report_view.dart';
 import 'package:medical_app/features/doctor/presentation/views/doctor_select_nurse_view.dart';
 import 'package:medical_app/features/doctor/presentation/views/widgets/case_details_request_choice.dart';
 import 'package:medical_app/features/doctor/presentation/views/widgets/doctor_case_details_analysis_list_view.dart';
@@ -80,14 +80,14 @@ class DoctorCaseDetailsView extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => AddMedicalReportView(),
+                            builder: (context) => DoctorRequestMedicalReportView(),
                           ),
                         );
                       } else {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => AddMedicalMeasurementView(),
+                            builder: (context) => DoctorRequestMedicalMeasurementView(),
                           ),
                         );
                       }

@@ -14,14 +14,15 @@ class CustomHomeView extends StatelessWidget {
       required this.firstContainerOnTap,
       required this.secondContainerOnTap,
       required this.thirdContainerTap,
-      required this.fourthContainerOnTap});
+      required this.fourthContainerOnTap, required this.firstContainerImage, required this.firstContainerTitle, required this.firstContainerColor});
 
   final void Function() notificationsOnTap;
   final void Function() firstContainerOnTap;
   final void Function() secondContainerOnTap;
   final void Function() thirdContainerTap;
   final void Function() fourthContainerOnTap;
-
+  final String firstContainerImage , firstContainerTitle;
+  final Color firstContainerColor;
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -50,9 +51,9 @@ class CustomHomeView extends StatelessWidget {
                       GestureDetector(
                         onTap: firstContainerOnTap,
                         child: CustomHomeBiggerContainer(
-                          color: ColorManager.skyBlue,
-                          text: 'Calls',
-                          image: AppAssets.containerHomeCalls,
+                          color: firstContainerColor,
+                          text: firstContainerTitle,
+                          image: firstContainerImage,
                           width: containerWidth,
                         ),
                       ),

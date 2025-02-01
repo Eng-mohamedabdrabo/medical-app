@@ -63,5 +63,7 @@ class AppAssets {
   static const String containerShowDetails = 'assets/images/containerShowDetails.svg';
   static const String containerAddNurse = 'assets/images/containerAddNurse.svg';
   static const String containerRequest = 'assets/images/containerRequest.svg';
+  static const String containerNurseAnalysis = 'assets/images/containerNurseAnalysis.svg';
+  static const String containerShowDetailsOrange = 'assets/images/containerShowDetailsOrange.svg';
 
 }
