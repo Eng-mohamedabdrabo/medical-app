@@ -65,5 +65,6 @@ class AppAssets {
   static const String containerRequest = 'assets/images/containerRequest.svg';
   static const String containerNurseAnalysis = 'assets/images/containerNurseAnalysis.svg';
   static const String containerShowDetailsOrange = 'assets/images/containerShowDetailsOrange.svg';
+  static const String containerAnalysisEmployeeAnalysis = 'assets/images/containerAnalysisEmployeeAnalysis.svg';
 
 }

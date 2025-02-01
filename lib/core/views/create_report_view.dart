@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:medical_app/core/utils/app_styles.dart';
 import 'package:medical_app/core/utils/color_manager.dart';
 import 'package:medical_app/core/views/widgets/create_report_custom_text_filed.dart';
-import 'package:medical_app/core/views/widgets/create_report_upload_imager_container.dart';
+import 'package:medical_app/core/widgets/custom_upload_imager_container.dart';
 import 'package:medical_app/core/widgets/custom_elevated_button.dart';
 import 'package:medical_app/core/widgets/custom_header.dart';
 
@@ -39,7 +39,7 @@ class CreateReportView extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              CreateReportUploadImageContainer(),
+              CustomUploadImageContainer(),
               Spacer(),
               CustomElevatedButton(text: 'Create Report', onPressed: () {  },)
             ],

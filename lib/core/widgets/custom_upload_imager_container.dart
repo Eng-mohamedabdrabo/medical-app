@@ -2,20 +2,20 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../utils/assets.dart';
-import '../../utils/color_manager.dart';
+import '../utils/assets.dart';
+import '../utils/color_manager.dart';
 
-class CreateReportUploadImageContainer extends StatelessWidget {
-  const CreateReportUploadImageContainer({
+class CustomUploadImageContainer extends StatelessWidget {
+  const CustomUploadImageContainer({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return DottedBorder(
-      color: ColorManager.gray.withValues(alpha: 0.4),
+      color: ColorManager.gray.withValues(alpha: 0.2),
       strokeWidth: 1,
-      dashPattern: [7, 6],
+      dashPattern: [22, 16],
       borderType: BorderType.RRect,
       radius: Radius.circular(12),
       child: Container(

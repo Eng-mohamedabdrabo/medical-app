@@ -1,7 +1,8 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:medical_app/core/utils/theme_manager.dart';
-import 'package:medical_app/features/doctor/presentation/views/doctor_select_nurse_view.dart';
+
+import 'features/analysis_employee/presentation/views/analysis_employee_add_medical_report_view.dart';
 
 void main() {
   runApp(
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       builder: DevicePreview.appBuilder,
       title: 'Medical App',
       theme: ThemeManager.getAppTheme(),
-      home: DoctorSelectNurseView(),
+      home: AnalysisEmployeeAddMedicalReportView(),
     );
   }
 }
