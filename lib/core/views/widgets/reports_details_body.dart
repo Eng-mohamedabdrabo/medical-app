@@ -69,7 +69,6 @@ class ReportsDetailsBody extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 CustomElevatedButton(
-                  text: 'Send', onPressed: () {  },
                 ),
               ],
             ),
