@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:medical_app/core/views/widgets/reports_list_view.dart';
+import '../../utils/app_router.dart';
 import '../../utils/app_styles.dart';
 import '../../utils/color_manager.dart';
 import '../../widgets/custom_add_button.dart';
@@ -46,7 +48,10 @@ class _ReportsViewBodyState extends State<ReportsViewBody> {
               SizedBox(
                 width: 12,
               ),
-              CustomAddButton(onTap: () {  },),
+              CustomAddButton(onTap: () {
+                GoRouter.of(context).push(AppRouter.kCreateReportView);
+
+              },),
             ],
           ),
           SizedBox(

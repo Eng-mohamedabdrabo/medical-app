@@ -1,11 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
+import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/utils/assets.dart';
 
-class SplashItem extends StatelessWidget {
+class SplashItem extends StatefulWidget {
   const SplashItem({super.key});
 
+  @override
+  State<SplashItem> createState() => _SplashItemState();
+}
+
+class _SplashItemState extends State<SplashItem> {
+  @override
+  void initState() {
+    navigateToHomeView();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
@@ -43,4 +55,14 @@ class SplashItem extends StatelessWidget {
       ),
     );
   }
+  void navigateToHomeView() {
+    Future.delayed(
+        const Duration(milliseconds: 4500), () {
+      if (mounted) {
+        GoRouter.of(context).push(AppRouter.kPrototypingMapView);
+      }
+    });
+  }
 }
+
+

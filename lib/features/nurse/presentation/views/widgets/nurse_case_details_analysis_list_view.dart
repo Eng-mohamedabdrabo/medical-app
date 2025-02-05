@@ -18,7 +18,7 @@ class NurseCaseDetailsAnalysisListView extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(right: 8.0),
               child: DoctorCaseDetailsAnalysisListViewItem(
-                text: e,
+                text: e, isSelected: false,
               ),
             )),
       )

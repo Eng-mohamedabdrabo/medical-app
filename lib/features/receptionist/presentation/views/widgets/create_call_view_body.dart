@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/utils/color_manager.dart';
 import '../../../../../core/widgets/custom_elevated_button.dart';
@@ -35,7 +37,10 @@ class CreateCallViewBody extends StatelessWidget {
               const SizedBox(height: 20),
               CustomTextFormField(hintText: 'Phone Number'),
               const SizedBox(height: 20),
-              GestureDetector(
+              InkWell(
+                onTap: (){
+                  GoRouter.of(context).push(AppRouter.kSelectDoctorView);
+                },
                 child: const CustomSelectSomeOneContainer(
                   empName: 'Select Doctor',
                 ),

@@ -1,8 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:medical_app/features/receptionist/presentation/views/widgets/calls_list_view.dart';
 
+import '../../../../core/utils/app_router.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/utils/color_manager.dart';
 import '../../../../core/widgets/custom_add_button.dart';
@@ -10,14 +12,14 @@ import '../../../../core/widgets/custom_calendar_sheet.dart';
 import '../../../../core/widgets/custom_date_picker_row.dart';
 import '../../../../core/widgets/custom_header.dart';
 
-class CallsView extends StatefulWidget {
-  const CallsView({super.key});
+class ReceptionistCallsView extends StatefulWidget {
+  const ReceptionistCallsView({super.key});
 
   @override
-  State<CallsView> createState() => _CallsViewState();
+  State<ReceptionistCallsView> createState() => _ReceptionistCallsViewState();
 }
 
-class _CallsViewState extends State<CallsView> {
+class _ReceptionistCallsViewState extends State<ReceptionistCallsView> {
  DateTime? selectedDate;
 
   @override
@@ -48,7 +50,9 @@ class _CallsViewState extends State<CallsView> {
                   SizedBox(
                     width: 12,
                   ),
-                  CustomAddButton(onTap: () {  },),
+                  CustomAddButton(onTap: () {
+                    GoRouter.of(context).push(AppRouter.kReceptionistCreateCallView);
+                  },),
                 ],
               ),
               SizedBox(height: 30,),

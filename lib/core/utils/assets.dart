@@ -1,6 +1,6 @@
 class AppAssets {
   AppAssets._();
-
+  static const String animationAttendance = 'lottie/attendance.json';
   static const String imagesRightArrow = 'assets/images/imagesArrow_right.svg';
   static const String imagesCalender = 'assets/images/imagesCalender.svg';
   static const String imagesCall = 'assets/images/imagesCall.svg';
@@ -12,6 +12,7 @@ class AppAssets {
   static const String imagesLocation = 'assets/images/imagesLocation.svg';
   static const String imagesLock = 'assets/images/imagesLock.svg';
   static const String imagesLogo = 'assets/images/imagesLogo.png';
+  static const String imagesTealCircle = 'assets/images/imagesTealCircle.svg';
   static const String imagesLogoWithName = 'assets/images/imagesLogoWithName.png';
   static const String imagesMessage = 'assets/images/imagesMessage.svg';
   static const String imagesNotifications = 'assets/images/imagesNotifications.svg';
@@ -19,6 +20,7 @@ class AppAssets {
   static const String imagesUndo = 'assets/images/imagesUndo.svg';
   static const String imagesUserProfile = 'assets/images/imagesUserProfile.svg';
   static const String imagesWrong = 'assets/images/imagesWrong.svg';
+  static const String imagesHeart = 'assets/images/imagesHeart.svg';
   static const String imagesUpperSplashContainer = 'assets/images/imagesUpperSplashContainer.svg';
   static const String imagesLowerSplashContainer = 'assets/images/imagesLowerSplashContainer.svg';
   static const String imagesFingerPrint = 'assets/images/imagesFingerPrint.svg';
@@ -45,19 +47,24 @@ class AppAssets {
   static const String imagesUploadImage = 'assets/images/imagesUploadImage.svg';
   static const String imagesUploadImageButton = 'assets/images/imagesUploadImageButton.svg';
   static const String imagesReply = 'assets/images/imagesReply.svg';
+  static const String imagesMidAidKit = 'assets/images/imagesMidAidKit.svg';
+  static const String imagesRemove = 'assets/images/imagesRemove.svg';
   static const String imagesReportsDetailsHospital = 'assets/images/imagesReportsDetailsHospital.png';
   static const String imagesActive = 'assets/images/imagesActive.svg';
   static const String imagesDeActive = 'assets/images/imagesDeactive.svg';
   static const String imagesCancel = 'assets/images/imagesCancel.svg';
   static const String imagesSearch = 'assets/images/imagesSearch.svg';
   static const String imagesCaseProcess = 'assets/images/imagesCaseProcess.svg';
+  static const String imagesAdd = 'assets/images/imagesAdd.svg';
   static const String imagesMedicalRecord = 'assets/images/imagesMedicalRecord.svg';
   static const String imagesMedicalMeasurement = 'assets/images/imagesMedicalMeasurment.svg';
+  static const String imagesArrowDown = 'assets/images/imagesArrowDown.svg';
   static const String containerHomeAttendance = 'assets/images/containerHomeAttendance.svg';
   static const String containerHomeCalls = 'assets/images/containerHomeCalls.svg';
   static const String containerHomeCases = 'assets/images/containerHomeCases.svg';
   static const String containerHomeReports = 'assets/images/containerHomeReports.svg';
   static const String containerHomeTasks = 'assets/images/containerHomeTasks.svg';
+  static const String containerHomeEmployee = 'assets/images/containerHomeEmployee.svg';
   static const String containerAcceptCall = 'assets/images/containerAcceptCall.svg';
   static const String containerBusyCall = 'assets/images/containerBusyCall.svg';
   static const String containerShowDetails = 'assets/images/containerShowDetails.svg';
@@ -66,5 +73,6 @@ class AppAssets {
   static const String containerNurseAnalysis = 'assets/images/containerNurseAnalysis.svg';
   static const String containerShowDetailsOrange = 'assets/images/containerShowDetailsOrange.svg';
   static const String containerAnalysisEmployeeAnalysis = 'assets/images/containerAnalysisEmployeeAnalysis.svg';
+  static const String medicalRecord = 'assets/images/medicalRecord.png';
 
 }

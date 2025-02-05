@@ -2,7 +2,8 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:medical_app/core/utils/theme_manager.dart';
 
-import 'features/analysis_employee/presentation/views/analysis_employee_add_medical_report_view.dart';
+import 'core/utils/app_router.dart';
+
 
 void main() {
   runApp(
@@ -17,13 +18,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
       title: 'Medical App',
       theme: ThemeManager.getAppTheme(),
-      home: AnalysisEmployeeAddMedicalReportView(),
     );
   }
 }

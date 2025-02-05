@@ -1,20 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:medical_app/core/utils/assets.dart';
 import 'package:medical_app/core/widgets/custom_elevated_button.dart';
-import 'package:medical_app/features/doctor/presentation/views/doctor_request_medical_measurement_view.dart';
-import 'package:medical_app/features/doctor/presentation/views/doctor_request_medical_report_view.dart';
-import 'package:medical_app/features/doctor/presentation/views/doctor_select_nurse_view.dart';
+import 'package:medical_app/core/widgets/medical_measurement_body.dart';
+import 'package:medical_app/core/widgets/medical_record_body.dart';
 import 'package:medical_app/features/doctor/presentation/views/widgets/case_details_request_choice.dart';
-import 'package:medical_app/features/doctor/presentation/views/widgets/doctor_case_details_analysis_list_view.dart';
-import '../../../../core/utils/app_styles.dart';
-import '../../../../core/utils/color_manager.dart';
-import '../../../../core/widgets/custom_case_description.dart';
-import '../../../../core/widgets/custom_case_details.dart';
+import 'package:medical_app/core/utils/app_router.dart';
+import 'package:medical_app/core/utils/app_styles.dart';
+import 'package:medical_app/core/utils/color_manager.dart';
+import 'package:medical_app/core/widgets/case_details_body.dart';
+import 'package:medical_app/features/doctor/presentation/views/widgets/doctor_case_details_action_body.dart';
+import 'package:medical_app/features/doctor/presentation/views/widgets/doctor_show_medical_requirement_body.dart';
 import '../../../../core/widgets/custom_header.dart';
+import '../../../doctor/presentation/views/widgets/doctor_case_details_analysis_list_view.dart';
 
-class DoctorCaseDetailsView extends StatelessWidget {
+class DoctorCaseDetailsView extends StatefulWidget {
   const DoctorCaseDetailsView({super.key});
+
+  @override
+  State<DoctorCaseDetailsView> createState() => _DoctorCaseDetailsViewState();
+}
+
+class _DoctorCaseDetailsViewState extends State<DoctorCaseDetailsView> {
+  int selectedIndex = 0;
 
   void _showBottomSheet(BuildContext context) {
     showModalBottomSheet(
@@ -23,7 +31,7 @@ class DoctorCaseDetailsView extends StatelessWidget {
         borderRadius: BorderRadius.vertical(top: Radius.circular(16.0)),
       ),
       builder: (context) {
-        int selectedIndex = 0;
+        int temporaryIndex = selectedIndex;
 
         return StatefulBuilder(
           builder: (BuildContext context, StateSetter setState) {
@@ -38,16 +46,14 @@ class DoctorCaseDetailsView extends StatelessWidget {
                       Expanded(
                         child: GestureDetector(
                           onTap: () {
-                            setState(() {
-                              selectedIndex = 0;
-                            });
+                            setState(() => temporaryIndex = 0);
                           },
                           child: FadeToggleSelection(
-                            isSelected: selectedIndex == 0,
+                            isSelected: temporaryIndex == 0,
                             child: CaseDetailsRequestChoice(
                               text: 'Medical Record',
                               image: AppAssets.imagesMedicalRecord,
-                              isSelected: selectedIndex == 0,
+                              isSelected: temporaryIndex == 0,
                             ),
                           ),
                         ),
@@ -56,16 +62,14 @@ class DoctorCaseDetailsView extends StatelessWidget {
                       Expanded(
                         child: GestureDetector(
                           onTap: () {
-                            setState(() {
-                              selectedIndex = 1;
-                            });
+                            setState(() => temporaryIndex = 1);
                           },
                           child: FadeToggleSelection(
-                            isSelected: selectedIndex == 1,
+                            isSelected: temporaryIndex == 1,
                             child: CaseDetailsRequestChoice(
                               text: 'Medical Measurement',
                               image: AppAssets.imagesMedicalMeasurement,
-                              isSelected: selectedIndex == 1,
+                              isSelected: temporaryIndex == 1,
                             ),
                           ),
                         ),
@@ -76,20 +80,12 @@ class DoctorCaseDetailsView extends StatelessWidget {
                   CustomElevatedButton(
                     text: 'Request',
                     onPressed: () {
-                      if (selectedIndex == 0) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => DoctorRequestMedicalReportView(),
-                          ),
-                        );
+                      if (temporaryIndex == 0) {
+                        GoRouter.of(context)
+                            .push(AppRouter.kDoctorRequestMedicalReportView);
                       } else {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => DoctorRequestMedicalMeasurementView(),
-                          ),
-                        );
+                        GoRouter.of(context).push(
+                            AppRouter.kDoctorRequestMedicalMeasurementView);
                       }
                     },
                   ),
@@ -102,69 +98,74 @@ class DoctorCaseDetailsView extends StatelessWidget {
     );
   }
 
+  Widget _buildSelectedContent() {
+    switch (selectedIndex) {
+      case 0:
+        return DoctorCaseDetailsActionsBody(
+          selectedContent: const CaseDetailsBody(),
+          onRequestPressed: () => _showBottomSheet(context),
+          onEndCasePressed: () {},
+          onAddNursePressed: () {
+            GoRouter.of(context).push(AppRouter.kDoctorSelectNurseView);
+          },
+        );
+      case 1:
+        return DoctorShowMedicalRequirementBody(
+          selectedContent: MedicalMeasurementBody(),
+        );
+      case 2:
+        return DoctorShowMedicalRequirementBody(
+          selectedContent: MedicalRecordBody(),
+        );
+      default:
+        return DoctorCaseDetailsActionsBody(
+          selectedContent: const CaseDetailsBody(),
+          onRequestPressed: () => _showBottomSheet(context),
+          onEndCasePressed: () {},
+          onAddNursePressed: () {
+            GoRouter.of(context).push(AppRouter.kDoctorSelectNurseView);
+          },
+        );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Column(
-            children: [
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomHeader(
-                        title: 'Case Details',
-                        textStyle: AppStyles.textStyleRegular18(context)
-                            .copyWith(color: ColorManager.black),
-                        color: ColorManager.black,
-                      ),
-                      const SizedBox(height: 24),
-                      DoctorCaseDetailsAnalysisListView(),
-                      const SizedBox(height: 28),
-                      CustomCaseDetails(),
-                      const SizedBox(height: 16),
-                      CustomCaseDescription(),
-                      const SizedBox(height: 45),
-                      Center(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        DoctorSelectNurseView(),
-                                  ),
-                                );
-                              },
-                              child:
-                                  SvgPicture.asset(AppAssets.containerAddNurse),
-                            ),
-                            const SizedBox(width: 20),
-                            GestureDetector(
-                              onTap: () => _showBottomSheet(context),
-                              child:
-                                  SvgPicture.asset(AppAssets.containerRequest),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Column(
+                  children: [
+                    CustomHeader(
+                      title: 'Case Details',
+                      textStyle: AppStyles.textStyleRegular18(context)
+                          .copyWith(color: ColorManager.black),
+                      color: ColorManager.black,
+                    ),
+                    const SizedBox(height: 24),
+                    DoctorCaseDetailsAnalysisListView(
+                      selectedIndex: selectedIndex,
+                      onItemSelected: (index) {
+                        setState(() {
+                          selectedIndex = index;
+                        });
+                      },
+                    ),
+                    const SizedBox(height: 28),
+                  ],
                 ),
               ),
-              CustomElevatedButton(
-                text: 'End Case',
-                backGroundColor: ColorManager.brightRed,
-                onPressed: () {},
+            ),
+            SliverToBoxAdapter(
+              child: SingleChildScrollView(
+                child: _buildSelectedContent(),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -175,8 +176,11 @@ class FadeToggleSelection extends StatelessWidget {
   final bool isSelected;
   final Widget child;
 
-  const FadeToggleSelection(
-      {super.key, required this.isSelected, required this.child});
+  const FadeToggleSelection({
+    super.key,
+    required this.isSelected,
+    required this.child,
+  });
 
   @override
   Widget build(BuildContext context) {

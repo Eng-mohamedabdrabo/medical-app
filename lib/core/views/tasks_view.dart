@@ -25,7 +25,7 @@ class _TasksViewState extends State<TasksView> {
           child: Column(
             children: [
             CustomHeader(
-            title: 'Tasks Details',
+            title: 'Tasks',
             textStyle: AppStyles.textStyleRegular18(context).copyWith(
               color: ColorManager.black,
             ),

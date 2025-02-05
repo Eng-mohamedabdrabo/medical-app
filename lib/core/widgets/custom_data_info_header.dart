@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
+import '../utils/app_router.dart';
 import '../utils/app_styles.dart';
 import '../utils/assets.dart';
 import '../utils/color_manager.dart';
@@ -7,11 +9,10 @@ import '../utils/color_manager.dart';
 class CustomDataInfoHeader extends StatelessWidget {
   const CustomDataInfoHeader({
     super.key,
-    this.trailingWidget, required this.profileOnTap,
+    this.trailingWidget, this.jobDescription,
   });
-
+  final String? jobDescription;
   final Widget? trailingWidget;
-  final void Function() profileOnTap;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,9 @@ class CustomDataInfoHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         GestureDetector(
-          onTap:profileOnTap ,
+          onTap:(){
+            GoRouter.of(context).push(AppRouter.kMyProfileView);
+          } ,
           child: SizedBox(
             width: 45,
             height: 45,
@@ -46,7 +49,7 @@ class CustomDataInfoHeader extends StatelessWidget {
               ),
               const SizedBox(height: 4),
               Text(
-                'Specialist, Doctor',
+                jobDescription??'Specialist, Doctor',
                 style: AppStyles.textStyleRegular12(context).copyWith(
                   color: ColorManager.teal,
                 ),

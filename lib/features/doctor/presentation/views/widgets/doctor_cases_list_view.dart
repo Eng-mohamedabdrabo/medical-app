@@ -3,7 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'doctor_cases_list_view_item.dart';
 
 class DoctorCasesListview extends StatelessWidget {
-  const DoctorCasesListview({super.key});
+  const DoctorCasesListview({super.key, this.onTap});
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,7 @@ class DoctorCasesListview extends StatelessWidget {
       itemCount: 9,
       itemBuilder: (context, index) => Padding(
         padding: const EdgeInsets.only(top: 24.0),
-        child: DoctorCasesListViewItem(),
+        child: DoctorCasesListViewItem(onTap: onTap,),
       ),
     );
   }

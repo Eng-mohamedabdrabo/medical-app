@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../../core/utils/app_router.dart';
 import '../../../../core/utils/assets.dart';
 import '../../../../core/utils/color_manager.dart';
 import '../../../../core/widgets/custom_home_view.dart';
@@ -14,11 +16,22 @@ class ReceptionistView extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: CustomHomeView(
-            notificationsOnTap: () {},
-            firstContainerOnTap: () {},
-            secondContainerOnTap: () {},
-            thirdContainerTap: () {},
-            fourthContainerOnTap: () {},
+            jobDescription: 'Specialist , Receptionist',
+            notificationsOnTap: () {
+              GoRouter.of(context).push(AppRouter.kNotificationsView);
+            },
+            firstContainerOnTap: () {
+              GoRouter.of(context).push(AppRouter.kReceptionistCallsView);
+            },
+            secondContainerOnTap: () {
+              GoRouter.of(context).push(AppRouter.kReportsView);
+            },
+            thirdContainerTap: () {
+              GoRouter.of(context).push(AppRouter.kTasksView);
+            },
+            fourthContainerOnTap: () {
+              GoRouter.of(context).push(AppRouter.kAttendanceView);
+            },
             firstContainerImage: AppAssets.containerHomeCalls,
             firstContainerTitle: 'Calls',
             firstContainerColor: ColorManager.skyBlue,

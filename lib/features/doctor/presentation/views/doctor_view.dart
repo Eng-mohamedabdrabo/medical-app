@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:medical_app/core/utils/assets.dart';
 import 'package:medical_app/core/utils/color_manager.dart';
 import 'package:medical_app/core/widgets/custom_home_view.dart';
 import 'package:medical_app/features/doctor/presentation/views/widgets/doctor_cases_container.dart';
+
+import '../../../../core/utils/app_router.dart';
 
 class DoctorView extends StatelessWidget {
   const DoctorView({super.key});
@@ -15,11 +18,21 @@ class DoctorView extends StatelessWidget {
           child: Column(
             children: [
               CustomHomeView(
-                notificationsOnTap: () {},
-                firstContainerOnTap: () {},
-                secondContainerOnTap: () {},
-                thirdContainerTap: () {},
-                fourthContainerOnTap: () {},
+                notificationsOnTap: () {
+                  GoRouter.of(context).push(AppRouter.kNotificationsView);
+                },
+                firstContainerOnTap: () {
+                  GoRouter.of(context).push(AppRouter.kDoctorCallsView);
+                },
+                secondContainerOnTap: () {
+                  GoRouter.of(context).push(AppRouter.kReportsView);
+                },
+                thirdContainerTap: () {
+                  GoRouter.of(context).push(AppRouter.kTasksView);
+                },
+                fourthContainerOnTap: () {
+                  GoRouter.of(context).push(AppRouter.kAttendanceView);
+                },
                 firstContainerImage: AppAssets.containerHomeCalls,
                 firstContainerTitle: 'Calls',
                 firstContainerColor: ColorManager.skyBlue,
@@ -29,7 +42,11 @@ class DoctorView extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                child: DoctorCasesContainer(),
+                child: DoctorCasesContainer(
+                  onTap: () {
+                    GoRouter.of(context).push(AppRouter.kDoctorCasesView);
+                  },
+                ),
               ),
             ],
           ),

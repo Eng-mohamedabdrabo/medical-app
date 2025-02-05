@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/color_manager.dart';
@@ -63,7 +65,12 @@ class NurseCallsListViewItem extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset(AppAssets.containerAcceptCall),
+                InkWell(
+                    onTap:(){
+                      GoRouter.of(context).push(AppRouter.kNurseCaseDetailsView);
+
+                    },
+                    child: SvgPicture.asset(AppAssets.containerAcceptCall)),
                 SizedBox(
                   width: 16,
                 ),

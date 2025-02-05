@@ -26,7 +26,7 @@ class MyProfileBody extends StatelessWidget {
                     ),
                     SizedBox(height: 60),
                     MyProfileData(),
-                    Spacer(), // Pushes content upwards if there's extra space
+                    Spacer(),
                   ],
                 ),
               ),

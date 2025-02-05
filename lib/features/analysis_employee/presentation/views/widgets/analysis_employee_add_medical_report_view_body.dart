@@ -42,7 +42,7 @@ class AnalysisEmployeeAddMedicalReportViewBody extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          CustomDataInfoHeader(profileOnTap: () {}),
+                          CustomDataInfoHeader(),
                           SizedBox(height: 8),
                           Text(
                             'Details note : Lorem Ipsum is simply dummy text of printing and typesetting industry.Lorem Ipsum',

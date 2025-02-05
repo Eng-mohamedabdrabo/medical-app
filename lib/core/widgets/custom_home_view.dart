@@ -14,8 +14,8 @@ class CustomHomeView extends StatelessWidget {
       required this.firstContainerOnTap,
       required this.secondContainerOnTap,
       required this.thirdContainerTap,
-      required this.fourthContainerOnTap, required this.firstContainerImage, required this.firstContainerTitle, required this.firstContainerColor});
-
+      required this.fourthContainerOnTap, required this.firstContainerImage, required this.firstContainerTitle, required this.firstContainerColor, this.jobDescription});
+  final String? jobDescription;
   final void Function() notificationsOnTap;
   final void Function() firstContainerOnTap;
   final void Function() secondContainerOnTap;
@@ -28,18 +28,19 @@ class CustomHomeView extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         double containerWidth =
-            (constraints.maxWidth - 16 * 3) / 2; // Calculate container width
+            (constraints.maxWidth - 16 * 3) / 2;
 
         return Column(
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: CustomDataInfoHeader(
+                jobDescription: jobDescription,
                 trailingWidget: GestureDetector(
                   onTap: notificationsOnTap,
                   child: SvgPicture.asset(AppAssets.imagesNotifications),
                 ),
-                profileOnTap: () {},
+
               ),
             ),
             const SizedBox(height: 50),

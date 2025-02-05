@@ -38,7 +38,7 @@ class CallsListViewItem extends StatelessWidget {
                 width: 12,
               ),
               Text(
-                'Task Name',
+                'Ebrahim Khaled',
                 style: AppStyles.textStyleRegular14(context)
                     .copyWith(color: ColorManager.black),
               ),

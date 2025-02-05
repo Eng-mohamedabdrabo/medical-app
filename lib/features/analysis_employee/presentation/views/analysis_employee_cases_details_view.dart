@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:medical_app/features/analysis_employee/presentation/views/widgets/analysis_employee_case_details_analysis_list_view.dart';
+import '../../../../core/utils/app_router.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/utils/assets.dart';
 import '../../../../core/utils/color_manager.dart';
@@ -36,7 +38,13 @@ class AnalysisEmployeeCasesDetailsView extends StatelessWidget {
                         children: [
                           AnalysisEmployeeCaseDetailsAnalysisListView(),
                           Spacer(),
-                          SvgPicture.asset(AppAssets.containerAnalysisEmployeeAnalysis)
+                          InkWell(
+                              onTap: () {
+                                GoRouter.of(context).push(AppRouter
+                                    .kAnalysisEmployeeAddMedicalReportView);
+                              },
+                              child: SvgPicture.asset(
+                                  AppAssets.containerAnalysisEmployeeAnalysis))
                         ],
                       ),
                       SizedBox(
@@ -48,7 +56,6 @@ class AnalysisEmployeeCasesDetailsView extends StatelessWidget {
                       const SizedBox(height: 16),
                       CustomCaseDescription(),
                       const SizedBox(height: 45),
-
                     ],
                   ),
                 ),
@@ -60,5 +67,3 @@ class AnalysisEmployeeCasesDetailsView extends StatelessWidget {
     );
   }
 }
-
-

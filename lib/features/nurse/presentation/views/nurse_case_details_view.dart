@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:medical_app/features/nurse/presentation/views/widgets/nurse_case_details_analysis_list_view.dart';
 import 'package:medical_app/features/nurse/presentation/views/widgets/nurse_have_request_notice_container.dart';
 
+import '../../../../core/utils/app_router.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/utils/assets.dart';
 import '../../../../core/utils/color_manager.dart';
@@ -38,7 +40,14 @@ class NurseCaseDetailsView extends StatelessWidget {
                         children: [
                           NurseCaseDetailsAnalysisListView(),
                           Spacer(),
-                          SvgPicture.asset(AppAssets.containerNurseAnalysis)
+                          InkWell(
+                            onTap: () {
+                              GoRouter.of(context)
+                                  .push(AppRouter.kNurseAddMeasurementView);
+                            },
+                            child: SvgPicture.asset(
+                                AppAssets.containerNurseAnalysis),
+                          ),
                         ],
                       ),
                       SizedBox(
@@ -50,17 +59,20 @@ class NurseCaseDetailsView extends StatelessWidget {
                       const SizedBox(height: 16),
                       CustomCaseDescription(),
                       const SizedBox(height: 45),
-
                     ],
                   ),
                 ),
               ),
-              SizedBox(height: 12,),
+              SizedBox(
+                height: 12,
+              ),
               CustomElevatedButton(
                 text: 'Call Doctor',
                 onPressed: () {},
               ),
-              SizedBox(height: 12,),
+              SizedBox(
+                height: 12,
+              ),
             ],
           ),
         ),
@@ -68,4 +80,3 @@ class NurseCaseDetailsView extends StatelessWidget {
     );
   }
 }
-

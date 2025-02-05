@@ -17,7 +17,7 @@ class AttendanceView extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                CustomDataInfoHeader(trailingWidget: SvgPicture.asset(AppAssets.imagesNotifications), profileOnTap: () {  },),
+                CustomDataInfoHeader(trailingWidget: SvgPicture.asset(AppAssets.imagesNotifications),),
                 SizedBox(
                   height: 31,
                 ),

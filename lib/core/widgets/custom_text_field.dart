@@ -7,12 +7,14 @@ import '../utils/color_manager.dart';
 class CustomTextFormField extends StatelessWidget {
   final String hintText;
   final String? leadingIcon;
+  final IconData? trailingIcon;
   final EdgeInsetsGeometry? contentPadding;
 
   const CustomTextFormField({
     super.key,
     required this.hintText,
     this.leadingIcon,
+    this.trailingIcon,
     this.contentPadding,
   });
 
@@ -88,6 +90,15 @@ class CustomTextFormField extends StatelessWidget {
             ),
             const SizedBox(width: 8),
           ],
+        ),
+      )
+          : null,
+      suffixIcon: trailingIcon != null
+          ? Padding(
+        padding: const EdgeInsets.only(right: 12.0),
+        child: Icon(
+          trailingIcon,
+          color: ColorManager.gray.withValues(alpha: 0.8),
         ),
       )
           : null,

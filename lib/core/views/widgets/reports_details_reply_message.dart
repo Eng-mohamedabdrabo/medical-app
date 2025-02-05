@@ -13,7 +13,7 @@ class ReportsDetailsReplyMessage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CustomDataInfoHeader(profileOnTap: () {  },
+        CustomDataInfoHeader(
 
         ),
         SizedBox(

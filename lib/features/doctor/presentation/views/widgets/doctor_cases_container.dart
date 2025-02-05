@@ -7,30 +7,34 @@ import '../../../../../core/utils/color_manager.dart';
 
 class DoctorCasesContainer extends StatelessWidget {
   const DoctorCasesContainer({
-    super.key,
+    super.key, required this.onTap,
   });
+  final void Function() onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric( vertical: 34),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        color: ColorManager.brown,
-      ),
-      child: Row(
-        children: [
-          SizedBox(width: 62,),
-          Text(
-            'Cases',
-            style: AppStyles.textStyleRegular14(context).copyWith(
-              color: ColorManager.white,
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.symmetric( vertical: 34),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          color: ColorManager.brown,
+        ),
+        child: Row(
+          children: [
+            SizedBox(width: 62,),
+            Text(
+              'Cases',
+              style: AppStyles.textStyleRegular14(context).copyWith(
+                color: ColorManager.white,
+              ),
             ),
-          ),
-          Spacer(),
-          SvgPicture.asset(AppAssets.containerHomeCases),
-          SizedBox(width: 62,)
-        ],
+            Spacer(),
+            SvgPicture.asset(AppAssets.containerHomeCases),
+            SizedBox(width: 62,)
+          ],
+        ),
       ),
     );
   }

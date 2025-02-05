@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:medical_app/core/utils/assets.dart';
 import 'package:medical_app/core/utils/color_manager.dart';
 
+import '../utils/app_router.dart';
 import '../utils/app_styles.dart';
 import '../widgets/custom_finger_print_decoration.dart';
 
@@ -65,21 +67,27 @@ class CheckAttendanceDoneCenterSection extends StatelessWidget {
         SizedBox(
           height: 130,
         ),
-        Container(
-          padding: EdgeInsets.all(8),
-          height: 50,
-          width: 50,
-          decoration: ShapeDecoration(
-            shape: OvalBorder(
-                side: BorderSide(
-              width: 1,
-              color: ColorManager.white,
-            )),
-          ),
-          child: Center(
-            child: Icon(
-              Icons.arrow_forward,
-              color: ColorManager.white,
+        InkWell(
+          onTap: (){
+            GoRouter.of(context).push(AppRouter.kDoctorView);
+
+          },
+          child: Container(
+            padding: EdgeInsets.all(8),
+            height: 50,
+            width: 50,
+            decoration: ShapeDecoration(
+              shape: OvalBorder(
+                  side: BorderSide(
+                width: 1,
+                color: ColorManager.white,
+              )),
+            ),
+            child: Center(
+              child: Icon(
+                Icons.arrow_forward,
+                color: ColorManager.white,
+              ),
             ),
           ),
         ),

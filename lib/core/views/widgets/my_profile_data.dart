@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:medical_app/core/utils/assets.dart';
+import '../../utils/app_router.dart';
 import '../../utils/app_styles.dart';
 import '../../utils/color_manager.dart';
 import 'my_profile_custom_image_frame.dart';
 import 'my_profile_list_view.dart';
 
 class MyProfileData extends StatelessWidget {
+  final bool isEdit;
+
   const MyProfileData({
     super.key,
+    this.isEdit = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width; // Get screen width
+    final screenWidth = MediaQuery.of(context).size.width;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -38,7 +44,6 @@ class MyProfileData extends StatelessWidget {
               ],
             ),
           ),
-
           Positioned(
             top: -187,
             left: (screenWidth / 2) - 401,
@@ -47,7 +52,6 @@ class MyProfileData extends StatelessWidget {
               painter: RPSCustomPainter(),
             ),
           ),
-
           Positioned(
             top: -34,
             left: (screenWidth / 2) - 42,
@@ -60,7 +64,52 @@ class MyProfileData extends StatelessWidget {
               ),
             ),
           ),
+          if (isEdit)
+            Positioned(
+              top: 584,
+              left: (screenWidth / 2) - 30,
+              child: InkWell(
+                onTap: () {
+                  GoRouter.of(context).push(AppRouter.kHrEditUserView);
+                },
+                child: EditContainer(),
+              ),
+            ),
         ],
+      ),
+    );
+  }
+}
+
+class EditContainer extends StatelessWidget {
+  const EditContainer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 42,
+      height: 42,
+      decoration: BoxDecoration(
+        color: ColorManager.teal,
+        shape: BoxShape.circle,
+      ),
+      child: Center(
+        child: Container(
+          width: 35,
+          height: 35,
+          decoration: BoxDecoration(
+            color: ColorManager.white,
+            shape: BoxShape.circle,
+          ),
+          child: Center(
+            child: SvgPicture.asset(
+              AppAssets.imagesPencil,
+              fit: BoxFit.contain,
+              colorFilter:
+                  ColorFilter.mode(ColorManager.black, BlendMode.srcIn),
+            ),
+          ),
+        ),
       ),
     );
   }
