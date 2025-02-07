@@ -13,29 +13,26 @@ class ReceptionistView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: CustomHomeView(
-            jobDescription: 'Specialist , Receptionist',
-            notificationsOnTap: () {
-              GoRouter.of(context).push(AppRouter.kNotificationsView);
-            },
-            firstContainerOnTap: () {
-              GoRouter.of(context).push(AppRouter.kReceptionistCallsView);
-            },
-            secondContainerOnTap: () {
-              GoRouter.of(context).push(AppRouter.kReportsView);
-            },
-            thirdContainerTap: () {
-              GoRouter.of(context).push(AppRouter.kTasksView);
-            },
-            fourthContainerOnTap: () {
-              GoRouter.of(context).push(AppRouter.kAttendanceView);
-            },
-            firstContainerImage: AppAssets.containerHomeCalls,
-            firstContainerTitle: 'Calls',
-            firstContainerColor: ColorManager.skyBlue,
-          ),
+        child: CustomHomeView(
+          jobDescription: 'Specialist , Receptionist',
+          notificationsOnTap: () {
+            GoRouter.of(context).push(AppRouter.kNotificationsView);
+          },
+          firstContainerOnTap: () {
+            GoRouter.of(context).push(AppRouter.kReceptionistCallsView);
+          },
+          secondContainerOnTap: () {
+            GoRouter.of(context).push(AppRouter.kReportsView);
+          },
+          thirdContainerTap: () {
+            GoRouter.of(context).push(AppRouter.kTasksView);
+          },
+          fourthContainerOnTap: () {
+            GoRouter.of(context).push(AppRouter.kAttendanceView);
+          },
+          firstContainerImage: AppAssets.containerHomeCalls,
+          firstContainerTitle: 'Calls',
+          firstContainerColor: ColorManager.skyBlue,
         ),
       ),
     );

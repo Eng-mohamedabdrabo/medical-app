@@ -74,5 +74,7 @@ class AppAssets {
   static const String containerShowDetailsOrange = 'assets/images/containerShowDetailsOrange.svg';
   static const String containerAnalysisEmployeeAnalysis = 'assets/images/containerAnalysisEmployeeAnalysis.svg';
   static const String medicalRecord = 'assets/images/medicalRecord.png';
+  static const String animationLogo = 'lottie/logo.json';
+  static const String animationLogoWithName = 'lottie/logoWithName.json';
 
 }

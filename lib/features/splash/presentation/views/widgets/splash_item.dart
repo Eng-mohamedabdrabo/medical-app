@@ -29,7 +29,7 @@ class _SplashItemState extends State<SplashItem> {
           SizedBox(
             height: screenHeight * 0.29,
           ),
-          Image.asset(AppAssets.imagesLogoWithName),
+          Lottie.asset(AppAssets.animationLogoWithName),
           Expanded(child: SizedBox()),
           Column(
             children: [

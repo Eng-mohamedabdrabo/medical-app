@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lottie/lottie.dart';
 import 'package:medical_app/core/utils/assets.dart';
 import 'package:medical_app/core/utils/color_manager.dart';
 
 import '../utils/app_router.dart';
 import '../utils/app_styles.dart';
 import '../widgets/custom_finger_print_decoration.dart';
+
 
 class CheckAttendanceDoneView extends StatelessWidget {
   const CheckAttendanceDoneView({super.key});
@@ -15,17 +16,36 @@ class CheckAttendanceDoneView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorManager.teal,
-      body: Column(
-        children: [
-          Expanded(child: SizedBox()),
-          CheckAttendanceDoneCenterSection(),
-          Expanded(child: SizedBox()),
-          CustomFingerprintDecoration(),
-        ],
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          return Stack(
+            children: [
+              // Fixed custom painter at the bottom center
+              Positioned(
+                bottom: 0,
+                left: 0,
+                right: 0,
+                child: CustomFingerprintDecoration(),
+              ),
+              // Centered content
+              Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: const [
+                    SizedBox(height: 50),
+                    CheckAttendanceDoneCenterSection(),
+                    SizedBox(height: 50),
+                  ],
+                ),
+              ),
+            ],
+          );
+        },
       ),
     );
   }
 }
+
 
 class CheckAttendanceDoneCenterSection extends StatelessWidget {
   const CheckAttendanceDoneCenterSection({
@@ -36,25 +56,7 @@ class CheckAttendanceDoneCenterSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          padding: EdgeInsets.all(46),
-          height: 200,
-          width: 200,
-          decoration: ShapeDecoration(
-            shape: OvalBorder(
-                side: BorderSide(
-              width: 1,
-              color: ColorManager.white,
-            )),
-          ),
-          child: SvgPicture.asset(
-            AppAssets.imagesCheck,
-            colorFilter: ColorFilter.mode(
-              ColorManager.white,
-              BlendMode.srcIn,
-            ),
-          ),
-        ),
+        Lottie.asset(AppAssets.animationAttendance),
         SizedBox(
           height: 30,
         ),

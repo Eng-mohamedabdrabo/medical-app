@@ -56,6 +56,7 @@ class ManagerTaskDetailsViewBody extends StatelessWidget {
               DoctorReplyMessageToManager(),
               SizedBox(height: 16),
               CustomElevatedButton(text: 'Finish Task', onPressed: () {}),
+              SizedBox(height: 8,)
             ],
           ),
         ),

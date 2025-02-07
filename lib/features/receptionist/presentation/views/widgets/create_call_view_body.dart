@@ -13,48 +13,65 @@ class CreateCallViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverToBoxAdapter(
-          child: CustomHeader(
-            title: 'Create Call',
-            textStyle: AppStyles.textStyleRegular18(context).copyWith(
-              color: ColorManager.black,
-            ),
+    return Scaffold(
+      body: SafeArea(
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            return constraints.maxHeight < 600
+                ? SingleChildScrollView(
+              child: _buildContent(context),
+            )
+                : CustomScrollView(
+              slivers: [
+                SliverToBoxAdapter(
+                  child: _buildContent(context),
+                ),
+              ],
+            );
+          },
+        ),
+      ),
+    );
+  }
+
+  Widget _buildContent(BuildContext context) {
+    return Column(
+      children: [
+        CustomHeader(
+          title: 'Create Call',
+          textStyle: AppStyles.textStyleRegular18(context).copyWith(
             color: ColorManager.black,
           ),
+          color: ColorManager.black,
         ),
-        SliverToBoxAdapter(
-          child: SizedBox(height:25 ,),
-        ),
-        SliverFillRemaining(
-          hasScrollBody: true,
-          child: Column(
-            children: [
-              CustomTextFormField(hintText: 'Patient Name'),
-              const SizedBox(height: 20),
-              CustomTextFormField(hintText: 'Age'),
-              const SizedBox(height: 20),
-              CustomTextFormField(hintText: 'Phone Number'),
-              const SizedBox(height: 20),
-              InkWell(
-                onTap: (){
-                  GoRouter.of(context).push(AppRouter.kSelectDoctorView);
-                },
-                child: const CustomSelectSomeOneContainer(
-                  empName: 'Select Doctor',
-                ),
-              ),
-              const SizedBox(height: 20),
-              CustomTextFormField(
-                hintText: 'Case Description',
-                contentPadding: const EdgeInsets.symmetric(
-                    vertical: 80, horizontal: 12),
-              ),
-              const Spacer(),
-              CustomElevatedButton(text: 'Send Call', onPressed: () {  },),
-            ],
+        const SizedBox(height: 25),
+        CustomTextFormField(hintText: 'Patient Name'),
+        const SizedBox(height: 20),
+        CustomTextFormField(hintText: 'Age'),
+        const SizedBox(height: 20),
+        CustomTextFormField(hintText: 'Phone Number'),
+        const SizedBox(height: 20),
+        InkWell(
+          onTap: () {
+            GoRouter.of(context).push(AppRouter.kSelectDoctorView);
+          },
+          child: const CustomSelectSomeOneContainer(
+            empName: 'Select Doctor',
           ),
+        ),
+        const SizedBox(height: 20),
+        CustomTextFormField(
+          hintText: 'Case Description',
+          contentPadding: const EdgeInsets.only(
+            bottom: 80,
+            left: 12,
+            top: 12,
+          ),
+        ),
+        const SizedBox(height: 20),
+        CustomElevatedButton(
+          text: 'Send Call',
+          onPressed: () {},
         ),
       ],
     );

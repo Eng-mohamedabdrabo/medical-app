@@ -9,6 +9,7 @@ class CustomTextFormField extends StatelessWidget {
   final String? leadingIcon;
   final IconData? trailingIcon;
   final EdgeInsetsGeometry? contentPadding;
+  final Color? backgroundColor;
 
   const CustomTextFormField({
     super.key,
@@ -16,6 +17,7 @@ class CustomTextFormField extends StatelessWidget {
     this.leadingIcon,
     this.trailingIcon,
     this.contentPadding,
+    this.backgroundColor,
   });
 
   @override
@@ -24,36 +26,12 @@ class CustomTextFormField extends StatelessWidget {
       width: MediaQuery.sizeOf(context).width < 800
           ? double.infinity
           : kBiggerScreensWidth,
-      child: contentPadding != null
-          ? Stack(
-        alignment: Alignment.topLeft,
-        children: [
-          TextFormField(
-            cursorColor: ColorManager.teal,
-            style: const TextStyle(color: ColorManager.teal),
-            decoration: _buildInputDecoration(context),
-          ),
-          Positioned(
-            left: 18,
-            top: 8,
-            child: Text(
-              hintText,
-              style: AppStyles.textStyleRegular14(context).copyWith(
-                color: ColorManager.gray.withValues(alpha: 0.8),
-              ),
-            ),
-          ),
-        ],
-      )
-          : TextFormField(
+      child: TextFormField(
         cursorColor: ColorManager.teal,
         style: const TextStyle(color: ColorManager.teal),
-        decoration: _buildInputDecoration(context).copyWith(
-          hintText: hintText,
-          hintStyle: AppStyles.textStyleRegular14(context).copyWith(
-            color: ColorManager.gray.withValues(alpha: 0.8),
-          ),
-        ),
+        maxLines: null, // Allows multi-line input
+        textAlignVertical: TextAlignVertical.top, // Align text to the top
+        decoration: _buildInputDecoration(context),
       ),
     );
   }
@@ -61,6 +39,13 @@ class CustomTextFormField extends StatelessWidget {
   InputDecoration _buildInputDecoration(BuildContext context) {
     return InputDecoration(
       contentPadding: contentPadding ?? const EdgeInsets.all(16),
+      floatingLabelBehavior: FloatingLabelBehavior.auto,
+      labelText: hintText,
+      labelStyle: AppStyles.textStyleRegular14(context).copyWith(
+        color: ColorManager.gray.withValues(alpha: 0.8),
+      ),
+      filled: backgroundColor != null, // Enable the fill if background color is provided
+      fillColor: backgroundColor,
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8),
         borderSide: BorderSide(

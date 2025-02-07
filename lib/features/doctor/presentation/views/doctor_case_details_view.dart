@@ -219,6 +219,7 @@ class _DoctorCaseDetailsViewState extends State<DoctorCaseDetailsView> with Sing
                       backGroundColor: ColorManager.brightRed,
                       onPressed: () {},
                     ),
+                    SizedBox(height: 8,)
                   ],
                 ),
               ),

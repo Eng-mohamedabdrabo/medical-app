@@ -37,7 +37,7 @@ class SelectDoctorBody extends StatelessWidget {
         CustomElevatedButton(
           text: 'Select Doctor', onPressed: () {  },
         ),
-
+            SizedBox(height: 8,)
       ],
     );
   }

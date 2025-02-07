@@ -70,6 +70,8 @@ class ManagerAddTaskViewBody extends StatelessWidget {
               SizedBox(height: 20),
               SizedBox(height: 50),
               CustomElevatedButton(text: 'Send', onPressed: () {}),
+              SizedBox(height: 8,)
+
             ],
           ),
         ),

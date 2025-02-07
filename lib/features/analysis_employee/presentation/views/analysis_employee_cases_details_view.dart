@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:medical_app/features/analysis_employee/presentation/views/widgets/analysis_employee_case_details_analysis_list_view.dart';
 import '../../../../core/utils/app_router.dart';
@@ -41,10 +41,8 @@ class _AnalysisEmployeeCasesDetailsViewState
       curve: Curves.easeInOut,
     );
 
-    _slideAnimation = Tween<Offset>(
-      begin: const Offset(.5, 0.0),
-      end: Offset.zero,
-    ).animate(CurvedAnimation(
+    _slideAnimation = Tween<Offset>(begin: const Offset(.5, 0.0), end: Offset.zero)
+        .animate(CurvedAnimation(
       parent: _animationController,
       curve: Curves.easeInOut,
     ));
@@ -75,46 +73,48 @@ class _AnalysisEmployeeCasesDetailsViewState
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Column(
-            children: [
-              CustomHeader(
-                title: 'Case Details',
-                textStyle: AppStyles.textStyleRegular18(context)
-                    .copyWith(color: ColorManager.black),
-                color: ColorManager.black,
-              ),
-              const SizedBox(height: 24),
-              Row(
-                children: [
-                  AnalysisEmployeeCaseDetailsAnalysisListView(
-                    selectedIndex: selectedIndex,
-                    onItemSelected: _onItemSelected,
-                  ),
-                  const Spacer(),
-                  InkWell(
-                    onTap: () {
-                      GoRouter.of(context)
-                          .push(AppRouter.kAnalysisEmployeeAddMedicalReportView);
-                    },
-                    child: SvgPicture.asset(AppAssets.containerAnalysisEmployeeAnalysis),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 28),
-              NurseHaveRequestNoticeContainer(),
-              const SizedBox(height: 28),
-              Flexible( // Use Flexible instead of Expanded
-                child: FadeTransition(
+        child: SingleChildScrollView(  // Wrap the content inside SingleChildScrollView
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CustomHeader(
+                  title: 'Case Details',
+                  textStyle: AppStyles.textStyleRegular18(context)
+                      .copyWith(color: ColorManager.black),
+                  color: ColorManager.black,
+                ),
+                const SizedBox(height: 24),
+                Row(
+                  children: [
+                    AnalysisEmployeeCaseDetailsAnalysisListView(
+                      selectedIndex: selectedIndex,
+                      onItemSelected: _onItemSelected,
+                    ),
+                    const Spacer(),
+                    InkWell(
+                      onTap: () {
+                        GoRouter.of(context)
+                            .push(AppRouter.kAnalysisEmployeeAddMedicalReportView);
+                      },
+                      child: SvgPicture.asset(AppAssets.containerAnalysisEmployeeAnalysis),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 28),
+                NurseHaveRequestNoticeContainer(),
+                const SizedBox(height: 28),
+                FadeTransition(
                   opacity: _fadeAnimation,
                   child: SlideTransition(
                     position: _slideAnimation,
                     child: _buildSelectedContent(),
                   ),
                 ),
-              ),
-            ],
+                const SizedBox(height: 20), // Optional space after content
+              ],
+            ),
           ),
         ),
       ),
