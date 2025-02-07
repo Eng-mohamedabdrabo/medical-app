@@ -27,7 +27,7 @@ class _SplashItemState extends State<SplashItem> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-            height: screenHeight * 0.25,
+            height: screenHeight * 0.29,
           ),
           Image.asset(AppAssets.imagesLogoWithName),
           Expanded(child: SizedBox()),
@@ -57,7 +57,7 @@ class _SplashItemState extends State<SplashItem> {
   }
   void navigateToHomeView() {
     Future.delayed(
-        const Duration(milliseconds: 4500), () {
+        const Duration(milliseconds: 3650), () {
       if (mounted) {
         GoRouter.of(context).push(AppRouter.kPrototypingMapView);
       }

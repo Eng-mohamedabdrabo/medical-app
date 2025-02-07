@@ -10,7 +10,6 @@ import 'package:medical_app/core/utils/app_styles.dart';
 import 'package:medical_app/core/utils/color_manager.dart';
 import 'package:medical_app/core/widgets/case_details_body.dart';
 import 'package:medical_app/features/doctor/presentation/views/widgets/doctor_case_details_action_body.dart';
-import 'package:medical_app/features/doctor/presentation/views/widgets/doctor_show_medical_requirement_body.dart';
 import '../../../../core/widgets/custom_header.dart';
 import '../../../doctor/presentation/views/widgets/doctor_case_details_analysis_list_view.dart';
 
@@ -21,8 +20,47 @@ class DoctorCaseDetailsView extends StatefulWidget {
   State<DoctorCaseDetailsView> createState() => _DoctorCaseDetailsViewState();
 }
 
-class _DoctorCaseDetailsViewState extends State<DoctorCaseDetailsView> {
+class _DoctorCaseDetailsViewState extends State<DoctorCaseDetailsView> with SingleTickerProviderStateMixin {
   int selectedIndex = 0;
+
+  late AnimationController _animationController;
+  late Animation<double> _fadeAnimation;
+  late Animation<Offset> _slideAnimation;
+
+  final Duration slideDuration = const Duration(milliseconds: 500);
+
+  @override
+  void initState() {
+    super.initState();
+    _animationController = AnimationController(
+      duration: slideDuration,
+      vsync: this,
+    );
+
+    _fadeAnimation = CurvedAnimation(
+      parent: _animationController,
+      curve: Curves.easeInOut,
+    );
+
+    _slideAnimation = Tween<Offset>(
+      begin: const Offset(1.0, 0.0), // Start off-screen to the right
+      end: Offset.zero,
+    ).animate(CurvedAnimation(
+      parent: _animationController,
+      curve: Curves.easeInOut,
+    ));
+
+    // Trigger the animation immediately after view is built
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _animationController.forward();
+    });
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
 
   void _showBottomSheet(BuildContext context) {
     showModalBottomSheet(
@@ -36,8 +74,7 @@ class _DoctorCaseDetailsViewState extends State<DoctorCaseDetailsView> {
         return StatefulBuilder(
           builder: (BuildContext context, StateSetter setState) {
             return Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 45),
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 45),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -110,13 +147,9 @@ class _DoctorCaseDetailsViewState extends State<DoctorCaseDetailsView> {
           },
         );
       case 1:
-        return DoctorShowMedicalRequirementBody(
-          selectedContent: MedicalMeasurementBody(),
-        );
+        return MedicalMeasurementBody();
       case 2:
-        return DoctorShowMedicalRequirementBody(
-          selectedContent: MedicalRecordBody(),
-        );
+        return MedicalRecordBody();
       default:
         return DoctorCaseDetailsActionsBody(
           selectedContent: const CaseDetailsBody(),
@@ -138,31 +171,56 @@ class _DoctorCaseDetailsViewState extends State<DoctorCaseDetailsView> {
             SliverToBoxAdapter(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Column(
-                  children: [
-                    CustomHeader(
-                      title: 'Case Details',
-                      textStyle: AppStyles.textStyleRegular18(context)
-                          .copyWith(color: ColorManager.black),
-                      color: ColorManager.black,
-                    ),
-                    const SizedBox(height: 24),
-                    DoctorCaseDetailsAnalysisListView(
-                      selectedIndex: selectedIndex,
-                      onItemSelected: (index) {
-                        setState(() {
-                          selectedIndex = index;
-                        });
-                      },
-                    ),
-                    const SizedBox(height: 28),
-                  ],
+                child: CustomHeader(
+                  title: 'Case Details',
+                  textStyle: AppStyles.textStyleRegular18(context)
+                      .copyWith(color: ColorManager.black),
+                  color: ColorManager.black,
                 ),
               ),
             ),
             SliverToBoxAdapter(
-              child: SingleChildScrollView(
-                child: _buildSelectedContent(),
+              child: const SizedBox(height: 24),
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: DoctorCaseDetailsAnalysisListView(
+                  selectedIndex: selectedIndex,
+                  onItemSelected: (index) {
+                    setState(() {
+                      selectedIndex = index;
+                      _animationController.reset();
+                      _animationController.forward();
+                    });
+                  },
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: const SizedBox(height: 28),
+            ),
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Column(
+                  children: [
+                    FadeTransition(
+                      opacity: _fadeAnimation,
+                      child: SlideTransition(
+                        position: _slideAnimation,
+                        child: _buildSelectedContent(),
+                      ),
+                    ),
+                    Expanded(child: const SizedBox(height: 16)),
+                    CustomElevatedButton(
+                      text: 'End Case',
+                      backGroundColor: ColorManager.brightRed,
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

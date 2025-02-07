@@ -44,9 +44,9 @@ class _ManagerCaseDetailsViewState extends State<ManagerCaseDetailsView>
       curve: Curves.easeInOut,
     ));
 
-    // To make the fade duration slower than the slide, use a separate controller for fade
+
     Future.delayed(Duration.zero, () {
-      _animationController.duration = slideDuration; // Set slide duration to 900ms
+      _animationController.duration = slideDuration;
       _animationController.forward();
     });
   }

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../../core/utils/assets.dart';
-import '../../../../../core/utils/color_manager.dart';
-import '../../../../../core/widgets/custom_elevated_button.dart';
 
 class DoctorCaseDetailsActionsBody extends StatelessWidget {
   final Widget selectedContent;
@@ -23,19 +21,24 @@ class DoctorCaseDetailsActionsBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      child: Column(
+      child: Stack(
         children: [
-          // No need for Expanded here, we only want to make the selectedContent scrollable
+          // The content above the button will be scrollable
           SingleChildScrollView(
-            child: selectedContent,
+            child: Column(
+              children: [
+                selectedContent,
+                const SizedBox(height: 16),
+                CaseDetailsActions(
+                  onRequestPressed: onRequestPressed,
+                  onEndCasePressed: onEndCasePressed,
+                  onAddNursePressed: onAddNursePressed,
+                ),
+              ],
+            ),
           ),
-          const SizedBox(height: 16),
-          // Case details actions should be fixed, not scrollable
-          CaseDetailsActions(
-            onRequestPressed: onRequestPressed,
-            onEndCasePressed: onEndCasePressed,
-            onAddNursePressed: onAddNursePressed,
-          ),
+          // Positioned at the bottom
+
         ],
       ),
     );
@@ -74,14 +77,7 @@ class CaseDetailsActions extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
-          height: 150,
-        ),
-        CustomElevatedButton(
-          text: 'End Case',
-          backGroundColor: ColorManager.brightRed,
-          onPressed: onEndCasePressed,
-        ),
+        const SizedBox(height: 16), // Add spacing between the row and the button
       ],
     );
   }

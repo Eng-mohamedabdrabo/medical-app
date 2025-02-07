@@ -4,30 +4,24 @@ import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/utils/color_manager.dart';
 
 class AnalysisEmployeeCaseDetailsAnalysisListViewItem extends StatelessWidget {
-  const AnalysisEmployeeCaseDetailsAnalysisListViewItem({super.key, required this.text});
+  const AnalysisEmployeeCaseDetailsAnalysisListViewItem({super.key, required this.text, required this.isSelected});
   final String text;
+  final bool isSelected;
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 40,
-      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-      decoration: ShapeDecoration(
-        shape: RoundedRectangleBorder(
-          side: BorderSide(
-            width: 1,
-            color: ColorManager.gray.withValues(
-              alpha: 0.2,
-            ),
-          ),
-          borderRadius: BorderRadius.circular(3),
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+      decoration: BoxDecoration(
+        color: isSelected ? ColorManager.teal : Colors.transparent,
+        border: Border.all(
+          color: isSelected ? ColorManager.teal : ColorManager.gray,
         ),
+        borderRadius: BorderRadius.circular(3),
       ),
-      child: Center(
-        child: Text(
-          text,
-          style: AppStyles.textStyleRegular10(context).copyWith(
-            color: ColorManager.black,
-          ),
+      child: Text(
+        text,
+        style: AppStyles.textStyleRegular10(context).copyWith(
+          color: isSelected ? ColorManager.white : ColorManager.black,
         ),
       ),
     );
