@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:medical_app/core/utils/app_styles.dart';
 import 'package:medical_app/features/prototyping/presentation/views/widgets/prototyping_item.dart';
+
+import '../../../../../core/utils/app_router.dart';
 
 class CustomPrototypeTabletGrid extends StatelessWidget {
   const CustomPrototypeTabletGrid({
@@ -16,6 +19,14 @@ class CustomPrototypeTabletGrid extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
+    final List<VoidCallback> onTapHandlers = [
+          () => GoRouter.of(context).push(AppRouter.kDoctorView),
+          () => GoRouter.of(context).push(AppRouter.kReceptionistView),
+          () => GoRouter.of(context).push(AppRouter.kNurseView),
+          () => GoRouter.of(context).push(AppRouter.kAnalysisEmployeeView),
+          () => GoRouter.of(context).push(AppRouter.kManagerView),
+          () => GoRouter.of(context).push(AppRouter.kHrView),
+    ];
     return SliverGrid.builder(
       itemCount: 6,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -24,7 +35,7 @@ class CustomPrototypeTabletGrid extends StatelessWidget {
         mainAxisSpacing: 16,
       ),
       itemBuilder: (context, index) {
-        return PrototypingItem(textStyle:AppStyles.textStyleRegular26(context),text: items[index]);
+        return InkWell(onTap:onTapHandlers[index],child: PrototypingItem(textStyle:AppStyles.textStyleRegular26(context),text: items[index]));
       },
     );
   }
