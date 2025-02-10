@@ -25,7 +25,8 @@ class HrShowEmployeeProfileViewBody extends StatelessWidget {
                     ),
                     SizedBox(height: 60),
                     MyProfileData(isEdit: true,),
-                    Spacer(),
+                    Expanded(child: SizedBox(height: 30,)),
+
                   ],
                 ),
               ),

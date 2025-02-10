@@ -49,6 +49,18 @@ class NurseView extends StatelessWidget {
                     },
                     child: NurseCasesContainer()),
               ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  child: IconButton(
+                    icon: const Icon(Icons.arrow_back, color: Colors.black),
+                    onPressed: () {
+                      GoRouter.of(context).push(AppRouter.kPrototypingMapView);
+                    },
+                  ),
+                ),
+              ),
             ],
           ),
         ),

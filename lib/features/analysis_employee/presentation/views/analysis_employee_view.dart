@@ -20,7 +20,6 @@ class AnalysisEmployeeView extends StatelessWidget {
                 jobDescription: 'Specialist , Analysis Employee',
                 notificationsOnTap: () {
                   GoRouter.of(context).push(AppRouter.kNotificationsView);
-
                 },
                 firstContainerOnTap: () {
                   GoRouter.of(context).push(AppRouter.kAnalysisEmployeeCasesRequestsView);
@@ -37,6 +36,18 @@ class AnalysisEmployeeView extends StatelessWidget {
                 firstContainerImage: AppAssets.containerHomeCases,
                 firstContainerTitle: 'Cases',
                 firstContainerColor: ColorManager.skyBlue,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  child: IconButton(
+                    icon: const Icon(Icons.arrow_back, color: Colors.black),
+                    onPressed: () {
+                      GoRouter.of(context).push(AppRouter.kPrototypingMapView);
+                    },
+                  ),
+                ),
               ),
             ],
           ),

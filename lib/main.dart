@@ -7,9 +7,7 @@ import 'core/utils/app_router.dart';
 
 void main() {
   runApp(
-    DevicePreview(
-      builder: (context) => const MyApp(),
-    ),
+    DevicePreview(builder: (context)=> const MyApp()),
   );
 }
 

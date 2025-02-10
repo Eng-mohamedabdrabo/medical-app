@@ -38,6 +38,18 @@ class HrView extends StatelessWidget {
                 firstContainerTitle: 'Employee',
                 firstContainerColor: ColorManager.brown,
               ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  child: IconButton(
+                    icon: const Icon(Icons.arrow_back, color: Colors.black),
+                    onPressed: () {
+                      GoRouter.of(context).push(AppRouter.kPrototypingMapView);
+                    },
+                  ),
+                ),
+              ),
             ],
           ),
         ),

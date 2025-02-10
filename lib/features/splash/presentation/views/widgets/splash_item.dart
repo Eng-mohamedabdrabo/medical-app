@@ -57,7 +57,7 @@ class _SplashItemState extends State<SplashItem> {
   }
   void navigateToHomeView() {
     Future.delayed(
-        const Duration(milliseconds: 3650), () {
+        const Duration(milliseconds: 4000), () {
       if (mounted) {
         GoRouter.of(context).push(AppRouter.kPrototypingMapView);
       }
