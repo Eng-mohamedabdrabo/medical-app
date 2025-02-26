@@ -43,7 +43,9 @@ class ReceptionistView extends StatelessWidget {
                 child: IconButton(
                   icon: const Icon(Icons.arrow_back, color: Colors.black),
                   onPressed: () {
-                    GoRouter.of(context).push(AppRouter.kPrototypingMapView);
+                    GoRouter.of(context).push(
+                      AppRouter.kPrototypingMapView,
+                    );
                   },
                 ),
               ),

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/views/widgets/my_profile_data.dart';
 import '../../../../../core/widgets/custom_header.dart';
+import '../../../../login_and_signup/presentation/manager/auth_cubit/auth_cubit.dart';
 
 class HrShowEmployeeProfileViewBody extends StatelessWidget {
-  const HrShowEmployeeProfileViewBody({super.key});
-
+  const HrShowEmployeeProfileViewBody({super.key,});
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -14,18 +15,18 @@ class HrShowEmployeeProfileViewBody extends StatelessWidget {
           return SingleChildScrollView(
             child: ConstrainedBox(
               constraints: BoxConstraints(minHeight: constraints.maxHeight),
-              child: IntrinsicHeight(
+              child:  IntrinsicHeight(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 20),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    const SizedBox(height: 20),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
                       child: CustomHeader(title: 'My Profile',),
                     ),
-                    SizedBox(height: 60),
-                    MyProfileData(isEdit: true,),
-                    Expanded(child: SizedBox(height: 30,)),
+                    const SizedBox(height: 60),
+                    MyProfileData(isEdit: true, profileModel:context.read<AuthCubit>().profileModel!,),
+                    const Expanded(child: SizedBox(height: 30,)),
 
                   ],
                 ),

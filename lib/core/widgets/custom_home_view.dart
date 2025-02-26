@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:medical_app/core/utils/assets.dart';
-import 'package:medical_app/core/utils/color_manager.dart';
-import 'package:medical_app/core/widgets/custom_data_info_header.dart';
+import '../utils/assets.dart';
+import '../utils/color_manager.dart';
+import 'custom_data_info_header.dart';
 
 import 'custom_home_bigger_container.dart';
 import 'custom_home_smaller_container.dart';

@@ -11,7 +11,7 @@ class CustomSelectSomeOneContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
       decoration: ShapeDecoration(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
@@ -27,7 +27,7 @@ class CustomSelectSomeOneContainer extends StatelessWidget {
             style: AppStyles.textStyleRegular14(context)
                 .copyWith(color: ColorManager.gray.withValues(alpha: 0.8)),
           ),
-          Spacer(),
+          const Spacer(),
           Icon(
             Icons.arrow_right,
             color: ColorManager.gray.withValues(alpha: 0.8),

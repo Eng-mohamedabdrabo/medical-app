@@ -25,7 +25,7 @@ class ManagerCasesView extends StatelessWidget {
                 ),
                 color: ColorManager.black,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 24,
               ),
               Expanded(

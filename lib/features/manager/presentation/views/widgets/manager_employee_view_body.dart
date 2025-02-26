@@ -9,17 +9,17 @@ class ManagerEmployeeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: null,
         backgroundColor: ColorManager.teal,
-        shape: const CircleBorder(), // Explicitly ensure circular shape
-        child: const Icon(Icons.add, color: Colors.white),
+        shape: CircleBorder(), // Explicitly ensure circular shape
+        child: Icon(Icons.add, color: Colors.white),
       ),
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            padding: EdgeInsets.symmetric(horizontal: 16.0),
             child: HrEmployeeUpperSection(),
           ),
           SizedBox(height: 14),

@@ -19,12 +19,11 @@ class NurseMeasurementResultRow extends StatelessWidget {
         Expanded(
           child: Container(
             height: 55,
-            padding: EdgeInsets.all(8),
+            padding: const EdgeInsets.all(8),
             decoration: ShapeDecoration(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(6),
                 side: BorderSide(
-                  width: 1,
                   color: ColorManager.gray.withValues(alpha: 0.2),
                 ),
               ),
@@ -38,16 +37,16 @@ class NurseMeasurementResultRow extends StatelessWidget {
                     fontWeight:FontWeight.w600
                   ),
                 ),
-                Spacer(),
-                Icon(Icons.arrow_drop_down_outlined),
+                const Spacer(),
+                const Icon(Icons.arrow_drop_down_outlined),
               ],
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 16,
         ),
-        Expanded(
+        const Expanded(
           child: CustomTextFormField(hintText: 'Add Value'),
         )
       ],

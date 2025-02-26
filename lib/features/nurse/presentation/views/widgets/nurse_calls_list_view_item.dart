@@ -32,7 +32,7 @@ class NurseCallsListViewItem extends StatelessWidget {
           Row(
             children: [
               SvgPicture.asset(AppAssets.containerTasksCheck),
-              SizedBox(
+              const SizedBox(
                 width: 12,
               ),
               Text(
@@ -42,13 +42,13 @@ class NurseCallsListViewItem extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           Row(
             children: [
               SvgPicture.asset(AppAssets.containerTasksCalender),
-              SizedBox(
+              const SizedBox(
                 width: 12,
               ),
               Text(
@@ -58,7 +58,7 @@ class NurseCallsListViewItem extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 24,
           ),
           Center(
@@ -71,7 +71,7 @@ class NurseCallsListViewItem extends StatelessWidget {
 
                     },
                     child: SvgPicture.asset(AppAssets.containerAcceptCall)),
-                SizedBox(
+                const SizedBox(
                   width: 16,
                 ),
                 SvgPicture.asset(AppAssets.containerBusyCall),

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/features/login_and_signup/presentation/views/widgets/upper_login_section.dart';
+import 'upper_login_section.dart';
 import 'lower_login_section.dart';
 
 class LoginViewBody extends StatelessWidget {
+  final String type;
+
   const LoginViewBody({
     super.key,
+    required this.type,
   });
 
   @override
@@ -15,9 +18,9 @@ class LoginViewBody extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 126),
-            UpperLoginSection(),
+            const UpperLoginSection(),
             const SizedBox(height: 70),
-            LowerLoginSection(),
+            LowerLoginSection(type: type), // تمرير النوع للـ `LowerLoginSection`
             const SizedBox(height: 210),
           ],
         ),

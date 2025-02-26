@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/features/receptionist/presentation/views/widgets/create_call_view_body.dart';
+import 'widgets/create_call_view_body.dart';
 
 
 class ReceptionistCreateCallView extends StatelessWidget {
@@ -7,10 +7,10 @@ class ReceptionistCreateCallView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          padding: EdgeInsets.symmetric(horizontal: 16.0),
           child: CreateCallViewBody(),
         ),
       ),

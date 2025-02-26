@@ -30,7 +30,7 @@ class _SplashItemState extends State<SplashItem> {
             height: screenHeight * 0.29,
           ),
           Lottie.asset(AppAssets.animationLogoWithName),
-          Expanded(child: SizedBox()),
+          const Expanded(child: SizedBox()),
           Column(
             children: [
               SizedBox(

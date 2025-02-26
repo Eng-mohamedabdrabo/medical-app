@@ -33,7 +33,7 @@ class AnalysisEmployeeCasesRequestsListViewItem extends StatelessWidget {
           Row(
             children: [
               SvgPicture.asset(AppAssets.containerTasksCheck),
-              SizedBox(
+              const SizedBox(
                 width: 12,
               ),
               Text(
@@ -43,13 +43,13 @@ class AnalysisEmployeeCasesRequestsListViewItem extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           Row(
             children: [
               SvgPicture.asset(AppAssets.containerTasksCalender),
-              SizedBox(
+              const SizedBox(
                 width: 12,
               ),
               Text(
@@ -59,7 +59,7 @@ class AnalysisEmployeeCasesRequestsListViewItem extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 24,
           ),
           Center(
@@ -71,7 +71,7 @@ class AnalysisEmployeeCasesRequestsListViewItem extends StatelessWidget {
                       GoRouter.of(context).push(AppRouter.kAnalysisEmployeeCasesDetailsView);
                     },
                     child: SvgPicture.asset(AppAssets.containerAcceptCall)),
-                SizedBox(
+                const SizedBox(
                   width: 16,
                 ),
                 SvgPicture.asset(AppAssets.containerBusyCall),

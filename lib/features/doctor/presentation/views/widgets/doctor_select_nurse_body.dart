@@ -23,17 +23,17 @@ class DoctorSelectNurseBody extends StatelessWidget {
           ),
           color: ColorManager.black,
         ),
-        SizedBox(
+        const SizedBox(
           height: 24,
         ),
-        CustomSearchBar(hintText: 'Search for nurse'),
-        SizedBox(
+        const CustomSearchBar(hintText: 'Search for nurse'),
+        const SizedBox(
           height: 24,
         ),
-        Expanded(
+        const Expanded(
           child: DoctorSelectNurseListView(),
         ),
-        SizedBox(
+        const SizedBox(
           height: 24,
         ),
         CustomElevatedButton(text: 'Select Nurse', onPressed: () {})

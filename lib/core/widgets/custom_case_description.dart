@@ -17,7 +17,7 @@ class CustomCaseDescription extends StatelessWidget {
             color: ColorManager.gray.withValues(alpha: 0.6),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 6,
         ),
         Text(

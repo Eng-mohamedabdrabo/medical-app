@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/core/widgets/custom_employee_filtering_list_view_item.dart';
+import 'custom_employee_filtering_list_view_item.dart';
 
 class CustomEmployeeFilteringListView extends StatelessWidget {
   const CustomEmployeeFilteringListView({super.key});

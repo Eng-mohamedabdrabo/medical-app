@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import '../../../features/login_and_signup/data/models/profile_model.dart';
 import '../../widgets/custom_header.dart';
 import 'my_profile_data.dart';
 
 class MyProfileBody extends StatelessWidget {
-  const MyProfileBody({
-    super.key,
-  });
+  final ProfileModel profileModel;
+
+  const MyProfileBody({super.key, required this.profileModel});
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +20,14 @@ class MyProfileBody extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 20),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                      child: CustomHeader(title: 'My Profile',),
+                    const SizedBox(height: 20),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
+                      child: CustomHeader(title: 'My Profile'),
                     ),
-                    SizedBox(height: 60),
-                    MyProfileData(),
-                    SizedBox(height: 24,),
+                    const SizedBox(height: 60),
+                    MyProfileData(profileModel: profileModel),
+                    const SizedBox(height: 24),
                   ],
                 ),
               ),
@@ -35,7 +36,6 @@ class MyProfileBody extends StatelessWidget {
         },
       ),
     );
-
   }
 }
 

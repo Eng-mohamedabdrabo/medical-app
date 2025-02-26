@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/features/analysis_employee/presentation/views/widgets/analysis_employee_cases_requests_list_view.dart';
+import 'widgets/analysis_employee_cases_requests_list_view.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/utils/color_manager.dart';
 import '../../../../core/widgets/custom_header.dart';
@@ -22,10 +22,10 @@ class AnalysisEmployeeCasesRequestsView extends StatelessWidget {
                 ),
                 color: ColorManager.black,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 24,
               ),
-              Expanded(
+              const Expanded(
                 child: AnalysisEmployeeCasesRequestsListView(),
               )
             ],

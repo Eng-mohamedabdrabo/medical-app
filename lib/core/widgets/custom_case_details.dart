@@ -82,7 +82,7 @@ class _CustomCaseDetailsState extends State<CustomCaseDetails> {
                 color: ColorManager.black,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 14,
             ),
             SvgPicture.asset(AppAssets.imagesCaseProcess),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/core/utils/color_manager.dart';
-import 'package:medical_app/core/widgets/custom_elevated_button.dart';
+import '../../../../../core/utils/color_manager.dart';
+import '../../../../../core/widgets/custom_elevated_button.dart';
 
 class DoctorShowMedicalRequirementBody extends StatelessWidget {
   const DoctorShowMedicalRequirementBody({super.key, required this.selectedContent});

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:medical_app/core/widgets/medical_measurement_body.dart';
-import 'package:medical_app/features/nurse/presentation/views/widgets/nurse_case_details_analysis_list_view.dart';
-import 'package:medical_app/features/nurse/presentation/views/widgets/nurse_have_request_notice_container.dart';
+import '../../../../core/widgets/medical_measurement_body.dart';
+import 'widgets/nurse_case_details_analysis_list_view.dart';
+import 'widgets/nurse_have_request_notice_container.dart';
 import '../../../../core/utils/app_router.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/utils/assets.dart';
@@ -101,7 +101,7 @@ class _NurseCaseDetailsViewState extends State<NurseCaseDetailsView> with Ticker
                 ],
               ),
               const SizedBox(height: 28),
-              NurseHaveRequestNoticeContainer(),
+              const NurseHaveRequestNoticeContainer(),
               const SizedBox(height: 28),
               Expanded(
                 child: SingleChildScrollView(

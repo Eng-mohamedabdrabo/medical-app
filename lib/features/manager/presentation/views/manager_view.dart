@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:medical_app/features/manager/presentation/views/widgets/manager_employee_container.dart';
+import 'widgets/manager_employee_container.dart';
 
 import '../../../../core/utils/app_router.dart';
 import '../../../../core/utils/assets.dart';
@@ -39,7 +39,7 @@ class ManagerView extends StatelessWidget {
                 firstContainerTitle: 'Cases',
                 firstContainerColor: ColorManager.skyBlue,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
               Padding(
@@ -49,7 +49,7 @@ class ManagerView extends StatelessWidget {
                       GoRouter.of(context).push(AppRouter.kHrEmployeeView);
 
                     },
-                    child: ManagerEmployeeContainer()),
+                    child: const ManagerEmployeeContainer()),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),

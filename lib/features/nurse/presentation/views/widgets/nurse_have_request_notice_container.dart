@@ -13,7 +13,7 @@ class NurseHaveRequestNoticeContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: ColorManager.orange.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(8),
@@ -35,14 +35,14 @@ class NurseHaveRequestNoticeContainer extends StatelessWidget {
               ),
               SvgPicture.asset(
                 AppAssets.imagesCancel,
-                colorFilter: ColorFilter.mode(
+                colorFilter: const ColorFilter.mode(
                   ColorManager.black,
                   BlendMode.srcIn,
                 ),
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           Padding(
@@ -57,7 +57,7 @@ class NurseHaveRequestNoticeContainer extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 15,),
+          const SizedBox(height: 15,),
           SvgPicture.asset(AppAssets.containerShowDetailsOrange)
         ],
       ),

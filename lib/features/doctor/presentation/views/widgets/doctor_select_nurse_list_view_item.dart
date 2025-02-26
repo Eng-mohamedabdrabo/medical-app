@@ -23,7 +23,7 @@ class DoctorSelectNurseListViewItem extends StatelessWidget {
                 BoxShadow(
                   color: Colors.black.withValues(alpha: 0.4),
                   blurRadius: 8,
-                  offset: Offset(0, 8),
+                  offset: const Offset(0, 8),
                 ),
               ],
             ),

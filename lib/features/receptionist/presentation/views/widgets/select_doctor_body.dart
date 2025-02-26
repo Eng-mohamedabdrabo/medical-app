@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/features/receptionist/presentation/views/widgets/select_doctor_list_view.dart';
+import 'select_doctor_list_view.dart';
 
 import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/utils/color_manager.dart';
@@ -23,21 +23,21 @@ class SelectDoctorBody extends StatelessWidget {
           ),
           color: ColorManager.black,
         ),
-        SizedBox(
+        const SizedBox(
           height: 24,
         ),
-        CustomSearchBar(hintText: 'Search for doctors'),
-        SizedBox(
+        const CustomSearchBar(hintText: 'Search for doctors'),
+        const SizedBox(
           height: 30,
         ),
-        Expanded(
+        const Expanded(
           child: SelectDoctorListView(),
         ),
-        SizedBox(height: 16,),
+        const SizedBox(height: 16,),
         CustomElevatedButton(
           text: 'Select Doctor', onPressed: () {  },
         ),
-            SizedBox(height: 8,)
+            const SizedBox(height: 8,)
       ],
     );
   }

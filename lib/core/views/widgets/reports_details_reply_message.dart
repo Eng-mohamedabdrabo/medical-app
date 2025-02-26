@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:medical_app/core/utils/assets.dart';
+import '../../utils/assets.dart';
 
 import '../../utils/app_styles.dart';
 import '../../utils/color_manager.dart';
@@ -13,10 +13,10 @@ class ReportsDetailsReplyMessage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CustomDataInfoHeader(
+        const CustomDataInfoHeader(
 
         ),
-        SizedBox(
+        const SizedBox(
           height: 9,
         ),
         Text(
@@ -26,13 +26,13 @@ class ReportsDetailsReplyMessage extends StatelessWidget {
             color: ColorManager.black,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 25,
         ),
         Row(
           children: [
             SvgPicture.asset(AppAssets.imagesReply,),
-            SizedBox(width: 2,),
+            const SizedBox(width: 2,),
             Text(
               'Reply - Manager',
               style: AppStyles.textStyleRegular10(context).copyWith(

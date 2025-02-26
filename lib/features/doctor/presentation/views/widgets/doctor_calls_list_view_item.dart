@@ -31,7 +31,7 @@ class DoctorCallsListViewItem extends StatelessWidget {
           Row(
             children: [
               SvgPicture.asset(AppAssets.containerTasksCheck),
-              SizedBox(
+              const SizedBox(
                 width: 12,
               ),
               Text(
@@ -42,14 +42,14 @@ class DoctorCallsListViewItem extends StatelessWidget {
             ],
           ),
 
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           Row(
             children: [
               SvgPicture.asset(AppAssets.containerTasksCalender),
 
-              SizedBox(
+              const SizedBox(
                 width: 12,
               ),
               Text(
@@ -59,7 +59,7 @@ class DoctorCallsListViewItem extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 24,
           ),
           Center(
@@ -67,7 +67,7 @@ class DoctorCallsListViewItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SvgPicture.asset(AppAssets.containerAcceptCall),
-                SizedBox(width: 16,),
+                const SizedBox(width: 16,),
                 SvgPicture.asset(AppAssets.containerBusyCall),
               ],
             ),

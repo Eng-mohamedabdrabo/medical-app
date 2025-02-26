@@ -11,23 +11,29 @@ class NurseCasesContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric( vertical: 34),
+      padding: const EdgeInsets.symmetric(vertical: 34),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: ColorManager.brown,
       ),
       child: Row(
         children: [
-          SizedBox(width: 62,),
+          const SizedBox(
+            width: 62,
+          ),
           Text(
             'Cases',
             style: AppStyles.textStyleRegular14(context).copyWith(
               color: ColorManager.white,
             ),
           ),
-          Spacer(),
-          SvgPicture.asset(AppAssets.containerHomeCases),
-          SizedBox(width: 62,)
+          const Spacer(),
+          SvgPicture.asset(
+            AppAssets.containerHomeCases,
+          ),
+          const SizedBox(
+            width: 62,
+          )
         ],
       ),
     );

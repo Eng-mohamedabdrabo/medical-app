@@ -14,19 +14,18 @@ class CustomUploadImageContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return DottedBorder(
       color: ColorManager.gray.withValues(alpha: 0.2),
-      strokeWidth: 1,
-      dashPattern: [22, 16],
+      dashPattern: const [22, 16],
       borderType: BorderType.RRect,
-      radius: Radius.circular(12),
+      radius: const Radius.circular(12),
       child: Container(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           height: 205,
           width: double.infinity,
           color: Colors.white,
           child: Column(
             children: [
               SvgPicture.asset(AppAssets.imagesUploadImage),
-              SizedBox(height: 24,),
+              const SizedBox(height: 24,),
               SvgPicture.asset(AppAssets.imagesUploadImageButton),
             ],
           )

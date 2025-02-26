@@ -29,7 +29,6 @@ class CustomHomeSmallerContainer extends StatelessWidget {
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SvgPicture.asset(image),
           const SizedBox(height: 10),

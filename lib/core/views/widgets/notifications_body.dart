@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/core/views/widgets/notifications_list_view.dart';
+import 'notifications_list_view.dart';
 
 import '../../utils/app_styles.dart';
 import '../../utils/color_manager.dart';
@@ -23,7 +23,7 @@ class NotificationBody extends StatelessWidget {
             title: 'Notifications',
           ),
         ),
-        Expanded(child: NotificationsListView())
+        const Expanded(child: NotificationsListView())
       ],
     );
   }

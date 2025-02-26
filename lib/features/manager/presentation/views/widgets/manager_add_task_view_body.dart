@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:medical_app/core/utils/assets.dart';
-import 'package:medical_app/core/widgets/custom_elevated_button.dart';
-import 'package:medical_app/core/widgets/custom_upload_imager_container.dart';
-import 'package:medical_app/features/manager/presentation/views/widgets/manager_add_task_list_view.dart';
+import '../../../../../core/utils/assets.dart';
+import '../../../../../core/widgets/custom_elevated_button.dart';
+import '../../../../../core/widgets/custom_upload_imager_container.dart';
+import 'manager_add_task_list_view.dart';
 import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/utils/color_manager.dart';
@@ -28,13 +28,13 @@ class ManagerAddTaskViewBody extends StatelessWidget {
             color: ColorManager.black,
           ),
         ),
-        SliverToBoxAdapter(
+        const SliverToBoxAdapter(
           child: SizedBox(height: 25),
         ),
         SliverList(
           delegate: SliverChildListDelegate(
             [
-              CustomTextFormField(hintText: 'Task Name'),
+              const CustomTextFormField(hintText: 'Task Name'),
               const SizedBox(height: 20),
               InkWell(
                 onTap: () {
@@ -45,16 +45,16 @@ class ManagerAddTaskViewBody extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              CustomTextFormField(
+              const CustomTextFormField(
                 hintText: 'Case Description',
                 contentPadding:
-                    const EdgeInsets.symmetric(vertical: 60, horizontal: 12),
+                    EdgeInsets.symmetric(vertical: 60, horizontal: 12),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 children: [
-                  Text('To do'),
-                  Spacer(),
+                  const Text('To do'),
+                  const Spacer(),
                   InkWell(
                     onTap: () {
                       _showAddBottomSheet(context);
@@ -63,14 +63,14 @@ class ManagerAddTaskViewBody extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 16),
-              SizedBox(height: 100, child: ManagerAddTaskListView()),
-              SizedBox(height: 24),
-              CustomUploadImageContainer(),
-              SizedBox(height: 20),
-              SizedBox(height: 50),
+              const SizedBox(height: 16),
+              const SizedBox(height: 100, child: ManagerAddTaskListView()),
+              const SizedBox(height: 24),
+              const CustomUploadImageContainer(),
+              const SizedBox(height: 20),
+              const SizedBox(height: 50),
               CustomElevatedButton(text: 'Send', onPressed: () {}),
-              SizedBox(height: 8,)
+              const SizedBox(height: 8,)
 
             ],
           ),
@@ -91,7 +91,7 @@ class ManagerAddTaskViewBody extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              CustomTextFormField(
+              const CustomTextFormField(
                   contentPadding:
                       EdgeInsets.symmetric(horizontal: 12, vertical: 65),
                   hintText: 'To do details'),
@@ -118,8 +118,8 @@ class AddHere extends StatelessWidget {
     return Row(
       children: [
         SvgPicture.asset(AppAssets.imagesAdd),
-        SizedBox(width: 2),
-        Text('Add'),
+        const SizedBox(width: 2),
+        const Text('Add'),
       ],
     );
   }

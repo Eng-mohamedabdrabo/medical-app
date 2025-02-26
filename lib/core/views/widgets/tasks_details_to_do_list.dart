@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:medical_app/core/views/widgets/tasks_details_to_do_item.dart';
+import 'tasks_details_to_do_item.dart';
 
 class TasksDetailsToDoList extends StatelessWidget {
   const TasksDetailsToDoList({
@@ -11,9 +11,9 @@ class TasksDetailsToDoList extends StatelessWidget {
     return Column(
       children: List.generate(
         3,
-            (index) => Padding(
-          padding: const EdgeInsets.only(top: 8.0),
-          child: const TasksDetailsToDoItem(),
+            (index) => const Padding(
+          padding: EdgeInsets.only(top: 8.0),
+          child: TasksDetailsToDoItem(),
         ),
       ),
     );

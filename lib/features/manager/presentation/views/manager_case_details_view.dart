@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/core/widgets/medical_measurement_body.dart';
-import 'package:medical_app/core/widgets/medical_record_body.dart';
+import '../../../../core/widgets/medical_measurement_body.dart';
+import '../../../../core/widgets/medical_record_body.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/utils/color_manager.dart';
 import '../../../../core/widgets/case_details_body.dart';

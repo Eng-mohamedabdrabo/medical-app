@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/features/doctor/presentation/views/widgets/doctor_cases_list_view.dart';
+import 'widgets/doctor_cases_list_view.dart';
 
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/utils/color_manager.dart';
@@ -11,7 +11,7 @@ class DoctorCasesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:  SafeArea(
+      body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Column(
@@ -23,8 +23,12 @@ class DoctorCasesView extends StatelessWidget {
                 ),
                 color: ColorManager.black,
               ),
-              SizedBox(height:24 ,),
-              Expanded(child: DoctorCasesListview(),)
+              const SizedBox(
+                height: 24,
+              ),
+              const Expanded(
+                child: DoctorCasesListview(),
+              )
             ],
           ),
         ),

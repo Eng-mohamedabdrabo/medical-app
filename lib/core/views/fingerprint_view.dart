@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:medical_app/core/utils/color_manager.dart';
-import 'package:medical_app/core/views/widgets/fingerprint_body.dart';
+import '../utils/color_manager.dart';
+import 'widgets/fingerprint_body.dart';
 
 import '../utils/app_router.dart';
 
@@ -20,7 +20,7 @@ class _FingerprintViewState extends State<FingerprintView> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: ColorManager.teal,
       body: FingerprintBody(),
     );

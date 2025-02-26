@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:medical_app/core/widgets/custom_upload_imager_container.dart';
-import 'package:medical_app/features/analysis_employee/presentation/views/widgets/record_requirements_list_view.dart';
+import '../../../../../core/widgets/custom_upload_imager_container.dart';
+import 'record_requirements_list_view.dart';
 import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/color_manager.dart';
@@ -27,7 +27,7 @@ class AnalysisEmployeeAddMedicalReportViewBody extends StatelessWidget {
                       .copyWith(color: ColorManager.black),
                   color: ColorManager.black,
                 ),
-                SizedBox(height: 24),
+                const SizedBox(height: 24),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -37,20 +37,20 @@ class AnalysisEmployeeAddMedicalReportViewBody extends StatelessWidget {
                         AppAssets.containerSolidDecoration,
                       ),
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          CustomDataInfoHeader(),
-                          SizedBox(height: 8),
+                          const CustomDataInfoHeader(),
+                          const SizedBox(height: 8),
                           Text(
                             'Details note : Lorem Ipsum is simply dummy text of printing and typesetting industry.Lorem Ipsum',
                             style: AppStyles.textStyleRegular12(context)
                                 .copyWith(color: ColorManager.black),
                           ),
-                          SizedBox(height: 20),
-                          SizedBox(
+                          const SizedBox(height: 20),
+                          const SizedBox(
                             height: 45,
                             child: RecordRequirementsListView(),
                           ),
@@ -59,7 +59,7 @@ class AnalysisEmployeeAddMedicalReportViewBody extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 Text(
                   'Add Medical Record',
                   style: AppStyles.textStyleRegular14(context).copyWith(
@@ -67,8 +67,8 @@ class AnalysisEmployeeAddMedicalReportViewBody extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                SizedBox(height: 16),
-                CustomUploadImageContainer()
+                const SizedBox(height: 16),
+                const CustomUploadImageContainer()
               ],
             ),
           ),

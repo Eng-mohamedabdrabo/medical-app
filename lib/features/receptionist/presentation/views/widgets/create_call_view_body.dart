@@ -45,11 +45,11 @@ class CreateCallViewBody extends StatelessWidget {
           color: ColorManager.black,
         ),
         const SizedBox(height: 25),
-        CustomTextFormField(hintText: 'Patient Name'),
+        const CustomTextFormField(hintText: 'Patient Name'),
         const SizedBox(height: 20),
-        CustomTextFormField(hintText: 'Age'),
+        const CustomTextFormField(hintText: 'Age'),
         const SizedBox(height: 20),
-        CustomTextFormField(hintText: 'Phone Number'),
+        const CustomTextFormField(hintText: 'Phone Number'),
         const SizedBox(height: 20),
         InkWell(
           onTap: () {
@@ -60,9 +60,9 @@ class CreateCallViewBody extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 20),
-        CustomTextFormField(
+        const CustomTextFormField(
           hintText: 'Case Description',
-          contentPadding: const EdgeInsets.only(
+          contentPadding: EdgeInsets.only(
             bottom: 80,
             left: 12,
             top: 12,

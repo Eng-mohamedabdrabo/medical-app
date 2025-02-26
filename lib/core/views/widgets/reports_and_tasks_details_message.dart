@@ -29,7 +29,7 @@ class ReportsAndTasksDetailsMessage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomDataInfoHeader(),
+              const CustomDataInfoHeader(),
               const SizedBox(height: 8),
               Text(
                 'Details note: Lorem Ipsum is simply dummy text of the printing and typesetting industry.',

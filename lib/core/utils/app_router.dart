@@ -1,16 +1,16 @@
 import 'package:go_router/go_router.dart';
-import 'package:medical_app/core/views/notifications_view.dart';
-import 'package:medical_app/features/doctor/presentation/views/doctor_calls_view.dart';
-import 'package:medical_app/features/doctor/presentation/views/doctor_view.dart';
-import 'package:medical_app/features/manager/presentation/views/manager_add_task_view.dart';
-import 'package:medical_app/features/manager/presentation/views/manager_task_details_view.dart';
-import 'package:medical_app/features/manager/presentation/views/manager_tasks.dart';
-import 'package:medical_app/features/nurse/presentation/views/nurse_view.dart';
-import 'package:medical_app/features/prototyping/presentation/views/prototyping_map_view.dart';
-import 'package:medical_app/features/receptionist/presentation/views/receptionist_view.dart';
-import 'package:medical_app/features/analysis_employee/presentation/views/analysis_employee_view.dart';
-import 'package:medical_app/features/manager/presentation/views/manager_view.dart';
-import 'package:medical_app/features/hr/presentation/views/hr_view.dart';
+import '../views/notifications_view.dart';
+import '../../features/doctor/presentation/views/doctor_calls_view.dart';
+import '../../features/doctor/presentation/views/doctor_view.dart';
+import '../../features/manager/presentation/views/manager_add_task_view.dart';
+import '../../features/manager/presentation/views/manager_task_details_view.dart';
+import '../../features/manager/presentation/views/manager_tasks.dart';
+import '../../features/nurse/presentation/views/nurse_view.dart';
+import '../../features/prototyping/presentation/views/prototyping_map_view.dart';
+import '../../features/receptionist/presentation/views/receptionist_view.dart';
+import '../../features/analysis_employee/presentation/views/analysis_employee_view.dart';
+import '../../features/manager/presentation/views/manager_view.dart';
+import '../../features/hr/presentation/views/hr_view.dart';
 import '../../features/analysis_employee/presentation/views/analysis_employee_add_medical_report_view.dart';
 import '../../features/analysis_employee/presentation/views/analysis_employee_cases_details_view.dart';
 import '../../features/analysis_employee/presentation/views/analysis_employee_cases_requests_view.dart';
@@ -199,9 +199,14 @@ abstract class AppRouter {
         builder: (context, state) => const HrShowEmployeeProfileView(),
       ),
       GoRoute(
-        path: kLoginView,
-        builder: (context, state) => const LoginView(),
+        path: AppRouter.kLoginView,
+        builder: (context, state) {
+          final String type = state.uri.queryParameters['type'] ?? 'unknown'; // استقبال النوع
+          return LoginView(type: type);
+        },
       ),
+
+
       GoRoute(
         path: kManagerTasksView,
         builder: (context, state) => const ManagerTasksView(),
@@ -268,9 +273,12 @@ abstract class AppRouter {
         builder: (context, state) => const ReportsDetailsView(),
       ),
       GoRoute(
-        path: kMyProfileView,
-        builder: (context, state) => const MyProfileView(),
+        path: AppRouter.kMyProfileView,
+        builder: (context, state) {
+          return const MyProfileView();
+        },
       ),
+
     ],
   );
 }

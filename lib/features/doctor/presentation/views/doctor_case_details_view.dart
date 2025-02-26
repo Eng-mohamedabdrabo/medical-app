@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:medical_app/core/utils/assets.dart';
-import 'package:medical_app/core/widgets/custom_elevated_button.dart';
-import 'package:medical_app/core/widgets/medical_measurement_body.dart';
-import 'package:medical_app/core/widgets/medical_record_body.dart';
-import 'package:medical_app/features/doctor/presentation/views/widgets/case_details_request_choice.dart';
-import 'package:medical_app/core/utils/app_router.dart';
-import 'package:medical_app/core/utils/app_styles.dart';
-import 'package:medical_app/core/utils/color_manager.dart';
-import 'package:medical_app/core/widgets/case_details_body.dart';
-import 'package:medical_app/features/doctor/presentation/views/widgets/doctor_case_details_action_body.dart';
+import '../../../../core/utils/assets.dart';
+import '../../../../core/widgets/custom_elevated_button.dart';
+import '../../../../core/widgets/medical_measurement_body.dart';
+import '../../../../core/widgets/medical_record_body.dart';
+import 'widgets/case_details_request_choice.dart';
+import '../../../../core/utils/app_router.dart';
+import '../../../../core/utils/app_styles.dart';
+import '../../../../core/utils/color_manager.dart';
+import '../../../../core/widgets/case_details_body.dart';
+import 'widgets/doctor_case_details_action_body.dart';
 import '../../../../core/widgets/custom_header.dart';
 import '../../../doctor/presentation/views/widgets/doctor_case_details_analysis_list_view.dart';
 
@@ -147,9 +147,9 @@ class _DoctorCaseDetailsViewState extends State<DoctorCaseDetailsView> with Sing
           },
         );
       case 1:
-        return MedicalMeasurementBody();
+        return const MedicalMeasurementBody();
       case 2:
-        return MedicalRecordBody();
+        return const MedicalRecordBody();
       default:
         return DoctorCaseDetailsActionsBody(
           selectedContent: const CaseDetailsBody(),
@@ -179,8 +179,8 @@ class _DoctorCaseDetailsViewState extends State<DoctorCaseDetailsView> with Sing
                 ),
               ),
             ),
-            SliverToBoxAdapter(
-              child: const SizedBox(height: 24),
+            const SliverToBoxAdapter(
+              child: SizedBox(height: 24),
             ),
             SliverToBoxAdapter(
               child: Padding(
@@ -197,8 +197,8 @@ class _DoctorCaseDetailsViewState extends State<DoctorCaseDetailsView> with Sing
                 ),
               ),
             ),
-            SliverToBoxAdapter(
-              child: const SizedBox(height: 28),
+            const SliverToBoxAdapter(
+              child: SizedBox(height: 28),
             ),
             SliverFillRemaining(
               hasScrollBody: false,
@@ -213,13 +213,13 @@ class _DoctorCaseDetailsViewState extends State<DoctorCaseDetailsView> with Sing
                         child: _buildSelectedContent(),
                       ),
                     ),
-                    Expanded(child: const SizedBox(height: 16)),
+                    const Expanded(child: SizedBox(height: 16)),
                     CustomElevatedButton(
                       text: 'End Case',
                       backGroundColor: ColorManager.brightRed,
                       onPressed: () {},
                     ),
-                    SizedBox(height: 8,)
+                    const SizedBox(height: 8,)
                   ],
                 ),
               ),

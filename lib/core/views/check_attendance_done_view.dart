@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
-import 'package:medical_app/core/utils/assets.dart';
-import 'package:medical_app/core/utils/color_manager.dart';
+import '../utils/assets.dart';
+import '../utils/color_manager.dart';
 
 import '../utils/app_router.dart';
 import '../utils/app_styles.dart';
@@ -18,7 +18,7 @@ class CheckAttendanceDoneView extends StatelessWidget {
       backgroundColor: ColorManager.teal,
       body: LayoutBuilder(
         builder: (context, constraints) {
-          return Stack(
+          return const Stack(
             children: [
               // Fixed custom painter at the bottom center
               Positioned(
@@ -31,7 +31,7 @@ class CheckAttendanceDoneView extends StatelessWidget {
               Center(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
-                  children: const [
+                  children: [
                     SizedBox(height: 50),
                     CheckAttendanceDoneCenterSection(),
                     SizedBox(height: 50),
@@ -57,7 +57,7 @@ class CheckAttendanceDoneCenterSection extends StatelessWidget {
     return Column(
       children: [
         Lottie.asset(AppAssets.animationAttendance),
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
         Text(
@@ -66,7 +66,7 @@ class CheckAttendanceDoneCenterSection extends StatelessWidget {
             color: ColorManager.white,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 130,
         ),
         InkWell(
@@ -75,17 +75,16 @@ class CheckAttendanceDoneCenterSection extends StatelessWidget {
 
           },
           child: Container(
-            padding: EdgeInsets.all(8),
+            padding: const EdgeInsets.all(8),
             height: 50,
             width: 50,
-            decoration: ShapeDecoration(
+            decoration: const ShapeDecoration(
               shape: OvalBorder(
                   side: BorderSide(
-                width: 1,
                 color: ColorManager.white,
               )),
             ),
-            child: Center(
+            child: const Center(
               child: Icon(
                 Icons.arrow_forward,
                 color: ColorManager.white,

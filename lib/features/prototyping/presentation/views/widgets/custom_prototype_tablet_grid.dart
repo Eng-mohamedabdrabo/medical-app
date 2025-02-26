@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:medical_app/core/utils/app_styles.dart';
-import 'package:medical_app/features/prototyping/presentation/views/widgets/prototyping_item.dart';
+import '../../../../../core/utils/app_styles.dart';
+import 'prototyping_item.dart';
 
 import '../../../../../core/utils/app_router.dart';
 

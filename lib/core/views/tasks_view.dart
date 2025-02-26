@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/core/views/widgets/tasks_list_view.dart';
+import 'widgets/tasks_list_view.dart';
 import '../utils/app_styles.dart';
 import '../utils/color_manager.dart';
 import '../widgets/custom_calendar_sheet.dart';
@@ -31,14 +31,14 @@ class _TasksViewState extends State<TasksView> {
             ),
             color: ColorManager.black,
             ),
-              SizedBox(height: 24,),
+              const SizedBox(height: 24,),
               CustomDatePickerRow(
                 selectedDate: selectedDate,
                 onCalendarTap: () {
                   buildShowModalBottomSheet(context);
                 },
               ),
-              Expanded(child: TasksListView(),)
+              const Expanded(child: TasksListView(),)
             ],
           ),
         ),

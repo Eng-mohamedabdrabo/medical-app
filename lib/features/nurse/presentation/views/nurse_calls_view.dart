@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/features/nurse/presentation/views/widgets/nurse_calls_list_view.dart';
+import 'widgets/nurse_calls_list_view.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/utils/color_manager.dart';
 import '../../../../core/widgets/custom_header.dart';
@@ -22,10 +22,10 @@ class NurseCallsView extends StatelessWidget {
                 ),
                 color: ColorManager.black,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 24,
               ),
-              Expanded(child: NurseCallsListView(),)
+              const Expanded(child: NurseCallsListView(),)
             ],
           ),
         ),

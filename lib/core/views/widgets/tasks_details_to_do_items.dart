@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:medical_app/core/views/widgets/tasks_details_to_do_list.dart';
+import 'tasks_details_to_do_list.dart';
 
 import '../../utils/app_styles.dart';
 import '../../utils/assets.dart';
@@ -37,8 +37,8 @@ class TasksDetailsToDoItems extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              SizedBox(height:100,child: const TasksDetailsToDoList()),
-              SizedBox(
+              const SizedBox(height:100,child: TasksDetailsToDoList()),
+              const SizedBox(
                 height: 40,
               ),
             ],

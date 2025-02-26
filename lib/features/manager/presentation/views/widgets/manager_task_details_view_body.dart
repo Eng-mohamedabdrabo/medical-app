@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:medical_app/core/widgets/custom_elevated_button.dart';
+import '../../../../../core/widgets/custom_elevated_button.dart';
 
 import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/utils/assets.dart';
@@ -28,19 +28,19 @@ class ManagerTaskDetailsViewBody extends StatelessWidget {
                 ),
                 color: ColorManager.black,
               ),
-              SizedBox(height: 35),
+              const SizedBox(height: 35),
               const TaskDetailsTaskName(),
               const SizedBox(height: 30),
-              ReportsAndTasksDetailsMessage(
+              const ReportsAndTasksDetailsMessage(
                 image: AppAssets.imagesATaskDetailsHospital,
               ),
               const SizedBox(height: 20),
-              TasksDetailsToDoItems(),
+              const TasksDetailsToDoItems(),
               const SizedBox(height: 2),
               Row(
                 children: [
                   SvgPicture.asset(AppAssets.imagesReply),
-                  SizedBox(width: 2),
+                  const SizedBox(width: 2),
                   Text(
                     'Reply - Manager',
                     style: AppStyles.textStyleRegular10(context).copyWith(
@@ -50,13 +50,13 @@ class ManagerTaskDetailsViewBody extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 6,
               ),
-              DoctorReplyMessageToManager(),
-              SizedBox(height: 16),
+              const DoctorReplyMessageToManager(),
+              const SizedBox(height: 16),
               CustomElevatedButton(text: 'Finish Task', onPressed: () {}),
-              SizedBox(height: 8,)
+              const SizedBox(height: 8,)
             ],
           ),
         ),

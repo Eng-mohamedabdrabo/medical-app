@@ -33,7 +33,7 @@ class TasksAndReportsListViewItem extends StatelessWidget {
           Row(
             children: [
               SvgPicture.asset(AppAssets.containerTasksCheck),
-              SizedBox(
+              const SizedBox(
                 width: 12,
               ),
               Text(
@@ -41,28 +41,28 @@ class TasksAndReportsListViewItem extends StatelessWidget {
                 style: AppStyles.textStyleRegular14(context)
                     .copyWith(color: ColorManager.black),
               ),
-              Expanded(child: SizedBox()),
+              const Expanded(child: SizedBox()),
               Container(
-                padding: EdgeInsets.all(2),
+                padding: const EdgeInsets.all(2),
                 decoration: ShapeDecoration(
                   color: ColorManager.lightTealTransparent,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(4),
-                    side: BorderSide(width: 1, color: ColorManager.teal),
+                    side: const BorderSide(width: 1, color: ColorManager.teal),
                   ),
                 ),
                 child: SvgPicture.asset(AppAssets.containerTasksFinished)
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 4,
           ),
           Row(
             children: [
               SvgPicture.asset(AppAssets.containerTasksCalender),
 
-              SizedBox(
+              const SizedBox(
                 width: 12,
               ),
               Text(
@@ -72,7 +72,7 @@ class TasksAndReportsListViewItem extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 14,
           ),
 

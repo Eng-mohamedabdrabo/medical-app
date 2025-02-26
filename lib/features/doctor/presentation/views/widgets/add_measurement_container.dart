@@ -11,7 +11,7 @@ class AddMeasurementContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return IntrinsicWidth(
       child: Container(
-        padding: EdgeInsets.all(12),
+        padding: const EdgeInsets.all(12),
         decoration: ShapeDecoration(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(6),
@@ -29,7 +29,7 @@ class AddMeasurementContainer extends StatelessWidget {
                 color: ColorManager.gray.withValues(alpha: 0.7),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 14,
             ),
             Icon(

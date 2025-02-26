@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:medical_app/core/views/widgets/tasks_and_reports_list_view_item.dart';
+import 'tasks_and_reports_list_view_item.dart';
 
 import '../../utils/app_router.dart';
 
@@ -17,7 +17,7 @@ class TasksListView extends StatelessWidget {
           onTap: onTap??() {
             GoRouter.of(context).push(AppRouter.kTasksDetailsView);
           },
-          child: TasksAndReportsListViewItem(),
+          child: const TasksAndReportsListViewItem(),
         ),
       ),
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:medical_app/core/utils/assets.dart';
+import '../../../../../core/utils/assets.dart';
 
 class ManagerAddTaskListViewItem extends StatelessWidget {
   const ManagerAddTaskListViewItem({super.key});
@@ -10,8 +10,8 @@ class ManagerAddTaskListViewItem extends StatelessWidget {
     return Row(
       children: [
         SvgPicture.asset(AppAssets.imagesRemove),
-        SizedBox(width: 6,),
-        Text('Hello this is a new task here!'),
+        const SizedBox(width: 6,),
+        const Text('Hello this is a new task here!'),
       ],
     );
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:medical_app/core/views/check_attendance_done_view.dart';
+import '../check_attendance_done_view.dart';
 
 import '../../utils/app_styles.dart';
 import '../../utils/assets.dart';
@@ -20,12 +20,12 @@ class FingerprintCenterSection extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => CheckAttendanceDoneView(),
+                  builder: (context) => const CheckAttendanceDoneView(),
                 ),
               );
             },
             child: SvgPicture.asset(AppAssets.imagesFingerPrint )),
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
         Text(

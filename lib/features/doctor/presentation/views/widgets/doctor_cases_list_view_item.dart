@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:medical_app/core/utils/assets.dart';
+import '../../../../../core/utils/assets.dart';
 
 import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/app_styles.dart';
@@ -9,7 +9,9 @@ import '../../../../../core/utils/color_manager.dart';
 
 class DoctorCasesListViewItem extends StatelessWidget {
   const DoctorCasesListViewItem({super.key, this.onTap});
+
   final void Function()? onTap;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,7 +35,7 @@ class DoctorCasesListViewItem extends StatelessWidget {
           Row(
             children: [
               SvgPicture.asset(AppAssets.containerTasksCheck),
-              SizedBox(
+              const SizedBox(
                 width: 12,
               ),
               Text(
@@ -43,13 +45,13 @@ class DoctorCasesListViewItem extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           Row(
             children: [
               SvgPicture.asset(AppAssets.containerTasksCalender),
-              SizedBox(
+              const SizedBox(
                 width: 12,
               ),
               Text(
@@ -59,16 +61,20 @@ class DoctorCasesListViewItem extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 34,
           ),
           Center(
             child: GestureDetector(
-                onTap: onTap??() {
-                  GoRouter.of(context).push(AppRouter.kDoctorCaseDetailsView);
-                },
-                child: SvgPicture.asset(AppAssets.containerShowDetails)),
-          )
+              onTap: onTap ??
+                  () {
+                    GoRouter.of(context).push(
+                      AppRouter.kDoctorCaseDetailsView,
+                    );
+                  },
+              child: SvgPicture.asset(AppAssets.containerShowDetails),
+            ),
+          ),
         ],
       ),
     );

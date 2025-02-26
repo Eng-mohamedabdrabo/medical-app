@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:medical_app/core/views/widgets/reports_list_view.dart';
+import 'reports_list_view.dart';
 import '../../utils/app_router.dart';
 import '../../utils/app_styles.dart';
 import '../../utils/color_manager.dart';
@@ -33,7 +33,7 @@ class _ReportsViewBodyState extends State<ReportsViewBody> {
                 .copyWith(color: ColorManager.black),
             color: ColorManager.black,
           ),
-          SizedBox(
+          const SizedBox(
             height: 24,
           ),
           Row(
@@ -45,7 +45,7 @@ class _ReportsViewBodyState extends State<ReportsViewBody> {
                       buildShowModalBottomSheet(context);
                     }),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 12,
               ),
               CustomAddButton(onTap: () {
@@ -54,10 +54,10 @@ class _ReportsViewBodyState extends State<ReportsViewBody> {
               },),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
-          Expanded(
+          const Expanded(
             child: ReportsListView(),
           ),
         ],

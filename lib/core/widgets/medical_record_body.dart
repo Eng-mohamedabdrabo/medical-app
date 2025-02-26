@@ -25,19 +25,19 @@ class MedicalRecordBody extends StatelessWidget {
             AppAssets.containerSolidDecoration,
           ),
         ),
-        SizedBox(width: 10),
+        const SizedBox(width: 10),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomDataInfoHeader(),
-              SizedBox(height: 8),
+              const CustomDataInfoHeader(),
+              const SizedBox(height: 8),
               Text(
                 'Details note : Lorem Ipsum is simply dummy text of printing and typesetting industry.Lorem Ipsum',
                 style: AppStyles.textStyleRegular12(context)
                     .copyWith(color: ColorManager.black),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Text(
                 'Medical Measurement',
                 style:
@@ -45,20 +45,19 @@ class MedicalRecordBody extends StatelessWidget {
                   color: ColorManager.black,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 8,
               ),
-              ManagerShowMedicalRecordListView(),
-              SizedBox(
+              const ManagerShowMedicalRecordListView(),
+              const SizedBox(
                 height: 14,
               ),
               Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  CustomMedicalRecordImage(
+                  const CustomMedicalRecordImage(
                     image: AppAssets.medicalRecord,
                   ),
-                  SizedBox(width: 16,),
+                  const SizedBox(width: 16,),
                   SvgPicture.asset(AppAssets.imagesDownload),
                 ],
               ),

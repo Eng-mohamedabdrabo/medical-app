@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:medical_app/core/utils/assets.dart';
+import '../../../features/login_and_signup/data/models/profile_model.dart';
+import '../../utils/assets.dart';
 import '../../utils/app_router.dart';
 import '../../utils/app_styles.dart';
 import '../../utils/color_manager.dart';
@@ -10,10 +11,10 @@ import 'my_profile_list_view.dart';
 
 class MyProfileData extends StatelessWidget {
   final bool isEdit;
-
+  final ProfileModel profileModel;
   const MyProfileData({
     super.key,
-    this.isEdit = false,
+    this.isEdit = false, required this.profileModel,
   });
 
   @override
@@ -40,7 +41,7 @@ class MyProfileData extends StatelessWidget {
                   style: AppStyles.textStyleMedium16(context),
                 ),
                 const SizedBox(height: 30),
-                MyProfileListView(),
+                 MyProfileListView(profileModel: profileModel,),
               ],
             ),
           ),
@@ -72,7 +73,7 @@ class MyProfileData extends StatelessWidget {
                 onTap: () {
                   GoRouter.of(context).push(AppRouter.kHrEditUserView);
                 },
-                child: EditContainer(),
+                child: const EditContainer(),
               ),
             ),
         ],
@@ -89,7 +90,7 @@ class EditContainer extends StatelessWidget {
     return Container(
       width: 42,
       height: 42,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: ColorManager.teal,
         shape: BoxShape.circle,
       ),
@@ -97,7 +98,7 @@ class EditContainer extends StatelessWidget {
         child: Container(
           width: 35,
           height: 35,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: ColorManager.white,
             shape: BoxShape.circle,
           ),
@@ -106,7 +107,7 @@ class EditContainer extends StatelessWidget {
               AppAssets.imagesPencil,
               fit: BoxFit.contain,
               colorFilter:
-                  ColorFilter.mode(ColorManager.black, BlendMode.srcIn),
+                  const ColorFilter.mode(ColorManager.black, BlendMode.srcIn),
             ),
           ),
         ),

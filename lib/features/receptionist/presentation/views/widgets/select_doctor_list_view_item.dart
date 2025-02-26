@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:medical_app/core/utils/assets.dart';
+import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/utils/color_manager.dart';
 
@@ -22,7 +22,7 @@ class SelectDoctorListViewItem extends StatelessWidget {
                 BoxShadow(
                   color: Colors.black.withValues(alpha: 0.4),
                   blurRadius: 8,
-                  offset: Offset(0, 8),
+                  offset: const Offset(0, 8),
                 ),
               ],
             ),

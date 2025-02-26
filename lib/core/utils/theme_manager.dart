@@ -8,7 +8,7 @@ abstract class ThemeManager {
     return ThemeData(
       brightness: Brightness.light,
       scaffoldBackgroundColor: ColorManager.white,
-      fontFamily: 'Poppins', // Add font family here
+      fontFamily: 'Poppins',
       appBarTheme: const AppBarTheme(
         backgroundColor: ColorManager.white,
         elevation: 0,

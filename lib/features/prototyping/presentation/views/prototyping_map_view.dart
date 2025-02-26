@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/core/utils/adaptive_layout.dart';
-import 'package:medical_app/features/prototyping/presentation/views/widgets/prototype_map_mobile_layout.dart';
-import 'package:medical_app/features/prototyping/presentation/views/widgets/prototype_map_tablet_layout.dart';
+import '../../../../core/utils/adaptive_layout.dart';
+import 'widgets/prototype_map_mobile_layout.dart';
+import 'widgets/prototype_map_tablet_layout.dart';
 
 class PrototypingMapView extends StatelessWidget {
   const PrototypingMapView({super.key});
@@ -10,8 +10,8 @@ class PrototypingMapView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AdaptiveLayout(
-        mobileLayout: (context) => PrototypeMapMobileLayout(),
-        tabletLayout: (context) => PrototypeMapTabletLayout(),
+        mobileLayout: (context) => const PrototypeMapMobileLayout(),
+        tabletLayout: (context) => const PrototypeMapTabletLayout(),
       ),
     );
   }

@@ -26,14 +26,14 @@ final String title;
               Icons.arrow_back,
               color: color ?? ColorManager.white,
             )),
-        Spacer(),
+        const Spacer(),
         Center(
           child: Text(
             title,
             style: textStyle ?? AppStyles.textStyleRegular18(context),
           ),
         ),
-        Spacer(),
+        const Spacer(),
       ],
     );
   }

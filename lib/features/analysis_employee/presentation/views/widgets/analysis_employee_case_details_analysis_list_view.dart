@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/features/analysis_employee/presentation/views/widgets/analysis_employee_case_details_analysis_list_view_item.dart';
+import 'analysis_employee_case_details_analysis_list_view_item.dart';
 
 class AnalysisEmployeeCaseDetailsAnalysisListView extends StatelessWidget {
   const AnalysisEmployeeCaseDetailsAnalysisListView({super.key, required this.selectedIndex, required this.onItemSelected});

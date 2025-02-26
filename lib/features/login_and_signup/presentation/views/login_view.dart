@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/core/widgets/custom_splash_and_login_background.dart';
-import 'package:medical_app/features/login_and_signup/presentation/views/widgets/login_view_body.dart';
+import '../../../../core/widgets/custom_splash_and_login_background.dart';
+import 'widgets/login_view_body.dart';
 
 class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+  final String type; // استقبال النوع
+
+  const LoginView({super.key, required this.type});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomSplashAndLoginBackground(
-        child: LoginViewBody(),
+        child: LoginViewBody(type: type), // تمرير النوع إلى `LoginViewBody`
       ),
     );
   }

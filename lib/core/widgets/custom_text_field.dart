@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:medical_app/core/utils/app_styles.dart';
+import '../utils/app_styles.dart';
 import '../../constants.dart';
 import '../utils/color_manager.dart';
 
@@ -10,6 +10,11 @@ class CustomTextFormField extends StatelessWidget {
   final IconData? trailingIcon;
   final EdgeInsetsGeometry? contentPadding;
   final Color? backgroundColor;
+  final TextEditingController? controller;
+  final String? Function(String?)? validator;
+  final TextInputType keyboardType;
+  final bool obscureText;
+  final Iterable<String>? autofillHints;
 
   const CustomTextFormField({
     super.key,
@@ -18,6 +23,11 @@ class CustomTextFormField extends StatelessWidget {
     this.trailingIcon,
     this.contentPadding,
     this.backgroundColor,
+    this.controller,
+    this.validator,
+    this.keyboardType = TextInputType.text,
+    this.obscureText = false,
+    this.autofillHints,
   });
 
   @override
@@ -27,11 +37,16 @@ class CustomTextFormField extends StatelessWidget {
           ? double.infinity
           : kBiggerScreensWidth,
       child: TextFormField(
+        controller: controller,
         cursorColor: ColorManager.teal,
         style: const TextStyle(color: ColorManager.teal),
-        maxLines: null, // Allows multi-line input
-        textAlignVertical: TextAlignVertical.top, // Align text to the top
+        maxLines: obscureText ? 1 : null,
+        textAlignVertical: TextAlignVertical.top,
+        keyboardType: keyboardType,
+        obscureText: obscureText,
+        autofillHints: autofillHints,
         decoration: _buildInputDecoration(context),
+        validator: validator,
       ),
     );
   }
@@ -42,15 +57,14 @@ class CustomTextFormField extends StatelessWidget {
       floatingLabelBehavior: FloatingLabelBehavior.auto,
       labelText: hintText,
       labelStyle: AppStyles.textStyleRegular14(context).copyWith(
-        color: ColorManager.gray.withValues(alpha: 0.8),
+        color: ColorManager.gray.withOpacity(0.8),
       ),
-      filled: backgroundColor != null, // Enable the fill if background color is provided
+      filled: backgroundColor != null,
       fillColor: backgroundColor,
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8),
         borderSide: BorderSide(
-          color: ColorManager.gray.withValues(alpha: 0.3),
-          width: 1,
+          color: ColorManager.gray.withOpacity(0.3),
         ),
       ),
       focusedBorder: OutlineInputBorder(
@@ -83,7 +97,7 @@ class CustomTextFormField extends StatelessWidget {
         padding: const EdgeInsets.only(right: 12.0),
         child: Icon(
           trailingIcon,
-          color: ColorManager.gray.withValues(alpha: 0.8),
+          color: ColorManager.gray.withOpacity(0.8),
         ),
       )
           : null,

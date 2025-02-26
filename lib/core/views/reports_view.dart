@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/core/views/widgets/reports_view_body.dart';
+import 'widgets/reports_view_body.dart';
 
 
 class ReportsView extends StatelessWidget {
@@ -7,7 +7,7 @@ class ReportsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(child: ReportsViewBody()),
     );
   }

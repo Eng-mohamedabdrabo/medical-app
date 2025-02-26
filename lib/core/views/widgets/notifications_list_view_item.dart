@@ -55,15 +55,15 @@ class NotificationsListViewItem extends StatelessWidget {
                             color:ColorManager.black,
                           ),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Row(
                           children: [
                             Text('02:39AM' , style: AppStyles.textStyleRegular8(context),),
-                            SizedBox(width: 4,),
+                            const SizedBox(width: 4,),
                             Container(
                               width: 10,
                               height: 10,
-                              decoration: ShapeDecoration(color:ColorManager.teal,shape: OvalBorder(
+                              decoration: const ShapeDecoration(color:ColorManager.teal,shape: OvalBorder(
                               )),
                             )
                           ],
@@ -81,7 +81,7 @@ class NotificationsListViewItem extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 38,)
+          const SizedBox(height: 38,)
         ],
       ),
     );

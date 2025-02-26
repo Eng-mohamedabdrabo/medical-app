@@ -34,7 +34,7 @@ class CallsListViewItem extends StatelessWidget {
           Row(
             children: [
               SvgPicture.asset(AppAssets.containerTasksCheck),
-              SizedBox(
+              const SizedBox(
                 width: 12,
               ),
               Text(
@@ -42,18 +42,18 @@ class CallsListViewItem extends StatelessWidget {
                 style: AppStyles.textStyleRegular14(context)
                     .copyWith(color: ColorManager.black),
               ),
-              Expanded(child: SizedBox()),
+              const Expanded(child: SizedBox()),
               SvgPicture.asset(AppAssets.imagesGreenCheck),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 4,
           ),
           Row(
             children: [
               SvgPicture.asset(AppAssets.containerTasksCalender),
 
-              SizedBox(
+              const SizedBox(
                 width: 12,
               ),
               Text(
@@ -63,7 +63,7 @@ class CallsListViewItem extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 14,
           ),
 

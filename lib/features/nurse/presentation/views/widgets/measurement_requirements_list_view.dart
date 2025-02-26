@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/features/nurse/presentation/views/widgets/measurement_requirements_list_view_item.dart';
+import 'measurement_requirements_list_view_item.dart';
 
 
 class MeasurementRequirementsListView extends StatelessWidget {

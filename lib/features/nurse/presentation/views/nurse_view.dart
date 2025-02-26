@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:medical_app/features/nurse/presentation/views/widgets/nurse_cases_container.dart';
+import 'widgets/nurse_cases_container.dart';
 import '../../../../core/utils/app_router.dart';
 import '../../../../core/utils/assets.dart';
 import '../../../../core/utils/color_manager.dart';
@@ -37,7 +37,7 @@ class NurseView extends StatelessWidget {
                 firstContainerTitle: 'Calls',
                 firstContainerColor: ColorManager.skyBlue,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
               Padding(
@@ -47,7 +47,7 @@ class NurseView extends StatelessWidget {
                       GoRouter.of(context).push(AppRouter.kNurseCaseDetailsView);
 
                     },
-                    child: NurseCasesContainer()),
+                    child: const NurseCasesContainer()),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),

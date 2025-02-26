@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:medical_app/features/hr/presentation/views/widgets/hr_employee_list_view_item.dart';
+import 'hr_employee_list_view_item.dart';
 
 import '../../../../../core/utils/app_router.dart';
 
@@ -18,7 +18,7 @@ class HrEmployeeListView extends StatelessWidget {
             GoRouter.of(context).push(AppRouter.kHrShowEmployeeProfileView);
 
           },
-          child: HrEmployeeListViewItem(),
+          child: const HrEmployeeListViewItem(),
         ),
       ),
     );

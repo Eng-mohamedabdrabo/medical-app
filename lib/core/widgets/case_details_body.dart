@@ -10,12 +10,12 @@ class CaseDetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
         CustomCaseDetails(),
-        const SizedBox(height: 16),
+        SizedBox(height: 16),
         CustomCaseDescription(),
-        const SizedBox(height: 45),
+        SizedBox(height: 45),
       ],
     );
   }

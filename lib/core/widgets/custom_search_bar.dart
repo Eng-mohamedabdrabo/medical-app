@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:medical_app/core/utils/app_styles.dart';
-import 'package:medical_app/core/utils/assets.dart';
+import '../utils/app_styles.dart';
+import '../utils/assets.dart';
 import '../../constants.dart';
 import '../utils/color_manager.dart';
 
@@ -64,7 +64,6 @@ class CustomSearchBar extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         borderSide: BorderSide(
           color: ColorManager.gray.withValues(alpha: 0.3),
-          width: 1,
         ),
       ),
       focusedBorder: OutlineInputBorder(

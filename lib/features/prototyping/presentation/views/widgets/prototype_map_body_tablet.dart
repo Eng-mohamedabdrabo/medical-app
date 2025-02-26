@@ -18,12 +18,12 @@ class PrototypeMapBodyTablet extends StatelessWidget {
             'Prototype Map',
             style: AppStyles.textStyleRegular26(context),
           ))),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: SizedBox(
               height: 50,
             ),
           ),
-          CustomPrototypeTabletGrid(),
+          const CustomPrototypeTabletGrid(),
         ],
       ),
     );

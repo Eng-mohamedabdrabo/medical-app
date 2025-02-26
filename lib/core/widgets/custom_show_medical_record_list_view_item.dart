@@ -12,7 +12,7 @@ class CustomShowMedicalRecordListViewItem extends StatelessWidget {
     return Row(
       children: [
         SvgPicture.asset(AppAssets.imagesTealCircle),
-        SizedBox(width: 4,),
+        const SizedBox(width: 4,),
         Text(text ,style: AppStyles.textStyleRegular12(context),),
       ],
     );

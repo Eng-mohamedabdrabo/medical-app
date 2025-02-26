@@ -22,14 +22,14 @@ class HrEmployeeUpperSection extends StatelessWidget {
           ),
           color: ColorManager.black,
         ),
-        SizedBox(
+        const SizedBox(
           height: 24,
         ),
-        CustomSearchBar(hintText: 'Search for Employee'),
-        SizedBox(
+        const CustomSearchBar(hintText: 'Search for Employee'),
+        const SizedBox(
           height: 15,
         ),
-        SizedBox(
+        const SizedBox(
           height: 30,
           child: CustomEmployeeFilteringListView(),
         ),

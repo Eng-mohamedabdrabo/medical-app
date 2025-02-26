@@ -24,7 +24,8 @@ class AppAssets {
   static const String imagesUpperSplashContainer = 'assets/images/imagesUpperSplashContainer.svg';
   static const String imagesLowerSplashContainer = 'assets/images/imagesLowerSplashContainer.svg';
   static const String imagesFingerPrint = 'assets/images/imagesFingerPrint.svg';
-  static const String animationLoading = 'lottie/loading.json'; //Duration(duration:900 milliSeconds)
+  static const String animationLoading = 'lottie/loading.json';
+  static const String animationCircularLoading = 'lottie/circularLoading.json';
   static const String containerCalender = 'assets/images/containerCalender.svg';
   static const String containerCall = 'assets/images/containerCall.svg';
   static const String containerGender = 'assets/images/containerGender.svg';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/core/views/widgets/tasks_details_body.dart';
+import 'widgets/tasks_details_body.dart';
 
 
 class TasksDetailsView extends StatelessWidget {
@@ -7,10 +7,10 @@ class TasksDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 30),
+          padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 30),
           child: TasksDetailsBody(),
         ),
       ),

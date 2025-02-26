@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
-import 'package:medical_app/core/utils/size_config.dart';
+import 'package:flutter/material.dart';
+import 'size_config.dart';
 
 import 'color_manager.dart';
 
@@ -13,7 +13,7 @@ abstract class AppStyles {
   }
 
   static textStyleRegular26(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontSize: 26,
       fontWeight: FontWeight.w400,
       color: ColorManager.teal,
@@ -21,7 +21,7 @@ abstract class AppStyles {
   }
 
   static textStyleRegular14(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w400,
       color: ColorManager.gray,
@@ -29,7 +29,7 @@ abstract class AppStyles {
   }
 
   static textStyleRegular20(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontSize: 20,
       fontWeight: FontWeight.w400,
       color: ColorManager.teal,
@@ -37,42 +37,42 @@ abstract class AppStyles {
   }
 
   static textStyleRegular18(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontSize: 18,
       fontWeight: FontWeight.w400,
       color: ColorManager.white,
     );
   }
   static textStyleMedium16(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w500,
       color: ColorManager.teal,
     );
   }
   static textStyleRegular12(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontSize: 12,
       fontWeight: FontWeight.w400,
       color: ColorManager.gray,
     );
   }
   static textStyleRegular8(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontSize: 8,
       fontWeight: FontWeight.w400,
       color: ColorManager.gray,
     );
   }
   static textStyleSemiBold14(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w600,
       color: ColorManager.orange,
     );
   }
   static textStyleRegular10(BuildContext context) {
-    return TextStyle(
+    return const TextStyle(
       fontSize: 10,
       fontWeight: FontWeight.w400,
       color: ColorManager.teal,

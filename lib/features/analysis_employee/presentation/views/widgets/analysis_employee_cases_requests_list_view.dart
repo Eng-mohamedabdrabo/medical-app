@@ -6,8 +6,8 @@ class AnalysisEmployeeCasesRequestsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(itemCount:4 ,itemBuilder: (context, index)=> Padding(
-      padding: const EdgeInsets.only(top: 24.0),
+    return ListView.builder(itemCount:4 ,itemBuilder: (context, index)=> const Padding(
+      padding: EdgeInsets.only(top: 24.0),
       child: AnalysisEmployeeCasesRequestsListViewItem(),
     ) ,);
   }

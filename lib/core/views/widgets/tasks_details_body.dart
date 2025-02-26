@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/core/views/widgets/reports_and_tasks_details_message.dart';
-import 'package:medical_app/core/views/widgets/task_details_task_name.dart';
-import 'package:medical_app/core/views/widgets/tasks_details_to_do_items.dart';
+import 'reports_and_tasks_details_message.dart';
+import 'task_details_task_name.dart';
+import 'tasks_details_to_do_items.dart';
 
 import '../../utils/app_styles.dart';
 import '../../utils/assets.dart';
@@ -26,28 +26,28 @@ class TasksDetailsBody extends StatelessWidget {
             color: ColorManager.black,
           ),
         ),
-        SliverToBoxAdapter(
-          child: const SizedBox(height: 35),
+        const SliverToBoxAdapter(
+          child: SizedBox(height: 35),
         ),
-        SliverToBoxAdapter(
-          child: const TaskDetailsTaskName(),
+        const SliverToBoxAdapter(
+          child: TaskDetailsTaskName(),
         ),
-        SliverToBoxAdapter(
-          child: const SizedBox(height: 30),
+        const SliverToBoxAdapter(
+          child: SizedBox(height: 30),
         ),
-        SliverToBoxAdapter(
+        const SliverToBoxAdapter(
           child: ReportsAndTasksDetailsMessage(
             image: AppAssets.imagesATaskDetailsHospital,
           ),
         ),
-        SliverToBoxAdapter(
-          child: const SizedBox(height: 20),
+        const SliverToBoxAdapter(
+          child: SizedBox(height: 20),
         ),
-        SliverToBoxAdapter(
+        const SliverToBoxAdapter(
           child: TasksDetailsToDoItems(),
         ),
-        SliverToBoxAdapter(
-          child: const SizedBox(height: 20),
+        const SliverToBoxAdapter(
+          child: SizedBox(height: 20),
         ),
         SliverToBoxAdapter(
           child: CustomTextFormField(
@@ -60,8 +60,8 @@ class TasksDetailsBody extends StatelessWidget {
             ),
           ),
         ),
-        SliverToBoxAdapter(
-          child: const SizedBox(height: 30),
+        const SliverToBoxAdapter(
+          child: SizedBox(height: 30),
         ),
         SliverFillRemaining(
           hasScrollBody: false,
@@ -72,7 +72,7 @@ class TasksDetailsBody extends StatelessWidget {
                 text: 'Execution',
                 onPressed: () {},
               ),
-              SizedBox(height: 12,)
+              const SizedBox(height: 12,)
             ],
           ),
         ),

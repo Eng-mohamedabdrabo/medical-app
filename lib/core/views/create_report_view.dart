@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/core/utils/app_styles.dart';
-import 'package:medical_app/core/utils/color_manager.dart';
-import 'package:medical_app/core/widgets/custom_text_field.dart';
-import 'package:medical_app/core/widgets/custom_upload_imager_container.dart';
-import 'package:medical_app/core/widgets/custom_elevated_button.dart';
-import 'package:medical_app/core/widgets/custom_header.dart';
+import '../utils/app_styles.dart';
+import '../utils/color_manager.dart';
+import '../widgets/custom_text_field.dart';
+import '../widgets/custom_upload_imager_container.dart';
+import '../widgets/custom_elevated_button.dart';
+import '../widgets/custom_header.dart';
 
 class CreateReportView extends StatelessWidget {
   const CreateReportView({super.key});
@@ -40,7 +40,7 @@ class CreateReportView extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    CustomUploadImageContainer(),
+                    const CustomUploadImageContainer(),
                   ],
                 ),
               ),

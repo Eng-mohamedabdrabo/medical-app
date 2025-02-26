@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:medical_app/core/models/my_profile_model.dart';
-import 'package:medical_app/core/utils/app_styles.dart';
+import '../../models/my_profile_model.dart';
+import '../../utils/app_styles.dart';
 
 class MyProfileListViewItem extends StatelessWidget {
   const MyProfileListViewItem({

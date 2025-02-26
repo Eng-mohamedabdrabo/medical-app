@@ -18,7 +18,7 @@ class CustomCaseDetailsItem extends StatelessWidget {
           style: AppStyles.textStyleRegular14(context)
               .copyWith(color: ColorManager.gray.withValues(alpha: 0.6)),
         ),
-        Spacer(),
+        const Spacer(),
         caseDetailsModel.data
       ],
     );

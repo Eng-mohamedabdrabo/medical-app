@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:medical_app/core/views/widgets/tasks_list_view.dart';
+import '../../../../../core/views/widgets/tasks_list_view.dart';
 
 import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/app_styles.dart';
@@ -30,7 +30,7 @@ class _ManagerTasksBodyState extends State<ManagerTasksBody> {
               .copyWith(color: ColorManager.black),
           color: ColorManager.black,
         ),
-        SizedBox(
+        const SizedBox(
           height: 24,
         ),
         Row(
@@ -42,7 +42,7 @@ class _ManagerTasksBodyState extends State<ManagerTasksBody> {
                     buildShowModalBottomSheet(context);
                   }),
             ),
-            SizedBox(
+            const SizedBox(
               width: 12,
             ),
             CustomAddButton(
@@ -52,7 +52,7 @@ class _ManagerTasksBodyState extends State<ManagerTasksBody> {
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
         Expanded(child: TasksListView(

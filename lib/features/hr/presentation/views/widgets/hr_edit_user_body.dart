@@ -23,7 +23,7 @@ class HrEditUserBody extends StatelessWidget {
                 color: ColorManager.black,
               ),
               const SizedBox(height: 24),
-              CreateAndEditUserData(),
+              // const CreateAndEditUserData(),
               const SizedBox(height: 24),
 
             ],

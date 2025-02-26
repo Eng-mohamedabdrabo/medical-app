@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/core/utils/app_styles.dart';
-import 'package:medical_app/core/utils/color_manager.dart';
+import '../../utils/app_styles.dart';
+import '../../utils/color_manager.dart';
 
 import '../../../constants.dart';
 

@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:medical_app/features/receptionist/presentation/views/widgets/calls_list_view.dart';
+import 'widgets/calls_list_view.dart';
 
 import '../../../../core/utils/app_router.dart';
 import '../../../../core/utils/app_styles.dart';
@@ -20,7 +20,7 @@ class ReceptionistCallsView extends StatefulWidget {
 }
 
 class _ReceptionistCallsViewState extends State<ReceptionistCallsView> {
- DateTime? selectedDate;
+  DateTime? selectedDate;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,9 @@ class _ReceptionistCallsViewState extends State<ReceptionistCallsView> {
                 ),
                 color: ColorManager.black,
               ),
-              SizedBox(height: 24,),
+              const SizedBox(
+                height: 24,
+              ),
               Row(
                 children: [
                   Expanded(
@@ -47,35 +49,42 @@ class _ReceptionistCallsViewState extends State<ReceptionistCallsView> {
                           buildShowModalBottomSheet(context);
                         }),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 12,
                   ),
-                  CustomAddButton(onTap: () {
-                    GoRouter.of(context).push(AppRouter.kReceptionistCreateCallView);
-                  },),
+                  CustomAddButton(
+                    onTap: () {
+                      GoRouter.of(context)
+                          .push(AppRouter.kReceptionistCreateCallView);
+                    },
+                  ),
                 ],
               ),
-              SizedBox(height: 30,),
-              Expanded(child: CallsListView())
+              const SizedBox(
+                height: 30,
+              ),
+              const Expanded(child: CallsListView())
             ],
           ),
         ),
       ),
     );
   }
- Future<void> buildShowModalBottomSheet(BuildContext context) {
-   return showModalBottomSheet(
-     context: context,
-     builder: (BuildContext context) {
-       return CustomCalendarSheet(
-         onDateSelected: (date) {
-           setState(() {
-             selectedDate = date;
-           });
-         },
-       );
-     },
-   );
- }
-}
 
+  Future<void> buildShowModalBottomSheet(BuildContext context) {
+    return showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return CustomCalendarSheet(
+          onDateSelected: (date) {
+            setState(
+              () {
+                selectedDate = date;
+              },
+            );
+          },
+        );
+      },
+    );
+  }
+}

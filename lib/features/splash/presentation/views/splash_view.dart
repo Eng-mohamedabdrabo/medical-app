@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/features/splash/presentation/views/widgets/splash_item.dart';
+import 'widgets/splash_item.dart';
 import '../../../../core/widgets/custom_splash_and_login_background.dart';
 
 class SplashView extends StatelessWidget {
@@ -7,7 +7,7 @@ class SplashView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: CustomSplashAndLoginBackground(
         child: SplashItem(),
       ),

@@ -30,7 +30,7 @@ class NurseAddMeasurementBody extends StatelessWidget {
                       .copyWith(color: ColorManager.black),
                   color: ColorManager.black,
                 ),
-                SizedBox(height: 24),
+                const SizedBox(height: 24),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -40,20 +40,20 @@ class NurseAddMeasurementBody extends StatelessWidget {
                         AppAssets.containerSolidDecoration,
                       ),
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          CustomDataInfoHeader(),
-                          SizedBox(height: 8),
+                          const CustomDataInfoHeader(),
+                          const SizedBox(height: 8),
                           Text(
                             'Details note : Lorem Ipsum is simply dummy text of printing and typesetting industry.Lorem Ipsum',
                             style: AppStyles.textStyleRegular12(context)
                                 .copyWith(color: ColorManager.black),
                           ),
-                          SizedBox(height: 20),
-                          SizedBox(
+                          const SizedBox(height: 20),
+                          const SizedBox(
                             height: 40,
                             child: MeasurementRequirementsListView(),
                           ),
@@ -62,7 +62,7 @@ class NurseAddMeasurementBody extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 Text(
                   'Add Measurement',
                   style: AppStyles.textStyleRegular14(context).copyWith(
@@ -70,16 +70,16 @@ class NurseAddMeasurementBody extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                SizedBox(height: 16),
-                Column(
+                const SizedBox(height: 16),
+                const Column(
                   children: [
                     NurseMeasurementResultRow(requirement: 'Blood Pressure'),
                     SizedBox(height: 16),
                     NurseMeasurementResultRow(requirement: 'Sugar Analysis'),
                   ],
                 ),
-                SizedBox(height: 16),
-                NurseAddMeasurementTextField(
+                const SizedBox(height: 16),
+                const NurseAddMeasurementTextField(
                   label: 'Add Note',
                   contentPadding: EdgeInsets.symmetric(
                     vertical: 60,

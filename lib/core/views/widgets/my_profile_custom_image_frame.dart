@@ -15,7 +15,7 @@ class RPSCustomPainter extends CustomPainter {
     Paint paint0Stroke = Paint()
       ..style = PaintingStyle.stroke
       ..strokeWidth = size.width * 0.006719527;
-    paint0Stroke.color = Color(0xff40BFB6).withValues(alpha: 1.0);
+    paint0Stroke.color = const Color(0xff40BFB6).withValues(alpha: 1.0);
     canvas.drawPath(path_0, paint0Stroke);
 
     Path path_1 = Path();
@@ -33,7 +33,7 @@ class RPSCustomPainter extends CustomPainter {
     path_1.close();
 
     Paint paint1Fill = Paint()..style = PaintingStyle.fill;
-    paint1Fill.color = Color(0xff95D5D3).withValues(alpha: 1.0);
+    paint1Fill.color = const Color(0xff95D5D3).withValues(alpha: 1.0);
     canvas.drawPath(path_1, paint1Fill);
 
     Path path_2 = Path();
@@ -51,7 +51,7 @@ class RPSCustomPainter extends CustomPainter {
     path_2.close();
 
     Paint paint2Fill = Paint()..style = PaintingStyle.fill;
-    paint2Fill.color = Color(0xff82CECB).withValues(alpha: 1.0);
+    paint2Fill.color = const Color(0xff82CECB).withValues(alpha: 1.0);
     canvas.drawPath(path_2, paint2Fill);
 
     Path path_3 = Path();
@@ -62,7 +62,7 @@ class RPSCustomPainter extends CustomPainter {
     path_3.close();
 
     Paint paint3Fill = Paint()..style = PaintingStyle.fill;
-    paint3Fill.color = Color(0xffFFFFFF).withValues(alpha: 1.0);
+    paint3Fill.color = const Color(0xffFFFFFF).withValues(alpha: 1.0);
     canvas.drawPath(path_3, paint3Fill);
   }
 

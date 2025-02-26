@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/features/doctor/presentation/views/widgets/add_measurement_container.dart';
-import 'package:medical_app/features/doctor/presentation/views/widgets/add_measurement_text_field.dart';
-import 'package:medical_app/features/doctor/presentation/views/widgets/add_medical_request_list_view.dart';
+import 'widgets/add_measurement_container.dart';
+import 'widgets/add_measurement_text_field.dart';
+import 'widgets/add_medical_request_list_view.dart';
 
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/utils/color_manager.dart';
@@ -27,26 +27,26 @@ class DoctorRequestMedicalMeasurementView extends StatelessWidget {
                 ),
                 color: ColorManager.black,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 24,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 39,
                 child: AddMedicalRequestListView(),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
-              AddMeasurementContainer(),
-              SizedBox(
+              const AddMeasurementContainer(),
+              const SizedBox(
                 height: 30,
               ),
-              AddMeasurementTextField(
+              const AddMeasurementTextField(
                 label: 'Add Note',
                 contentPadding:
                 EdgeInsets.symmetric(horizontal: 16.0, vertical: 50.0),
               ),
-              Expanded(child: SizedBox()),
+              const Expanded(child: SizedBox()),
               CustomElevatedButton(text: 'send', onPressed: (){})
             ],
           ),

@@ -87,7 +87,7 @@ class _CustomCalendarSheetState extends State<CustomCalendarSheet> {
                     calendarBuilders: CalendarBuilders(
                       selectedBuilder: (context, date, _) {
                         return Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: ColorManager.teal,
                             shape: BoxShape.circle,
                           ),

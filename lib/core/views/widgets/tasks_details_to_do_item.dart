@@ -14,7 +14,7 @@ class TasksDetailsToDoItem extends StatelessWidget {
     return Row(
       children: [
         SvgPicture.asset(AppAssets.imagesGreenCheck),
-        SizedBox(width: 10,),
+        const SizedBox(width: 10,),
         Text('Lorem Ipsum is simply dummy text of' , style: AppStyles.textStyleRegular12(context),)
       ],
     );

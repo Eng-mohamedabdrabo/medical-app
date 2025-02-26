@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/core/utils/assets.dart';
-import 'package:medical_app/core/views/widgets/reports_and_tasks_details_message.dart';
-import 'package:medical_app/core/views/widgets/reports_details_custom_text_field.dart';
-import 'package:medical_app/core/views/widgets/reports_details_end_button.dart';
-import 'package:medical_app/core/views/widgets/reports_details_reply_message.dart';
+import '../../utils/assets.dart';
+import 'reports_and_tasks_details_message.dart';
+import 'reports_details_custom_text_field.dart';
+import 'reports_details_end_button.dart';
+import 'reports_details_reply_message.dart';
 
 import '../../utils/app_styles.dart';
 import '../../utils/color_manager.dart';
@@ -32,7 +32,7 @@ class ReportsDetailsBody extends StatelessWidget {
                   color: ColorManager.black,
                 ),
                 const SizedBox(height: 10),
-                Row(
+                const Row(
                   children: [
                     Flexible(
                       child: ReportsDetailsCustomTextField(
@@ -43,9 +43,9 @@ class ReportsDetailsBody extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 25),
-                ReportsDetailsReplyMessage(),
+                const ReportsDetailsReplyMessage(),
                 const SizedBox(height: 13),
-                ReportsAndTasksDetailsMessage(image: AppAssets.imagesReportsDetailsHospital,),
+                const ReportsAndTasksDetailsMessage(image: AppAssets.imagesReportsDetailsHospital,),
               ],
             ),
           ),
@@ -53,7 +53,7 @@ class ReportsDetailsBody extends StatelessWidget {
             hasScrollBody: false,
             child: Column(
               children: [
-                Expanded(child: SizedBox(
+                const Expanded(child: SizedBox(
                   height: 88,
                 )),
                 ReportsDetailsCustomTextField(

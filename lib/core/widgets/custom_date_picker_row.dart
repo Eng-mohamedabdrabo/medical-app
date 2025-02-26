@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:medical_app/core/utils/app_styles.dart';
-import 'package:medical_app/core/utils/assets.dart';
-import 'package:medical_app/core/utils/color_manager.dart';
+import '../utils/app_styles.dart';
+import '../utils/assets.dart';
+import '../utils/color_manager.dart';
 
 class CustomDatePickerRow extends StatelessWidget {
   final DateTime? selectedDate;
@@ -21,10 +21,10 @@ class CustomDatePickerRow extends StatelessWidget {
         Expanded(
           child: Container(
             padding: const EdgeInsets.all(16),
-            decoration: ShapeDecoration(
+            decoration: const ShapeDecoration(
               shape: RoundedRectangleBorder(
-                borderRadius: const BorderRadius.horizontal(left: Radius.circular(8),),
-                side: BorderSide(width: 1, color: ColorManager.gray),
+                borderRadius: BorderRadius.horizontal(left: Radius.circular(8),),
+                side: BorderSide(color: ColorManager.gray),
               ),
             ),
             child: Text(
@@ -49,7 +49,7 @@ class CustomDatePickerRow extends StatelessWidget {
             ),
             child: SvgPicture.asset(
               AppAssets.imagesCalender,
-              colorFilter: ColorFilter.mode(
+              colorFilter: const ColorFilter.mode(
                 ColorManager.white,
                 BlendMode.srcIn,
               ),

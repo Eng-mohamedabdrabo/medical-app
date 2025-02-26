@@ -11,7 +11,7 @@ class AttendanceNoteWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
           color: ColorManager.orange.withValues(alpha: 0.2),
           borderRadius: BorderRadius.circular(16)),
@@ -22,11 +22,11 @@ class AttendanceNoteWidget extends StatelessWidget {
             'Note',
             style: AppStyles.textStyleSemiBold14(context),
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           Text(
-            "Details note : Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry",
+            'Details note : Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
             style: AppStyles.textStyleRegular12(context).copyWith(
               color: ColorManager.black,
             ),

@@ -15,7 +15,7 @@ class TaskDetailsTaskName extends StatelessWidget {
       width: MediaQuery.sizeOf(context).width < 800
           ? double.infinity
           : kBiggerScreensWidth,
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: ColorManager.gray.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(4),
@@ -26,7 +26,7 @@ class TaskDetailsTaskName extends StatelessWidget {
             'Task Name',
             style: AppStyles.textStyleRegular14(context),
           ),
-          Spacer(),
+          const Spacer(),
         ],
       ),
     );

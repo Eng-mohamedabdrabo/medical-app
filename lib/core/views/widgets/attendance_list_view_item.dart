@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:medical_app/core/models/attendance_model.dart';
+import '../../models/attendance_model.dart';
 
 import '../../utils/app_router.dart';
 import '../../utils/app_styles.dart';
@@ -39,7 +39,7 @@ class AttendanceListViewItem extends StatelessWidget {
                 attendanceModel.title,
                 style: AppStyles.textStyleRegular14(context),
               ),
-              Expanded(child: SizedBox()),
+              const Expanded(child: SizedBox()),
               GestureDetector(
                   onTap: () {
                     GoRouter.of(context).push(AppRouter.kFingerprintView);
@@ -47,14 +47,14 @@ class AttendanceListViewItem extends StatelessWidget {
                   child: SvgPicture.asset(attendanceModel.icon)),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 4,
           ),
           Text(
             attendanceModel.subtitle,
             style: AppStyles.textStyleRegular10(context),
           ),
-          SizedBox(
+          const SizedBox(
             height: 14,
           ),
           GestureDetector(

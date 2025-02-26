@@ -11,8 +11,8 @@ class ReportsDetailsEndButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16),
-      decoration: ShapeDecoration(
+      padding: const EdgeInsets.all(16),
+      decoration: const ShapeDecoration(
         color: ColorManager.brightRed,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.horizontal(

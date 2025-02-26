@@ -16,7 +16,7 @@ class MyProfileBackground extends StatelessWidget {
             ColorManager.teal.withValues(alpha: 0.3),
             ColorManager.teal,
           ],
-          stops: [0.3, 1.0],
+          stops: const [0.3, 1.0],
         ),
       ),
       child: Center(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:medical_app/core/utils/assets.dart';
-import 'package:medical_app/core/utils/color_manager.dart';
-import 'package:medical_app/core/widgets/custom_home_view.dart';
-import 'package:medical_app/features/doctor/presentation/views/widgets/doctor_cases_container.dart';
+import '../../../../core/utils/assets.dart';
+import '../../../../core/utils/color_manager.dart';
+import '../../../../core/widgets/custom_home_view.dart';
+import 'widgets/doctor_cases_container.dart';
 
 import '../../../../core/utils/app_router.dart';
 
@@ -37,7 +37,7 @@ class DoctorView extends StatelessWidget {
                 firstContainerTitle: 'Calls',
                 firstContainerColor: ColorManager.skyBlue,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
               Padding(

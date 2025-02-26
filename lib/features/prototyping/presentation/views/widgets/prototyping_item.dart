@@ -29,7 +29,6 @@ class PrototypingItem extends StatelessWidget {
             color: backgroundColor ?? Colors.transparent,
             shape: RoundedRectangleBorder(
               side: const BorderSide(
-                width: 1,
                 color: ColorManager.gray,
               ),
               borderRadius: BorderRadius.circular(12),

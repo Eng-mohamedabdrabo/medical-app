@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/features/doctor/presentation/views/widgets/doctor_calls_list_view.dart';
+import 'widgets/doctor_calls_list_view.dart';
 
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/utils/color_manager.dart';
@@ -23,8 +23,8 @@ class DoctorCallsView extends StatelessWidget {
                 ),
                 color: ColorManager.black,
               ),
-              SizedBox(height: 24,),
-              Expanded(child: DoctorCallsListView())
+              const SizedBox(height: 24,),
+              const Expanded(child: DoctorCallsListView())
             ],
           ),
         ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/core/models/attendance_model.dart';
-import 'package:medical_app/core/views/widgets/attendance_list_view_item.dart';
+import '../../models/attendance_model.dart';
+import 'attendance_list_view_item.dart';
 
 import '../../utils/assets.dart';
 

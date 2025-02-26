@@ -23,7 +23,7 @@ class CustomAddButton extends StatelessWidget {
         ),
         child: SvgPicture.asset(
           AppAssets.imagesPlus,
-          colorFilter: ColorFilter.mode(
+          colorFilter: const ColorFilter.mode(
             ColorManager.white,
             BlendMode.srcIn,
           ),

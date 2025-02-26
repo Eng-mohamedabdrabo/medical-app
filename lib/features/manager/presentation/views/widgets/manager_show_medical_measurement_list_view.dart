@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/core/widgets/custom_show_medical_measurement_list_view_item.dart';
+import '../../../../../core/widgets/custom_show_medical_measurement_list_view_item.dart';
 
 class ManagerShowMedicalMeasurementListView extends StatelessWidget {
   const ManagerShowMedicalMeasurementListView({super.key});

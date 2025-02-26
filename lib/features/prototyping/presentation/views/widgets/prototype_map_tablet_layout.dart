@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/features/prototyping/presentation/views/widgets/prototype_map_body_tablet.dart';
+import 'prototype_map_body_tablet.dart';
 
 import '../../../../../core/widgets/custom_splash_and_login_background.dart';
 
@@ -8,7 +8,7 @@ class PrototypeMapTabletLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomSplashAndLoginBackground(
+    return const CustomSplashAndLoginBackground(
       child: PrototypeMapBodyTablet()
     );
   }
