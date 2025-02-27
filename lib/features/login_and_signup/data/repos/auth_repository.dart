@@ -1,4 +1,4 @@
-import '../../../../core/network/auth_api_helper.dart';
+import '../../../../core/network/dio_helper.dart';
 import '../../presentation/manager/auth_cubit/register_model.dart';
 import '../models/profile_model.dart';
 import '../models/login.dart';
@@ -11,7 +11,7 @@ class AuthRepository {
     required String type,
   }) async {
     try {
-      final response = await AuthDioHelper.postData(
+      final response = await DioHelper.postData(
         url: '/login',
         data: {
           'email': email,
@@ -26,7 +26,7 @@ class AuthRepository {
       if (response.data['status'] == 1) {
         LoginModel loginModel = LoginModel.fromJson(response.data);
 
-        await AuthDioHelper.updateToken(loginModel.data.accessToken);
+        await DioHelper.updateToken(loginModel.data.accessToken);
 
         print('Saved Token: ${loginModel.data.accessToken}');
 
@@ -53,7 +53,7 @@ class AuthRepository {
     required String address,
   }) async {
     try {
-      final response = await AuthDioHelper.postData(
+      final response = await DioHelper.postData(
         url: '/register',
         data: {
           'first_name': firstName,
@@ -75,7 +75,7 @@ class AuthRepository {
       if (response.data['status'] == 1) {
         RegisterModel registerModel = RegisterModel.fromJson(response.data);
 
-        await AuthDioHelper.updateToken(registerModel.data.accessToken);
+        await DioHelper.updateToken(registerModel.data.accessToken);
 
         print('Saved Token: ${registerModel.data.accessToken}');
 
@@ -90,7 +90,7 @@ class AuthRepository {
 
   Future<ProfileModel> showProfile({required int userId}) async {
     try {
-      final response = await AuthDioHelper.postData(
+      final response = await DioHelper.postData(
         url: '/show-profile',
         data: {'user_id': userId},
       );

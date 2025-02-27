@@ -9,12 +9,14 @@ class CustomSearchBar extends StatelessWidget {
   final String hintText;
   final String? leadingIcon;
   final EdgeInsetsGeometry? contentPadding;
+  final ValueChanged<String>? onChanged;
 
   const CustomSearchBar({
     super.key,
     required this.hintText,
     this.leadingIcon,
     this.contentPadding,
+    this.onChanged,
   });
 
   @override
@@ -23,36 +25,11 @@ class CustomSearchBar extends StatelessWidget {
       width: MediaQuery.sizeOf(context).width < 800
           ? double.infinity
           : kBiggerScreensWidth,
-      child: contentPadding != null
-          ? Stack(
-        alignment: Alignment.topLeft,
-        children: [
-          TextFormField(
-            cursorColor: ColorManager.teal,
-            style: const TextStyle(color: ColorManager.teal),
-            decoration: _buildInputDecoration(context),
-          ),
-          Positioned(
-            left: 18,
-            top: 8,
-            child: Text(
-              hintText,
-              style: AppStyles.textStyleRegular14(context).copyWith(
-                color: ColorManager.gray.withValues(alpha: 0.8),
-              ),
-            ),
-          ),
-        ],
-      )
-          : TextFormField(
+      child: TextFormField(
         cursorColor: ColorManager.teal,
         style: const TextStyle(color: ColorManager.teal),
-        decoration: _buildInputDecoration(context).copyWith(
-          hintText: hintText,
-          hintStyle: AppStyles.textStyleRegular14(context).copyWith(
-            color: ColorManager.gray.withValues(alpha: 0.8),
-          ),
-        ),
+        onChanged: onChanged,
+        decoration: _buildInputDecoration(context),
       ),
     );
   }
@@ -79,7 +56,7 @@ class CustomSearchBar extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12.0),
             child: SvgPicture.asset(
-              AppAssets.imagesSearch, // Assuming search icon is here
+              AppAssets.imagesSearch,
               height: 20,
               width: 20,
             ),
@@ -91,6 +68,10 @@ class CustomSearchBar extends StatelessWidget {
               child: SvgPicture.asset(leadingIcon!),
             ),
         ],
+      ),
+      hintText: hintText,
+      hintStyle: AppStyles.textStyleRegular14(context).copyWith(
+        color: ColorManager.gray.withValues(alpha: 0.8),
       ),
     );
   }

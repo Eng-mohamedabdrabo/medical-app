@@ -1,12 +1,35 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/color_manager.dart';
+import '../../../data/models/all_users_model.dart';
 
 class HrEmployeeListViewItem extends StatelessWidget {
-  const HrEmployeeListViewItem({super.key});
+  const HrEmployeeListViewItem({super.key, required this.usersModel});
+  final AllUsersModel usersModel;
+
+  String getUserAvatar() {
+    switch (usersModel.type.toLowerCase()) {
+      case 'doctor':
+        return 'assets/images/doctor.svg';
+      case 'hr':
+        return 'assets/images/hr.svg';
+      case 'receptionist':
+        return 'assets/images/receptionist.svg';
+      case 'analysis':
+        return 'assets/images/analysis.svg';
+      case 'manger':
+        return 'assets/images/manager.svg';
+      case 'nurse':
+        return 'assets/images/nurse.svg';
+      default:
+        return 'assets/images/default.svg';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +44,7 @@ class HrEmployeeListViewItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.4),
+                  color: Colors.black.withOpacity(0.4),
                   blurRadius: 8,
                   offset: const Offset(0, 8),
                 ),
@@ -30,11 +53,27 @@ class HrEmployeeListViewItem extends StatelessWidget {
           ),
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
-            child: Image.asset(
-              AppAssets.imagesProfilePic,
+            child: CachedNetworkImage(
+              imageUrl: usersModel.avatar,
               fit: BoxFit.cover,
               width: 45,
               height: 45,
+              errorWidget: (context, url, error) {
+                return SvgPicture.asset(
+                  getUserAvatar(),
+                  fit: BoxFit.cover,
+                  width: 45,
+                  height: 45,
+                );
+              },
+              placeholder: (context, url) {
+                return LottieBuilder.asset(
+                  AppAssets.animationCircularLoading,
+                  fit: BoxFit.cover,
+                  width: 45,
+                  height: 45,
+                );
+              },
             ),
           ),
           Positioned(
@@ -44,20 +83,18 @@ class HrEmployeeListViewItem extends StatelessWidget {
             bottom: 0,
             child: Align(
               alignment: Alignment.bottomRight,
-              child: SvgPicture.asset(
-                AppAssets.imagesActive,
-              ),
+              child: SvgPicture.asset(AppAssets.imagesActive),
             ),
           ),
         ],
       ),
       title: Text(
-        'Mohamed Abdrabo',
+        usersModel.firstName,
         style: AppStyles.textStyleRegular14(context)
             .copyWith(color: ColorManager.black),
       ),
       subtitle: Text(
-        'Specialist - Nurse',
+        'Specialist - ${usersModel.type}',
         style: AppStyles.textStyleRegular12(context),
       ),
     );

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/utils/color_manager.dart';
 import '../../../../../core/widgets/custom_employee_filtering_list_view.dart';
 import '../../../../../core/widgets/custom_header.dart';
 import '../../../../../core/widgets/custom_search_bar.dart';
+import '../../manager/all_users_cubit/all_users_cubit.dart';
 
 class HrEmployeeUpperSection extends StatelessWidget {
   const HrEmployeeUpperSection({
@@ -25,7 +27,12 @@ class HrEmployeeUpperSection extends StatelessWidget {
         const SizedBox(
           height: 24,
         ),
-        const CustomSearchBar(hintText: 'Search for Employee'),
+        CustomSearchBar(
+          hintText: 'Search for Employee',
+          onChanged: (value) {
+            context.read<AllUsersCubit>().searchEmployee(value);
+          },
+        ),
         const SizedBox(
           height: 15,
         ),

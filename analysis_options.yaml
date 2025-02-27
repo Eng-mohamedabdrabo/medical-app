@@ -1,6 +1,5 @@
 analyzer:
   errors:
-    deprecated_member_use: ignore
     library_prefixes: ignore
     library_private_types_in_public_api: ignore
     avoid_function_literals_in_foreach_calls: ignore

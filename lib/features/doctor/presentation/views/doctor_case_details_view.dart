@@ -43,7 +43,7 @@ class _DoctorCaseDetailsViewState extends State<DoctorCaseDetailsView> with Sing
     );
 
     _slideAnimation = Tween<Offset>(
-      begin: const Offset(1.0, 0.0), // Start off-screen to the right
+      begin: const Offset(1.0, 0.0),
       end: Offset.zero,
     ).animate(CurvedAnimation(
       parent: _animationController,
