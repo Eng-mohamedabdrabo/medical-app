@@ -9,10 +9,13 @@ import 'features/hr/data/repos/all_users_repo.dart';
 import 'features/hr/presentation/manager/all_users_cubit/all_users_cubit.dart';
 import 'features/login_and_signup/data/repos/auth_repository.dart';
 import 'features/login_and_signup/presentation/manager/auth_cubit/auth_cubit.dart';
+import 'features/receptionist/data/repos/create_call_repository.dart';
+import 'features/receptionist/presentation/manager/create_call_cubit/create_call_cubit.dart';
+import 'features/receptionist/presentation/manager/show_all_calls_cubit/show_all_calls_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await DioHelper.init(); // تأكد من انتظار التهيئة
+  await DioHelper.init();
 
   final authRepository = AuthRepository();
   final allUserRepository = AllUserRepository();
@@ -23,6 +26,8 @@ void main() async {
         providers: [
           BlocProvider(create: (context) => AuthCubit(authRepository)),
           BlocProvider(create: (context) => AllUsersCubit(allUserRepository)..getAllUsers()),
+          BlocProvider(create: (context) => ShowAllCallsCubit()..getAllCalls()),
+          BlocProvider(create: (context) => CreateCallCubit(CreateCallRepo())),
         ],
         child: const MyApp(),
       ),

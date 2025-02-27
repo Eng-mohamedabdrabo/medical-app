@@ -4,13 +4,14 @@ import 'package:flutter_svg/svg.dart';
 import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/color_manager.dart';
+import '../../../data/models/show_all_calls_model.dart';
 
 
 class CallsListViewItem extends StatelessWidget {
   const CallsListViewItem({
-    super.key,
+    super.key, required this.allCallsModel,
   });
-
+ final ShowAllCallsModel allCallsModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,7 +39,7 @@ class CallsListViewItem extends StatelessWidget {
                 width: 12,
               ),
               Text(
-                'Ebrahim Khaled',
+                allCallsModel.patientName,
                 style: AppStyles.textStyleRegular14(context)
                     .copyWith(color: ColorManager.black),
               ),
@@ -57,7 +58,7 @@ class CallsListViewItem extends StatelessWidget {
                 width: 12,
               ),
               Text(
-                '24 . 04 . 2021',
+                allCallsModel.createdAt,
                 style: AppStyles.textStyleRegular14(context)
                     .copyWith(color: ColorManager.black),
               ),

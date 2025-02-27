@@ -10,13 +10,13 @@ class CustomSearchBar extends StatelessWidget {
   final String? leadingIcon;
   final EdgeInsetsGeometry? contentPadding;
   final ValueChanged<String>? onChanged;
-
+  final TextEditingController? controller;
   const CustomSearchBar({
     super.key,
     required this.hintText,
     this.leadingIcon,
     this.contentPadding,
-    this.onChanged,
+    this.onChanged,  this.controller,
   });
 
   @override
@@ -26,6 +26,7 @@ class CustomSearchBar extends StatelessWidget {
           ? double.infinity
           : kBiggerScreensWidth,
       child: TextFormField(
+        controller: controller,
         cursorColor: ColorManager.teal,
         style: const TextStyle(color: ColorManager.teal),
         onChanged: onChanged,
