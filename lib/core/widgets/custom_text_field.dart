@@ -15,6 +15,7 @@ class CustomTextFormField extends StatelessWidget {
   final TextInputType keyboardType;
   final bool obscureText;
   final Iterable<String>? autofillHints;
+  final void Function(String)? onChanged;
 
   const CustomTextFormField({
     super.key,
@@ -28,15 +29,19 @@ class CustomTextFormField extends StatelessWidget {
     this.keyboardType = TextInputType.text,
     this.obscureText = false,
     this.autofillHints,
+    this.onChanged,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.sizeOf(context).width < 800
+      width: MediaQuery
+          .sizeOf(context)
+          .width < 800
           ? double.infinity
           : kBiggerScreensWidth,
       child: TextFormField(
+        onChanged:onChanged,
         controller: controller,
         cursorColor: ColorManager.teal,
         style: const TextStyle(color: ColorManager.teal),
@@ -57,14 +62,14 @@ class CustomTextFormField extends StatelessWidget {
       floatingLabelBehavior: FloatingLabelBehavior.auto,
       labelText: hintText,
       labelStyle: AppStyles.textStyleRegular14(context).copyWith(
-        color: ColorManager.gray.withOpacity(0.8),
+        color: ColorManager.gray.withValues(alpha: 0.8),
       ),
       filled: backgroundColor != null,
       fillColor: backgroundColor,
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8),
         borderSide: BorderSide(
-          color: ColorManager.gray.withOpacity(0.3),
+          color: ColorManager.gray.withValues(alpha: 0.3),
         ),
       ),
       focusedBorder: OutlineInputBorder(
@@ -97,7 +102,7 @@ class CustomTextFormField extends StatelessWidget {
         padding: const EdgeInsets.only(right: 12.0),
         child: Icon(
           trailingIcon,
-          color: ColorManager.gray.withOpacity(0.8),
+          color: ColorManager.gray.withValues(alpha: 0.8),
         ),
       )
           : null,

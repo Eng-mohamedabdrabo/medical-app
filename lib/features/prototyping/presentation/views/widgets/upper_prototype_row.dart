@@ -8,7 +8,7 @@ class UpperPrototypeRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return  const PrototypeRow(
       items: ['Doctor', 'Receptionist', 'Nurse'],
-      types: ['doctor', 'receptionist', 'nurse'], // يجب أن تكون حساسة
+      types: ['doctor', 'receptionist', 'Nurse'], // يجب أن تكون حساسة
     );
   }
 }

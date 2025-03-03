@@ -4,8 +4,9 @@ import '../utils/app_styles.dart';
 import '../utils/assets.dart';
 
 class CustomShowMedicalMeasurementListViewItem extends StatelessWidget {
-  const CustomShowMedicalMeasurementListViewItem({super.key, required this.text});
+  const CustomShowMedicalMeasurementListViewItem({super.key, required this.text, required this.anotherText});
    final String text;
+   final String anotherText;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -14,7 +15,7 @@ class CustomShowMedicalMeasurementListViewItem extends StatelessWidget {
         const SizedBox(width: 4,),
         Text(text ,style: AppStyles.textStyleRegular12(context),),
         const Spacer(),
-        Text('120 - 80' , style: AppStyles.textStyleRegular12(context),)
+        Text(anotherText , style: AppStyles.textStyleRegular12(context),)
       ],
     );
   }

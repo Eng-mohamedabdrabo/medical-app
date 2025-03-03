@@ -9,11 +9,10 @@ class AllUsersCubit extends Cubit<AllUsersState> {
 
   List<AllUsersModel> allUsers = [];
   List<AllUsersModel> displayedUsers = [];
-  AllUsersModel? selectedDoctor; // الطبيب المختار
+  AllUsersModel? selectedDoctor;
 
   AllUsersCubit(this.allUserRepository) : super(AllUsersInitialState());
 
-  /// 🔹 جلب جميع المستخدمين من جميع الأنواع
   Future<void> getAllUsers() async {
     emit(AllUsersLoadingState());
 
@@ -35,7 +34,6 @@ class AllUsersCubit extends Cubit<AllUsersState> {
     }
   }
 
-  /// 🔹 جلب المستخدمين بناءً على النوع (مثلاً جلب الأطباء فقط)
   Future<void> getFilteredUsers({required String type}) async {
     emit(AllUsersLoadingState());
 
@@ -48,7 +46,6 @@ class AllUsersCubit extends Cubit<AllUsersState> {
     }
   }
 
-  /// 🔹 البحث في جميع الموظفين (يشمل كل الأنواع)
   void searchEmployee(String query) {
     if (query.isEmpty) {
       emit(AllUsersSuccessState(allUsers: displayedUsers));
@@ -62,7 +59,6 @@ class AllUsersCubit extends Cubit<AllUsersState> {
     emit(AllUsersSearchState(filteredUsers: filteredUsers));
   }
 
-  /// 🔹 جلب الأطباء فقط
   Future<void> getDoctorsOnly() async {
     emit(AllUsersLoadingState());
 
@@ -75,7 +71,6 @@ class AllUsersCubit extends Cubit<AllUsersState> {
     }
   }
 
-  /// 🔹 البحث عن طبيب فقط
   void searchDoctor(String query) {
     if (query.isEmpty) {
       emit(AllUsersFilteredState(allUsers: displayedUsers));
@@ -89,13 +84,11 @@ class AllUsersCubit extends Cubit<AllUsersState> {
     emit(AllUsersSearchState(filteredUsers: filteredDoctors));
   }
 
-  /// 🔹 تحديد الطبيب المختار
   void selectDoctor(AllUsersModel doctor) {
     selectedDoctor = doctor;
-    emit(AllUsersFilteredState(allUsers: displayedUsers)); // تحديث الحالة بدون تغيير القائمة
+    emit(AllUsersFilteredState(allUsers: displayedUsers));
   }
 
-  /// 🔹 إعادة تعيين قائمة المستخدمين المعروضة
   void resetDisplayedUsers() {
     displayedUsers = List.from(allUsers);
     emit(AllUsersSuccessState(allUsers: displayedUsers));

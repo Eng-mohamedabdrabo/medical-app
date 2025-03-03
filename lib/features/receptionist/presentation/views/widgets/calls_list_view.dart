@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lottie/lottie.dart';
+import '../../../../../core/utils/assets.dart';
 import '../../manager/show_all_calls_cubit/show_all_calls_cubit.dart';
 import 'calls_list_view_item.dart';
 
@@ -26,7 +28,7 @@ class CallsListView extends StatelessWidget {
           );
         }
         else{
-          return const Center(child: CircularProgressIndicator(),);
+          return Center(child: LottieBuilder.asset(AppAssets.loading , height: 60,width: 60,),);
         }
       },
     );

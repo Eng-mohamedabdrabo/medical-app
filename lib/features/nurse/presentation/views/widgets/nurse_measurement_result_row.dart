@@ -7,9 +7,9 @@ import '../../../../../core/widgets/custom_text_field.dart';
 class NurseMeasurementResultRow extends StatelessWidget {
   const NurseMeasurementResultRow({
     super.key,
-    required this.requirement,
+    required this.requirement, this.onChanged,
   });
-
+  final void Function(String)? onChanged;
   final String requirement;
 
   @override
@@ -46,8 +46,8 @@ class NurseMeasurementResultRow extends StatelessWidget {
         const SizedBox(
           width: 16,
         ),
-        const Expanded(
-          child: CustomTextFormField(hintText: 'Add Value'),
+         Expanded(
+          child: CustomTextFormField(hintText: 'Add Value' , onChanged: onChanged),
         )
       ],
     );

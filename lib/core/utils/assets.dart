@@ -52,6 +52,7 @@ class AppAssets {
   static const String imagesRemove = 'assets/images/imagesRemove.svg';
   static const String imagesReportsDetailsHospital = 'assets/images/imagesReportsDetailsHospital.png';
   static const String imagesActive = 'assets/images/imagesActive.svg';
+  static const String imagesPlaceholder = 'assets/images/placeholder.svg';
   static const String imagesDeActive = 'assets/images/imagesDeactive.svg';
   static const String imagesCancel = 'assets/images/imagesCancel.svg';
   static const String imagesSearch = 'assets/images/imagesSearch.svg';
@@ -77,5 +78,6 @@ class AppAssets {
   static const String medicalRecord = 'assets/images/medicalRecord.png';
   static const String animationLogo = 'lottie/logo.json';
   static const String animationLogoWithName = 'lottie/logoWithName.json';
+  static const String loading = 'lottie/Loading (2).json';
 
 }

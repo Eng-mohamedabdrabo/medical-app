@@ -5,14 +5,15 @@ import '../../../../../constants.dart';
 
 
 class NurseAddMeasurementTextField extends StatelessWidget {
+  final void Function(String)? onChanged;
   final String label;
   final EdgeInsetsGeometry contentPadding;
-
+  final TextEditingController controller;
   const NurseAddMeasurementTextField({
     super.key,
     required this.label,
     this.contentPadding = const EdgeInsets.symmetric(
-        horizontal: 16.0, vertical: 12.0),
+        horizontal: 16.0, vertical: 12.0), required this.controller, this.onChanged,
   });
 
   @override
@@ -22,6 +23,7 @@ class NurseAddMeasurementTextField extends StatelessWidget {
           ? double.infinity
           : kBiggerScreensWidth,
       child: TextFormField(
+        onChanged: onChanged,
         decoration: InputDecoration(
           labelText: label,
           labelStyle: AppStyles.textStyleRegular14(context),

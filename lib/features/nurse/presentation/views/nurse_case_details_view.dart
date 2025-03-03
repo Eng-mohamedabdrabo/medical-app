@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import '../../../../core/widgets/case_details_body.dart';
 import '../../../../core/widgets/medical_measurement_body.dart';
 import 'widgets/nurse_case_details_analysis_list_view.dart';
 import 'widgets/nurse_have_request_notice_container.dart';
@@ -8,7 +9,6 @@ import '../../../../core/utils/app_router.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/utils/assets.dart';
 import '../../../../core/utils/color_manager.dart';
-import '../../../../core/widgets/custom_case_details.dart';
 import '../../../../core/widgets/custom_elevated_button.dart';
 import '../../../../core/widgets/custom_header.dart';
 
@@ -132,11 +132,12 @@ class _NurseCaseDetailsViewState extends State<NurseCaseDetailsView> with Ticker
   Widget _buildSelectedContent() {
     switch (selectedIndex) {
       case 0:
-        return const CustomCaseDetails(); // Assuming this represents "Medical Measurement"
+        return const CaseDetailsBody();
       case 1:
         return const MedicalMeasurementBody();
       default:
-        return const CustomCaseDetails(); // Default case for Medical Measurement
+        return const CaseDetailsBody();
+    // return const CustomCaseDetails(); // Default case for Medical Measurement
     }
   }
 }

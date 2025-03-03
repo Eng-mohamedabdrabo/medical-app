@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lottie/lottie.dart';
+import '../../../../../core/utils/assets.dart';
 import '../../../../hr/presentation/manager/all_users_cubit/all_users_cubit.dart';
 import 'select_doctor_list_view_item.dart';
 
@@ -21,7 +23,7 @@ class SelectDoctorListView extends StatelessWidget {
         } else if (state is AllUsersFailureState) {
           return const Center(child: Text('Failed to load doctors'));
         } else {
-          return const Center(child: CircularProgressIndicator());
+          return  Center(child: LottieBuilder.asset(AppAssets.loading , height: 60,width: 60,));
         }
       },
     );

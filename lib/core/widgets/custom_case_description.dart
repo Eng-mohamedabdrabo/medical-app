@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../../features/manager/data/models/show_case_details_model.dart';
 import '../utils/app_styles.dart';
 import '../utils/color_manager.dart';
 
 class CustomCaseDescription extends StatelessWidget {
-  const CustomCaseDescription({super.key});
-
+  const CustomCaseDescription({super.key, required this.caseDetailsModel});
+final ShowCaseDetailsModel caseDetailsModel;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -21,7 +22,7 @@ class CustomCaseDescription extends StatelessWidget {
           height: 6,
         ),
         Text(
-          "Details note : Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+          caseDetailsModel.description,
           style: AppStyles.textStyleRegular14(context).copyWith(
             color: ColorManager.black,
           ),

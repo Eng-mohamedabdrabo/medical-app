@@ -80,7 +80,7 @@ class _CreateAndEditUserDataState extends State<CreateAndEditUserData> {
             fillColor: Colors.white,
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: BorderSide(color: ColorManager.gray.withOpacity(0.4)),
+              borderSide: BorderSide(color: ColorManager.gray.withValues(alpha: 0.4)),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
@@ -146,7 +146,7 @@ class _CreateAndEditUserDataState extends State<CreateAndEditUserData> {
               child: Text(
                 value,
                 style: TextStyle(
-                  color: ColorManager.gray.withOpacity(0.8),
+                  color: ColorManager.gray.withValues(alpha: 0.8),
                 ),
               ),
             );
@@ -182,7 +182,7 @@ class _CreateAndEditUserDataState extends State<CreateAndEditUserData> {
               child: Text(
                 value,
                 style: TextStyle(
-                  color: ColorManager.gray.withOpacity(0.8),
+                  color: ColorManager.gray.withValues(alpha: 0.8),
                 ),
               ),
             );

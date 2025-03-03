@@ -7,20 +7,23 @@ import '../../utils/color_manager.dart';
 import '../../widgets/custom_data_info_header.dart';
 
 class ReportsDetailsReplyMessage extends StatelessWidget {
-  const ReportsDetailsReplyMessage({super.key});
-
+  const ReportsDetailsReplyMessage({super.key, required this.name, required this.date,  this.note});
+final String name;
+final String date;
+final String? note;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const CustomDataInfoHeader(
-
+         CustomDataInfoHeader(
+           date:date ,
+       name:name ,
         ),
         const SizedBox(
           height: 9,
         ),
         Text(
-          "Details note : Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's",
+          note??"doctor didn't add anything !",
           textAlign: TextAlign.justify,
           style: AppStyles.textStyleRegular12(context).copyWith(
             color: ColorManager.black,

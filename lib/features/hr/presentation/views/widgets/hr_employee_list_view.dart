@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lottie/lottie.dart';
 import '../../../../../core/utils/app_router.dart';
+import '../../../../../core/utils/assets.dart';
 import '../../../data/models/all_users_model.dart';
 import '../../manager/all_users_cubit/all_users_cubit.dart';
 import 'hr_employee_list_view_item.dart';
@@ -23,10 +25,9 @@ class HrEmployeeListView extends StatelessWidget {
 
   Widget _buildContent(AllUsersState state, BuildContext context) {
     if (state is AllUsersLoadingState) {
-      return const Center(
-        key: ValueKey('loading'),
-        child: CircularProgressIndicator(
-        ),
+      return Center(
+        key: const ValueKey('loading'),
+        child: LottieBuilder.asset(AppAssets.loading , height: 60,width: 60,),
       );
     } else if (state is AllUsersSuccessState) {
       return _buildList(state.allUsers, context);

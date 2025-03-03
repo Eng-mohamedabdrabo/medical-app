@@ -8,7 +8,8 @@ import 'widgets/doctor_cases_container.dart';
 import '../../../../core/utils/app_router.dart';
 
 class DoctorView extends StatelessWidget {
-  const DoctorView({super.key});
+
+  const DoctorView({super.key, });
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +45,8 @@ class DoctorView extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 12.0),
                 child: DoctorCasesContainer(
                   onTap: () {
-                    GoRouter.of(context).push(AppRouter.kDoctorCasesView);
+                    GoRouter.of(context).push(AppRouter.kDoctorCasesView,
+                    );
                   },
                 ),
               ),

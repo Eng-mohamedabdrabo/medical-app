@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../core/utils/assets.dart';
-
 import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/utils/color_manager.dart';
+import '../../../../receptionist/data/models/show_all_calls_model.dart';
 
 class DoctorCasesListViewItem extends StatelessWidget {
-  const DoctorCasesListViewItem({super.key, this.onTap});
+  const DoctorCasesListViewItem({super.key, this.onTap, required this.allCallsModel});
 
   final void Function()? onTap;
-
+  final ShowAllCallsModel allCallsModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -39,7 +39,7 @@ class DoctorCasesListViewItem extends StatelessWidget {
                 width: 12,
               ),
               Text(
-                'Task Name',
+                allCallsModel.patientName,
                 style: AppStyles.textStyleRegular14(context)
                     .copyWith(color: ColorManager.black),
               ),
@@ -55,7 +55,7 @@ class DoctorCasesListViewItem extends StatelessWidget {
                 width: 12,
               ),
               Text(
-                '24 . 04 . 2021',
+                allCallsModel.createdAt,
                 style: AppStyles.textStyleRegular14(context)
                     .copyWith(color: ColorManager.black),
               ),

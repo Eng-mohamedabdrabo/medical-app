@@ -54,7 +54,7 @@ class _SelectDoctorBodyState extends State<SelectDoctorBody> {
             if (query.isEmpty) {
               allUsersCubit.getDoctorsOnly();
             } else {
-              allUsersCubit.searchEmployee(query);
+              allUsersCubit.searchDoctor(query);
             }
           },
         ),
@@ -67,7 +67,7 @@ class _SelectDoctorBodyState extends State<SelectDoctorBody> {
           text: 'Select Doctor',
           onPressed: allUsersCubit.selectedDoctor == null
               ? (){}
-              : () {
+              : () async{
             Navigator.pop(context, allUsersCubit.selectedDoctor);
           },
         ),

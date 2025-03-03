@@ -4,7 +4,6 @@ import 'task_details_task_name.dart';
 import 'tasks_details_to_do_items.dart';
 
 import '../../utils/app_styles.dart';
-import '../../utils/assets.dart';
 import '../../utils/color_manager.dart';
 import '../../widgets/custom_elevated_button.dart';
 import '../../widgets/custom_header.dart';
@@ -37,7 +36,7 @@ class TasksDetailsBody extends StatelessWidget {
         ),
         const SliverToBoxAdapter(
           child: ReportsAndTasksDetailsMessage(
-            image: AppAssets.imagesATaskDetailsHospital,
+            image: ('assets/images/doctor.svg'),
           ),
         ),
         const SliverToBoxAdapter(

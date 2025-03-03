@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../features/manager/data/models/show_case_details_model.dart';
 import '../models/case_details_model.dart';
 import '../utils/app_styles.dart';
 import '../utils/assets.dart';
@@ -8,8 +9,8 @@ import '../utils/color_manager.dart';
 import 'custom_case_details_item.dart';
 
 class CustomCaseDetails extends StatefulWidget {
-  const CustomCaseDetails({super.key});
-
+  const CustomCaseDetails({super.key, required this.caseDetailsModel});
+ final ShowCaseDetailsModel caseDetailsModel;
   @override
   State<CustomCaseDetails> createState() => _CustomCaseDetailsState();
 }
@@ -21,7 +22,7 @@ class _CustomCaseDetailsState extends State<CustomCaseDetails> {
       CaseDetailsModel(
         title: 'Patient Name',
         data: Text(
-          'Ebrahim Khaled',
+          widget.caseDetailsModel.patientName,
           style: AppStyles.textStyleRegular14(context).copyWith(
             color: ColorManager.black,
           ),
@@ -30,7 +31,7 @@ class _CustomCaseDetailsState extends State<CustomCaseDetails> {
       CaseDetailsModel(
         title: 'Age',
         data: Text(
-          '24 Years',
+          widget.caseDetailsModel.age,
           style: AppStyles.textStyleRegular14(context).copyWith(
             color: ColorManager.black,
           ),
@@ -39,7 +40,7 @@ class _CustomCaseDetailsState extends State<CustomCaseDetails> {
       CaseDetailsModel(
         title: 'Phone Number',
         data: Text(
-          '254110241423',
+          widget.caseDetailsModel.phone,
           style: AppStyles.textStyleRegular14(context).copyWith(
             color: ColorManager.black,
           ),
@@ -48,7 +49,7 @@ class _CustomCaseDetailsState extends State<CustomCaseDetails> {
       CaseDetailsModel(
         title: 'Date',
         data: Text(
-          '24 . 04 . 2021',
+          widget.caseDetailsModel.createdAt,
           style: AppStyles.textStyleRegular14(context).copyWith(
             color: ColorManager.black,
           ),
@@ -57,7 +58,7 @@ class _CustomCaseDetailsState extends State<CustomCaseDetails> {
       CaseDetailsModel(
         title: 'Doctor',
         data: Text(
-          'Salma Ahmed',
+          widget.caseDetailsModel.doctorId,
           style: AppStyles.textStyleRegular14(context).copyWith(
             color: ColorManager.black,
           ),

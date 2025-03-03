@@ -29,13 +29,13 @@ class ReportsAndTasksDetailsMessage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const CustomDataInfoHeader(),
+              const CustomDataInfoHeader(jobDescription: 'Specialist , Manager',),
               const SizedBox(height: 8),
               Text(
-                'Details note: Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                "Api haven't handle this!!!!.",
                 textAlign: TextAlign.justify,
                 style: AppStyles.textStyleRegular12(context)
-                    .copyWith(color: ColorManager.black),
+                    .copyWith(color: ColorManager.brightRed),
               ),
               const SizedBox(height: 15),
               Container(

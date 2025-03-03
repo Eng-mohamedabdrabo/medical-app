@@ -10,9 +10,6 @@ class DioHelper {
       BaseOptions(
         baseUrl: 'https://hospital.elhossiny.net/api/v1',
         receiveDataWhenStatusError: true,
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
       ),
     );
 
@@ -27,9 +24,17 @@ class DioHelper {
 
   static Future<Response> postData({
     required String url,
-    required Map<String, dynamic> data,
+    required dynamic data, // يقبل Map أو FormData
   }) async {
-    return await dio.post(url, data: data);
+    return await dio.post(
+      url,
+      data: data,
+      options: Options(
+        headers: {
+          'Content-Type': data is FormData ? 'multipart/form-data' : 'application/json',
+        },
+      ),
+    );
   }
 
   static Future<Response> getData({
@@ -45,5 +50,12 @@ class DioHelper {
     token = newToken;
     dio.options.headers['Authorization'] = 'Bearer $newToken';
     print('Updated Token: $newToken');
+  }
+
+  static Future<Response> deleteData({
+    required String url,
+    Map<String, dynamic>? query,
+  }) async {
+    return await dio.delete(url, queryParameters: query);
   }
 }

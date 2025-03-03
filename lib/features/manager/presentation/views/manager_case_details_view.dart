@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../../../core/widgets/medical_measurement_body.dart';
-import '../../../../core/widgets/medical_record_body.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/utils/color_manager.dart';
 import '../../../../core/widgets/case_details_body.dart';
@@ -112,7 +111,7 @@ class _ManagerCaseDetailsViewState extends State<ManagerCaseDetailsView>
       case 1:
         return const MedicalMeasurementBody();
       case 2:
-        return const MedicalRecordBody();
+        return const MedicalMeasurementBody();
       default:
         return const CaseDetailsBody();
     }

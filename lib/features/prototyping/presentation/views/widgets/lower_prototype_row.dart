@@ -7,8 +7,8 @@ class LowerPrototypeRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const PrototypeRow(
-      items: ['Analysis Employee', 'Manager', 'HR'],
-      types: ['analysis', 'manager', 'hr'], // نفس الفكرة هنا
+      items: ['Analysis', 'Manager', 'HR'],
+      types: ['Analysis', 'manger', 'hr'],
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lottie/lottie.dart';
 import '../../../../../constants.dart';
 import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/app_styles.dart';
@@ -107,7 +108,7 @@ class _LowerLoginSectionState extends State<LowerLoginSection> {
               buildForgotPassword(context),
               const SizedBox(height: 30),
               state is AuthLoading
-                  ? const CircularProgressIndicator()
+                  ?  Center(child: LottieBuilder.asset(AppAssets.loading , height: 60,width: 60,))
                   : CustomElevatedButton(
                 text: 'Login',
                 onPressed: () async {
@@ -138,9 +139,9 @@ void navigateToDashboard(BuildContext context, String type) {
   final Map<String, String> routes = {
     'doctor': AppRouter.kDoctorView,
     'receptionist': AppRouter.kReceptionistView,
-    'nurse': AppRouter.kNurseView,
-    'analysis': AppRouter.kAnalysisEmployeeView,
-    'manager': AppRouter.kManagerView,
+    'Nurse': AppRouter.kNurseView,
+    'Analysis': AppRouter.kAnalysisEmployeeView,
+    'manger': AppRouter.kManagerView,
     'hr': AppRouter.kHrView,
   };
 

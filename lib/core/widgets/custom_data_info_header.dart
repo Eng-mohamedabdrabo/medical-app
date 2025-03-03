@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 import '../utils/app_router.dart';
@@ -9,11 +10,13 @@ import '../utils/color_manager.dart';
 class CustomDataInfoHeader extends StatelessWidget {
   const CustomDataInfoHeader({
     super.key,
-    this.trailingWidget, this.jobDescription,
+    this.trailingWidget, this.jobDescription, this.image, this.name, this.date,
   });
   final String? jobDescription;
   final Widget? trailingWidget;
-
+  final String? image;
+  final String? name;
+  final String? date;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -28,7 +31,7 @@ class CustomDataInfoHeader extends StatelessWidget {
             height: 45,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(16),
-              child: Image.asset(AppAssets.imagesProfilePic, fit: BoxFit.cover),
+              child: SvgPicture.asset(image??AppAssets.imagesPlaceholder, fit: BoxFit.cover),
             ),
           ),
         ),
@@ -39,7 +42,7 @@ class CustomDataInfoHeader extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Mohamed',
+                name??'User',
                 style: AppStyles.textStyleRegular14(context)
                     .copyWith(color: ColorManager.black),
               ),
@@ -57,7 +60,7 @@ class CustomDataInfoHeader extends StatelessWidget {
           trailingWidget!
         else
           Text(
-            '26 Jan 2025',
+            date??'26/2/2025',
             style: AppStyles.textStyleRegular10(context).copyWith(
               fontWeight: FontWeight.w300,
               color: ColorManager.gray,

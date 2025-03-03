@@ -57,8 +57,8 @@ class MyProfileData extends StatelessWidget {
             top: -34,
             left: (screenWidth / 2) - 42,
             child: ClipOval(
-              child: Image.asset(
-                AppAssets.imagesProfilePic,
+              child: SvgPicture.asset(
+                AppAssets.imagesPlaceholder,
                 width: 70,
                 height: 70,
                 fit: BoxFit.cover,

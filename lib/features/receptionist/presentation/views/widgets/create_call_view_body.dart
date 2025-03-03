@@ -1,56 +1,17 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/utils/color_manager.dart';
 import '../../../../../core/widgets/custom_elevated_button.dart';
 import '../../../../../core/widgets/custom_header.dart';
 import '../../../../../core/widgets/custom_select_someone_container.dart';
 import '../../../../../core/widgets/custom_text_field.dart';
+import '../../../data/models/create_call_model.dart';
+import '../../manager/show_all_calls_cubit/show_all_calls_cubit.dart';
 import '../select_doctor_view.dart';
 
-// Dummy Models
-class CreateCallRequestModel {
-  final String patientName;
-  final int doctorId;
-  final int age;
-  final String phone;
-  final String description;
 
-  CreateCallRequestModel({
-    required this.patientName,
-    required this.doctorId,
-    required this.age,
-    required this.phone,
-    required this.description,
-  });
-
-  Map<String, dynamic> toJson() {
-    return {
-      'patient_name': patientName,
-      'doctor_id': doctorId,
-      'age': age,
-      'phone': phone,
-      'description': description,
-    };
-  }
-}
-
-class CreateCallResponseModel {
-  final int status;
-  final String message;
-
-  CreateCallResponseModel({
-    required this.status,
-    required this.message,
-  });
-
-  factory CreateCallResponseModel.fromJson(Map<String, dynamic> json) {
-    return CreateCallResponseModel(
-      status: json['status'],
-      message: json['message'],
-    );
-  }
-}
 
 class CreateCallViewBody extends StatefulWidget {
   const CreateCallViewBody({super.key});
@@ -64,8 +25,8 @@ class _CreateCallViewBodyState extends State<CreateCallViewBody> {
   TextEditingController ageController = TextEditingController();
   TextEditingController phoneNumberController = TextEditingController();
   TextEditingController caseDescriptionController = TextEditingController();
-  String? selectedDoctor; // ✅ Selected Doctor Name
-  int? selectedDoctorId; // ✅ Selected Doctor ID
+  String? selectedDoctor;
+  int? selectedDoctorId;
 
   @override
   Widget build(BuildContext context) {
@@ -112,13 +73,13 @@ class _CreateCallViewBodyState extends State<CreateCallViewBody> {
 
             if (selected != null && mounted) {
               setState(() {
-                selectedDoctor = selected.firstName; // ✅ Update Doctor Name
-                selectedDoctorId = selected.id; // ✅ Store Doctor ID
+                selectedDoctor = selected.firstName;
+                selectedDoctorId = selected.id;
               });
             }
           },
           child: CustomSelectSomeOneContainer(
-            empName: selectedDoctor ?? 'Select Doctor', // ✅ Show Selected Doctor
+            empName: selectedDoctor ?? 'Select Doctor',
           ),
         ),
 
@@ -141,7 +102,6 @@ class _CreateCallViewBodyState extends State<CreateCallViewBody> {
   }
 
   Future<void> sendCallRequest() async {
-    // ✅ Validate Input
     if (patientNameController.text.isEmpty ||
         ageController.text.isEmpty ||
         phoneNumberController.text.isEmpty ||
@@ -152,9 +112,9 @@ class _CreateCallViewBodyState extends State<CreateCallViewBody> {
     }
 
     try {
-      await Future.delayed(const Duration(seconds: 2)); // Simulate Network Delay
+      await Future.delayed(const Duration(seconds: 2));
 
-      final response = CreateCallResponseModel(status: 200, message: "Call request sent successfully!");
+      final response = CreateCallResponseModel(status: 1, message: "Call request sent successfully!");
 
       showSuccessDialog(response.message);
     } catch (e) {
@@ -169,7 +129,12 @@ class _CreateCallViewBodyState extends State<CreateCallViewBody> {
       animType: AnimType.scale,
       title: 'Success',
       desc: message,
-      btnOkOnPress: () {},
+      btnOkOnPress: ()async {
+        final navigator = Navigator.of(context);
+        await context.read<ShowAllCallsCubit>().getAllCalls();
+        navigator.pop();
+
+      },
     ).show();
   }
 

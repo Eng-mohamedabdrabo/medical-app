@@ -20,7 +20,7 @@ class LoginViewBody extends StatelessWidget {
             const SizedBox(height: 126),
             const UpperLoginSection(),
             const SizedBox(height: 70),
-            LowerLoginSection(type: type), // تمرير النوع للـ `LowerLoginSection`
+            LowerLoginSection(type: type),
             const SizedBox(height: 210),
           ],
         ),

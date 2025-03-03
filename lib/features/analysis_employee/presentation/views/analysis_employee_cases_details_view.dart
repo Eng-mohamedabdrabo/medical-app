@@ -96,7 +96,7 @@ class _AnalysisEmployeeCasesDetailsViewState
                     InkWell(
                       onTap: () {
                         GoRouter.of(context)
-                            .push(AppRouter.kAnalysisEmployeeAddMedicalReportView);
+                            .push(AppRouter.kNurseAddMeasurementView);
                       },
                       child: SvgPicture.asset(AppAssets.containerAnalysisEmployeeAnalysis),
                     ),

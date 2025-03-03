@@ -4,7 +4,7 @@ import '../../features/doctor/presentation/views/doctor_calls_view.dart';
 import '../../features/doctor/presentation/views/doctor_view.dart';
 import '../../features/manager/presentation/views/manager_add_task_view.dart';
 import '../../features/manager/presentation/views/manager_task_details_view.dart';
-import '../../features/manager/presentation/views/manager_tasks.dart';
+import '../../features/manager/presentation/views/manager_tasks_view.dart';
 import '../../features/nurse/presentation/views/nurse_view.dart';
 import '../../features/prototyping/presentation/views/prototyping_map_view.dart';
 import '../../features/receptionist/presentation/views/receptionist_view.dart';

@@ -25,7 +25,7 @@ class PrototypeRow extends StatelessWidget {
           child: PrototypingItem(
             text: text,
             onTap: () => GoRouter.of(context).push(
-              '${AppRouter.kLoginView}?type=$type', // إرسال النوع مع التنقل
+              '${AppRouter.kLoginView}?type=$type',
             ),
           ),
         );
